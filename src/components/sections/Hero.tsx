@@ -39,9 +39,9 @@ function HeroDashboard() {
         {/* KPIs */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 7, marginBottom: 10 }}>
           {[
-            { label:"Revenue", val:"$84.2K", chg:"+18%",  c:"#10b981" },
+            { label:"Monthly Revenue", val:"₹84.2L", chg:"+18%",  c:"#10b981" },
             { label:"AI Tasks", val:"1,429",  chg:"Auto'd", c:"#8b5cf6" },
-            { label:"Leads",   val:"342",    chg:"+23%",  c:"#3b82f6" },
+            { label:"New Leads",   val:"342",    chg:"+23%",  c:"#3b82f6" },
             { label:"Uptime",  val:"99.9%",  chg:"Live",  c:"#06b6d4" },
           ].map(k => (
             <div key={k.label} style={{ background:"rgba(255,255,255,0.035)", border:"1px solid rgba(255,255,255,0.07)", borderRadius:9, padding:"9px 11px" }}>
@@ -137,20 +137,20 @@ export default function Hero() {
                 initial={{ opacity:0, y:22 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.6, delay:0.1 }}
                 style={{ fontSize:"clamp(2rem,3.6vw,3.4rem)", fontWeight:900, lineHeight:1.08, letterSpacing:"-0.025em", color:"#f1f5f9", marginBottom:20 }}
               >
-                Building{" "}
-                <span className="gradient-text">Intelligent</span>
-                <br />Digital Solutions
-                <br /><span style={{ color:"#475569" }}>for Modern Businesses.</span>
+                Scale Your{" "}
+                <span className="gradient-text">Business</span>
+                <br />With Next-Gen Tech.
+                <br /><span style={{ color:"#475569" }}>Built for India & Beyond.</span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity:0, y:14 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5, delay:0.2 }}
                 style={{ fontSize:"1.05rem", color:"#64748b", lineHeight:1.78, marginBottom:36, maxWidth:460 }}
               >
-                We design <strong style={{ color:"#94a3b8" }}>websites</strong>,{" "}
-                <strong style={{ color:"#94a3b8" }}>mobile apps</strong>, AI solutions, custom software
-                and automation systems that help businesses{" "}
-                <strong style={{ color:"#94a3b8" }}>operate smarter</strong> and accelerate growth.
+                We help Indian brands <strong style={{ color:"#94a3b8" }}>maximize ROI</strong> with premium{" "}
+                <strong style={{ color:"#94a3b8" }}>websites, mobile apps</strong>, AI solutions, custom software
+                and automation systems.{" "}
+                <strong style={{ color:"#94a3b8" }}>10x your growth</strong> today.
               </motion.p>
 
               {/* CTAs */}

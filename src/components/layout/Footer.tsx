@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Link2, Camera, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const WHATSAPP_NUMBER = "918217206292";
-const EMAIL = "hello@optqvo.com";
 
 const footerLinks = {
   Company: [
@@ -29,12 +28,6 @@ const footerLinks = {
     { label: "Maintenance & Support", href: "#services" },
   ],
 };
-
-const socials = [
-  { icon: Mail, label: "Email", href: `mailto:${EMAIL}`, color: "hover:text-violet-400" },
-  { icon: Link2, label: "LinkedIn", href: "https://linkedin.com/company/optqvo", color: "hover:text-blue-400" },
-  { icon: Camera, label: "Instagram", href: "https://instagram.com/optqvo", color: "hover:text-pink-400" },
-];
 
 export default function Footer() {
   const scrollTo = (href: string) => {
@@ -66,14 +59,14 @@ export default function Footer() {
               />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs mb-4">
-              We help businesses build, automate, optimize and scale through modern software, AI and intelligent business systems.
+              We help Indian businesses scale faster and maximize ROI through custom software, AI, and smart automation.
             </p>
             <p className="text-xs font-semibold uppercase tracking-widest gradient-text mb-5">Build. Automate. Grow.</p>
 
             {/* Contact buttons */}
-            <div className="flex flex-col gap-2 mb-6">
+            <div className="flex flex-col gap-3 mb-6">
               <a
-                href={whatsappLink}
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Optqvo%2C%20I%27d%20like%20to%20discuss%20a%20project.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200"
@@ -86,35 +79,9 @@ export default function Footer() {
                 </span>
                 Message Us
               </a>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200"
-              >
-                <span className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0"
-                  style={{ background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.3)" }}>
-                  <Mail className="w-2.5 h-2.5 text-violet-400" />
-                </span>
-                Email Us
-              </a>
             </div>
 
-            {/* Socials */}
-            <div className="flex items-center gap-3">
-              {socials.map(({ icon: Icon, label, href, color }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`w-9 h-9 rounded-xl glass border border-white/[0.07] flex items-center justify-center text-slate-500 ${color} transition-all duration-200`}
-                >
-                  <Icon className="w-4 h-4" />
-                </motion.a>
-              ))}
-            </div>
+
           </div>
 
           {/* Links */}
