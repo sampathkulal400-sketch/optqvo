@@ -1,27 +1,74 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
-import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import Industries from "@/components/sections/Industries";
-import Process from "@/components/sections/Process";
+import Solutions from "@/components/sections/Solutions";
+import CustomSolutions from "@/components/sections/CustomSolutions";
+import Portfolio from "@/components/sections/Portfolio";
+import About from "@/components/sections/About";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
+import EnquiryModal from "@/components/sections/EnquiryModal";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalCategory, setModalCategory] = useState<string | undefined>(undefined);
+
+  const handleOpenEnquiry = (category?: string) => {
+    setModalCategory(category);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseEnquiry = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div style={{ backgroundColor: "#09090B", minHeight: "100vh" }}>
-      <Navbar />
+      <Navbar onOpenEnquiry={handleOpenEnquiry} />
+
       <main>
-        <Hero />
-        <Services />
-        <WhyChooseUs />
-        <Industries />
-        <Process />
-        <FAQ />
-        <FinalCTA />
+        {/* 1. Hero: 5-Second Test Clarity */}
+        <Hero onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* 2. Services: What Optqvo Can Build */}
+        <Services onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* 3. Solutions: Solutions Organized by Business Types */}
+        <Solutions onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* 4. Custom Solutions: Dedicated Problem Solver Section */}
+        <CustomSolutions onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* 5. Our Work: Real Verified Projects (Gokarna Purohita & SN Cranes Puttur) */}
+        <Portfolio onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* 6. About: Simple, Trustworthy Story */}
+        <About />
+
+        {/* 7. FAQ: Plain English Answers */}
+        <FAQ onOpenEnquiry={handleOpenEnquiry} />
+
+        {/* 8. Final CTA: "Have a problem you'd like to solve?" */}
+        <FinalCTA onOpenEnquiry={handleOpenEnquiry} />
       </main>
-      <Footer />
+
+      {/* Footer */}
+      <Footer onOpenEnquiry={handleOpenEnquiry} />
+
+      {/* Floating Action Elements */}
+      <FloatingWhatsApp />
+
+      {/* Interactive Problem Submission Modal */}
+      <EnquiryModal
+        isOpen={isModalOpen}
+        onClose={handleCloseEnquiry}
+        initialCategory={modalCategory}
+      />
     </div>
   );
 }

@@ -9,8 +9,8 @@ import {
 const reasons = [
   {
     icon: Rocket,
-    title: "High-Speed Delivery",
-    description: "We build and deploy fast. Get your business online or your app launched without months of waiting.",
+    title: "We Move Fast",
+    description: "Most of our clients go live in 2–4 weeks. No endless meetings, no months of waiting — we get to work.",
     gradient: "from-violet-500/10 to-violet-500/0",
     iconColor: "text-violet-400",
     iconBg: "bg-violet-500/10",
@@ -18,8 +18,8 @@ const reasons = [
   },
   {
     icon: Layers,
-    title: "Cost-Effective Scaling",
-    description: "Premium technology that fits your budget. We build solutions designed to give you maximum ROI.",
+    title: "Honest Pricing",
+    description: "We give you a fixed quote before we start. No surprise invoices, no scope creep — what we quote is what you pay.",
     gradient: "from-blue-500/10 to-blue-500/0",
     iconColor: "text-blue-400",
     iconBg: "bg-blue-500/10",
@@ -27,8 +27,8 @@ const reasons = [
   },
   {
     icon: Brain,
-    title: "AI-First Approach",
-    description: "Automate your daily tasks with AI chatbots and smart tools so you can focus on growing your business.",
+    title: "Smart Automation",
+    description: "We set up automations that handle your repetitive tasks — from lead follow-ups to invoice generation — so your team doesn't have to.",
     gradient: "from-fuchsia-500/10 to-fuchsia-500/0",
     iconColor: "text-fuchsia-400",
     iconBg: "bg-fuchsia-500/10",
@@ -36,8 +36,8 @@ const reasons = [
   },
   {
     icon: Server,
-    title: "Reliable & Secure",
-    description: "Your data is safe, and your website stays online 24/7. We use top-tier cloud hosting for zero downtime.",
+    title: "Always Online",
+    description: "We host on enterprise cloud infrastructure. Your website stays up, your data stays safe, and we monitor it around the clock.",
     gradient: "from-cyan-500/10 to-cyan-500/0",
     iconColor: "text-cyan-400",
     iconBg: "bg-cyan-500/10",
@@ -45,8 +45,8 @@ const reasons = [
   },
   {
     icon: Shield,
-    title: "Premium Quality",
-    description: "Stand out in the Indian market with world-class UI/UX design that builds immediate trust with your customers.",
+    title: "Designed to Impress",
+    description: "We don't do plain template websites. Every project gets a custom design that matches your brand and earns trust from day one.",
     gradient: "from-indigo-500/10 to-indigo-500/0",
     iconColor: "text-indigo-400",
     iconBg: "bg-indigo-500/10",
@@ -54,8 +54,8 @@ const reasons = [
   },
   {
     icon: MessageSquare,
-    title: "Direct WhatsApp Support",
-    description: "No confusing ticketing systems. Get direct updates, support, and consulting right on WhatsApp.",
+    title: "WhatsApp Support",
+    description: "Reach us directly on WhatsApp — not through a ticketing system. Real replies from the people who built your product.",
     gradient: "from-emerald-500/10 to-emerald-500/0",
     iconColor: "text-emerald-400",
     iconBg: "bg-emerald-500/10",
@@ -63,8 +63,8 @@ const reasons = [
   },
   {
     icon: LifeBuoy,
-    title: "Long-Term Partner",
-    description: "We don't just build and disappear. We provide ongoing maintenance to keep your business running smoothly.",
+    title: "We Stick Around",
+    description: "Launch day isn't the end. We stay on for maintenance, fixes, and improvements — your long-term tech team.",
     gradient: "from-amber-500/10 to-amber-500/0",
     iconColor: "text-amber-400",
     iconBg: "bg-amber-500/10",
@@ -72,8 +72,8 @@ const reasons = [
   },
   {
     icon: Lock,
-    title: "100% Transparency",
-    description: "Honest pricing, clear timelines, and zero hidden costs. You always know exactly what you are paying for.",
+    title: "No Hidden Surprises",
+    description: "You'll always know where your project stands — we share progress updates, flag issues early, and never go silent.",
     gradient: "from-sky-500/10 to-sky-500/0",
     iconColor: "text-sky-400",
     iconBg: "bg-sky-500/10",
@@ -106,8 +106,8 @@ export default function WhyChooseUs() {
             Built for <span className="gradient-text">Indian Businesses</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            We deliver premium digital solutions that are affordable, scalable, and designed to help you dominate your local market.
-            that don't just work — they transform.
+            We&apos;re a small, focused team that builds real products for real businesses —
+            no bloat, no outsourcing, no disappearing after launch.
           </p>
         </motion.div>
 

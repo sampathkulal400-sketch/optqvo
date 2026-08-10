@@ -1,0 +1,311 @@
+"use client";
+
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import {
+  Utensils, ShoppingBag, Hotel, Scissors, Stethoscope,
+  GraduationCap, Building2, Briefcase, ArrowRight, CheckCircle2
+} from "lucide-react";
+
+interface SolutionsProps {
+  onOpenEnquiry?: (category?: string) => void;
+}
+
+interface SolutionCategory {
+  id: string;
+  name: string;
+  icon: typeof Utensils;
+  headline: string;
+  description: string;
+  features: string[];
+  simpleExample: { from: string; to: string };
+}
+
+const solutionCategories: SolutionCategory[] = [
+  {
+    id: "restaurant",
+    name: "Restaurants & Cafes",
+    icon: Utensils,
+    headline: "Simple Digital Solutions for Restaurants",
+    description: "Make it easier for customers to view your menu, contact you, book a table, and explore your restaurant online.",
+    features: [
+      "Digital QR Menu (Customers scan & view menu on their phone)",
+      "Digital menu creation from existing paper menus",
+      "Professional restaurant website with food photos & prices",
+      "Direct WhatsApp ordering & table reservation inquiries",
+      "Google Maps location & direction integration",
+      "Offers, daily specials & customer feedback system",
+    ],
+    simpleExample: {
+      from: "Instead of printing paper menus every time prices change...",
+      to: "Customers scan a QR code and open your clean digital menu directly on their phone.",
+    },
+  },
+  {
+    id: "retail",
+    name: "Retail & Shops",
+    icon: ShoppingBag,
+    headline: "Make Your Shop Easier to Find and Explore Online",
+    description: "Showcase your products, accept online inquiries, and help local customers discover your store.",
+    features: [
+      "Business website with product showcase catalog",
+      "Product photos, specifications & price details",
+      "One-click WhatsApp product inquiry button",
+      "Store location & operating hours on Google Maps",
+      "Product search & category filter for customers",
+      "Simple product inquiry & sales dashboard",
+    ],
+    simpleExample: {
+      from: "Instead of answering 'Do you have this in stock?' repeatedly on phone calls...",
+      to: "Customers browse your online catalog and tap WhatsApp to order directly.",
+    },
+  },
+  {
+    id: "hotel",
+    name: "Hotels & Stays",
+    icon: Hotel,
+    headline: "Showcase Your Rooms and Accept Direct Bookings",
+    description: "Help travelers explore room details, photos, amenities, and send booking inquiries without third-party commissions.",
+    features: [
+      "Professional hotel & resort website",
+      "Room category showcases with photo galleries & pricing",
+      "Direct booking inquiry form & WhatsApp contact",
+      "Location map, nearby attractions & guest guides",
+      "Customer reviews & feedback collection",
+      "Digital hotel information page for checked-in guests",
+    ],
+    simpleExample: {
+      from: "Instead of paying high commission fees on every guest booking...",
+      to: "Guests discover your rooms on your website and book directly with your reception.",
+    },
+  },
+  {
+    id: "salon",
+    name: "Salons & Spas",
+    icon: Scissors,
+    headline: "Display Services, Pricing & Accept Appointments",
+    description: "Make it effortless for clients to view your haircut, spa, and beauty packages and book slots online.",
+    features: [
+      "Professional salon & spa website",
+      "Service menu with transparent pricing & package details",
+      "Online appointment booking form",
+      "Direct WhatsApp booking confirmation",
+      "Staff profiles, special offers & package deals",
+      "Location & customer review showcase",
+    ],
+    simpleExample: {
+      from: "Instead of managing appointments manually on paper notebooks...",
+      to: "Clients choose their required service online and book their slot in seconds.",
+    },
+  },
+  {
+    id: "clinic",
+    name: "Clinics & Doctors",
+    icon: Stethoscope,
+    headline: "Clean Online Presence for Clinics & Health Centers",
+    description: "Help patients find doctor profiles, clinic timing, available services, and request appointments online.",
+    features: [
+      "Professional clinic website",
+      "Doctor qualifications, specialization & department info",
+      "Services offered & treatment descriptions",
+      "Patient appointment inquiry & WhatsApp contact",
+      "Clinic location, opening hours & contact details",
+      "Patient information guides & basic admin dashboard",
+    ],
+    simpleExample: {
+      from: "Instead of phone lines constantly busy during clinic hours...",
+      to: "Patients easily check doctor timing and submit appointment requests online.",
+    },
+  },
+  {
+    id: "education",
+    name: "Education & Coaching",
+    icon: GraduationCap,
+    headline: "Course Information & Admission Inquiry Platforms",
+    description: "Help students and parents explore courses, download prospectuses, and apply for admissions online.",
+    features: [
+      "School, college & coaching institute website",
+      "Course catalog with fee structure & syllabus details",
+      "Student & admission inquiry forms",
+      "Online registration & application submission",
+      "Announcements, exam updates & notice board",
+      "Simple student & admin dashboard when required",
+    ],
+    simpleExample: {
+      from: "Instead of handing out printed pamphlets to every inquiring student...",
+      to: "Parents explore detailed course info online and apply directly.",
+    },
+  },
+  {
+    id: "realestate",
+    name: "Real Estate & Builders",
+    icon: Building2,
+    headline: "Showcase Properties & Capture Qualified Buyer Leads",
+    description: "Display residential & commercial properties with photos, site locations, and direct agent contacts.",
+    features: [
+      "Real estate business website",
+      "Property listings with photos, floor plans & pricing",
+      "Location filter & property search",
+      "Instant WhatsApp & inquiry buttons on every property",
+      "Lead management & inquiry tracking dashboard",
+      "Agent profiles & contact details",
+    ],
+    simpleExample: {
+      from: "Instead of sending heavy PDF brochures over chat...",
+      to: "Buyers browse your property website and tap to chat with your sales representative.",
+    },
+  },
+  {
+    id: "professional",
+    name: "Professional Services",
+    icon: Briefcase,
+    headline: "Digital Presence for Architects, Designers & Consultants",
+    description: "Establish trust, showcase past project portfolios, and attract high-value business clients.",
+    features: [
+      "Professional business website",
+      "Clean project portfolio & photo showcase",
+      "Service presentations & case studies",
+      "Consultation booking & inquiry forms",
+      "Client testimonials & trust badges",
+      "Direct WhatsApp & phone contact integration",
+    ],
+    simpleExample: {
+      from: "Instead of relying purely on word-of-mouth recommendations...",
+      to: "Clients inspect your completed work portfolio online and book consultations.",
+    },
+  },
+];
+
+export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
+  const [activeTab, setActiveTab] = useState<string>("restaurant");
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const activeCategory = solutionCategories.find((cat) => cat.id === activeTab) || solutionCategories[0];
+  const IconComponent = activeCategory.icon;
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section id="solutions" ref={ref} className="relative py-12 lg:py-16 overflow-hidden bg-[#0c0c12]">
+      <div className="absolute top-0 left-0 right-0 h-px glow-line" />
+
+      <div className="section-wrap">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8 sm:mb-10"
+        >
+          <span className="badge mb-4">SOLUTIONS BY INDUSTRY</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
+            Solutions Built for <span className="gradient-text">Your Business Type</span>
+          </h2>
+          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+            We understand the specific problems of your industry. Select your business type to see how Optqvo can help.
+          </p>
+        </motion.div>
+
+        {/* Business Category Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+          {solutionCategories.map((cat) => {
+            const Icon = cat.icon;
+            const isActive = activeTab === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveTab(cat.id)}
+                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer border ${
+                  isActive
+                    ? "bg-violet-600 border-violet-500 text-white shadow-lg shadow-violet-600/25"
+                    : "bg-white/[0.03] border-white/[0.07] text-slate-400 hover:text-white hover:border-white/[0.15]"
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                <span>{cat.name}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Selected Category Solution Detail Box */}
+        <motion.div
+          key={activeCategory.id}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35 }}
+          className="rounded-3xl glass-strong border border-white/[0.1] p-6 sm:p-10 shadow-2xl"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/25 flex items-center justify-center text-violet-400">
+                  <IconComponent className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-violet-400">Industry Solution</span>
+                  <h3 className="text-2xl sm:text-3xl font-black text-white">{activeCategory.headline}</h3>
+                </div>
+              </div>
+
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                {activeCategory.description}
+              </p>
+
+              {/* Feature Checklist */}
+              <div className="pt-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Included Capabilities:</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-300">
+                  {activeCategory.features.map((feat) => (
+                    <div key={feat} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="pt-4 flex flex-wrap items-center gap-4">
+                <button
+                  onClick={() => onOpenEnquiry ? onOpenEnquiry(activeCategory.name) : scrollTo("contact")}
+                  className="btn-gradient px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white flex items-center gap-2 cursor-pointer border-none"
+                >
+                  <span>Get Solution For {activeCategory.name}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Right Before & After Comparison */}
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl bg-[#08080d] border border-white/[0.08] p-6 space-y-4">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-white/[0.08] pb-3">
+                  How It Makes Things Simple
+                </div>
+
+                <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300">
+                  <p className="font-bold mb-1 text-red-400">Before Optqvo:</p>
+                  <p className="leading-relaxed">{activeCategory.simpleExample.from}</p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300">
+                  <p className="font-bold mb-1 text-emerald-400">With Optqvo Solution:</p>
+                  <p className="leading-relaxed">{activeCategory.simpleExample.to}</p>
+                </div>
+
+                <p className="text-[11px] text-slate-500 text-center pt-1">
+                  Customized specifically around your business rules & timing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

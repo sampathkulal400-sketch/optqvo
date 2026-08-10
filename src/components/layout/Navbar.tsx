@@ -2,216 +2,192 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, MessageSquare } from "lucide-react";
+
+interface NavbarProps {
+  onOpenEnquiry?: (category?: string) => void;
+}
 
 const navLinks = [
   { label: "Home", href: "home" },
   { label: "Services", href: "services" },
-  { label: "Industries", href: "industries" },
-  { label: "Process", href: "process" },
+  { label: "Solutions", href: "solutions", hasDropdown: true },
+  { label: "Work", href: "work" },
+  { label: "About", href: "about" },
   { label: "FAQ", href: "faq" },
   { label: "Contact", href: "contact" },
 ];
 
-export default function Navbar() {
+const solutionDropdownItems = [
+  { label: "Restaurants & Cafes", href: "solutions" },
+  { label: "Retail & Shops", href: "solutions" },
+  { label: "Hotels & Stays", href: "solutions" },
+  { label: "Salons & Spas", href: "solutions" },
+  { label: "Clinics & Doctors", href: "solutions" },
+  { label: "Education & Coaching", href: "solutions" },
+  { label: "Real Estate", href: "solutions" },
+  { label: "Professional Services", href: "solutions" },
+  { label: "Custom Solutions", href: "custom-solutions" },
+];
+
+export default function Navbar({ onOpenEnquiry }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const scrollTo = (id: string) => {
     setMobileOpen(false);
+    setDropdownOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
       <motion.header
-        initial={{ y: -64, opacity: 0 }}
+        initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
-        style={{
-          position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-          transition: "all 0.4s ease",
-          background: scrolled ? "rgba(9,9,11,0.85)" : "transparent",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
-        }}
+        transition={{ duration: 0.5 }}
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+          scrolled
+            ? "bg-[#09090c]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-lg"
+            : "bg-transparent border-b border-transparent"
+        }`}
       >
-        <div
-          style={{
-            maxWidth: 1280,
-            margin: "0 auto",
-            padding: "0 64px",
-            height: 64,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-          className="nav-container"
-        >
-          {/* Logo */}
-          <motion.button
+        <div className="section-wrap h-16 flex items-center justify-between">
+          {/* Brand Logo */}
+          <button
             onClick={() => scrollTo("home")}
-            style={{
-              display: "flex", alignItems: "center",
-              background: "transparent", border: "none", cursor: "pointer", padding: 0,
-            }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
+            className="flex items-center gap-2 bg-transparent border-none cursor-pointer p-0"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/icon.png"
               alt="Optqvo"
-              style={{ height: 42, width: "auto", objectFit: "contain", display: "block" }}
+              className="h-9 w-auto object-contain block"
             />
-          </motion.button>
+          </button>
 
-          {/* Desktop nav */}
-          <nav style={{ display: "flex", alignItems: "center", gap: 2 }} className="desktop-nav">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollTo(link.href)}
-                style={{
-                  padding: "7px 14px",
-                  fontSize: "0.85rem",
-                  fontWeight: 500,
-                  color: "#94a3b8",
-                  background: "transparent",
-                  border: "none",
-                  borderRadius: 8,
-                  cursor: "pointer",
-                  transition: "all 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLElement).style.color = "#f1f5f9";
-                  (e.target as HTMLElement).style.background = "rgba(255,255,255,0.06)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLElement).style.color = "#94a3b8";
-                  (e.target as HTMLElement).style.background = "transparent";
-                }}
-              >
-                {link.label}
-              </button>
-            ))}
+          {/* Desktop Nav Links */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => {
+              if (link.hasDropdown) {
+                return (
+                  <div
+                    key={link.href}
+                    className="relative"
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                  >
+                    <button
+                      onClick={() => scrollTo(link.href)}
+                      className="px-3.5 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/[0.05] rounded-lg transition-colors cursor-pointer bg-transparent border-none flex items-center gap-1"
+                    >
+                      {link.label}
+                      <ChevronDown className="w-3.5 h-3.5 opacity-70" />
+                    </button>
+
+                    {/* Solutions Dropdown Menu */}
+                    <AnimatePresence>
+                      {dropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 8 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 w-56 p-2 rounded-2xl bg-[#0d0d14] border border-white/[0.12] shadow-2xl z-50 space-y-0.5"
+                        >
+                          {solutionDropdownItems.map((item) => (
+                            <button
+                              key={item.label}
+                              onClick={() => scrollTo(item.href)}
+                              className="w-full text-left px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-violet-600/20 rounded-xl transition-colors cursor-pointer bg-transparent border-none block"
+                            >
+                              {item.label}
+                            </button>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
+              return (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className="px-3.5 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/[0.05] rounded-lg transition-colors cursor-pointer bg-transparent border-none"
+                >
+                  {link.label}
+                </button>
+              );
+            })}
           </nav>
 
-          {/* CTA */}
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }} className="desktop-cta">
-            <motion.button
-              onClick={() => scrollTo("contact")}
-              className="btn-gradient"
-              style={{
-                padding: "9px 20px",
-                borderRadius: 10,
-                fontSize: "0.85rem",
-                fontWeight: 700,
-                color: "#fff",
-                border: "none",
-                cursor: "pointer",
-                letterSpacing: "-0.01em",
-              }}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+          {/* Desktop Right CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={() => onOpenEnquiry ? onOpenEnquiry() : scrollTo("contact")}
+              className="btn-gradient px-4 py-2 rounded-xl text-xs font-bold text-white flex items-center gap-2 cursor-pointer border-none shadow-md"
             >
-              Book Free Consultation
-            </motion.button>
+              <MessageSquare className="w-3.5 h-3.5" />
+              <span>Tell Us Your Problem</span>
+            </button>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile Hamburger Toggle */}
           <button
-            id="mobile-menu-btn"
             onClick={() => setMobileOpen(!mobileOpen)}
-            style={{
-              display: "none",
-              padding: 8, background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.09)",
-              borderRadius: 8, color: "#94a3b8", cursor: "pointer",
-            }}
-            className="mobile-menu-btn"
-            aria-label="Menu"
+            className="lg:hidden p-2 rounded-lg bg-white/[0.05] border border-white/[0.1] text-slate-300 cursor-pointer"
+            aria-label="Toggle Menu"
           >
-            {mobileOpen ? <X style={{ width: 20, height: 20 }} /> : <Menu style={{ width: 20, height: 20 }} />}
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </motion.header>
 
-      {/* Mobile menu */}
+      {/* Mobile Drawer Navigation */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            style={{
-              position: "fixed", top: 64, left: 0, right: 0, zIndex: 99,
-              background: "rgba(9,9,11,0.97)",
-              backdropFilter: "blur(24px)",
-              borderBottom: "1px solid rgba(255,255,255,0.07)",
-              padding: "16px 24px 20px",
-            }}
+            className="fixed top-16 left-0 right-0 z-[99] bg-[#09090e]/98 backdrop-blur-2xl border-b border-white/[0.1] p-6 lg:hidden max-h-[85vh] overflow-y-auto"
           >
-            {navLinks.map((link, i) => (
-              <motion.button
-                key={link.href}
-                initial={{ opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.04 }}
-                onClick={() => scrollTo(link.href)}
-                style={{
-                  display: "block", width: "100%", textAlign: "left",
-                  padding: "11px 14px", borderRadius: 10,
-                  fontSize: "0.9rem", fontWeight: 500,
-                  color: "#94a3b8", background: "transparent",
-                  border: "none", cursor: "pointer",
-                  transition: "all 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLElement).style.color = "#f1f5f9";
-                  (e.target as HTMLElement).style.background = "rgba(255,255,255,0.05)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLElement).style.color = "#94a3b8";
-                  (e.target as HTMLElement).style.background = "transparent";
-                }}
-              >
-                {link.label}
-              </motion.button>
-            ))}
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              onClick={() => scrollTo("contact")}
-              className="btn-gradient"
-              style={{
-                display: "block", width: "100%", marginTop: 12,
-                padding: "12px", borderRadius: 10,
-                fontSize: "0.9rem", fontWeight: 700,
-                color: "#fff", border: "none", cursor: "pointer",
+            <div className="space-y-1 mb-6">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className="w-full text-left px-4 py-3 text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/[0.05] rounded-xl transition-colors cursor-pointer bg-transparent border-none block"
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                if (onOpenEnquiry) onOpenEnquiry();
+                else scrollTo("contact");
               }}
+              className="btn-gradient w-full py-3.5 px-4 rounded-xl text-sm font-bold text-white flex items-center justify-center gap-2 cursor-pointer border-none shadow-lg"
             >
-              Book Free Consultation
-            </motion.button>
+              <MessageSquare className="w-4 h-4" />
+              <span>Tell Us Your Problem</span>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <style>{`
-        @media (max-width: 900px) {
-          .desktop-nav, .desktop-cta { display: none !important; }
-          .mobile-menu-btn { display: flex !important; }
-        }
-      `}</style>
     </>
   );
 }
