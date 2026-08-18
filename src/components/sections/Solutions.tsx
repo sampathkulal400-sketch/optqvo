@@ -199,7 +199,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           className="text-center mb-10 sm:mb-12"
         >
           <span className="font-mono text-xs uppercase tracking-widest text-[#FAFAF8] font-bold bg-[#3B1B4E] px-3.5 py-1 rounded-full inline-block mb-4">
-            03 / SOLUTIONS BY INDUSTRY
+            SOLUTIONS BY INDUSTRY
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#0B0B0C] mb-4">
             Solutions Built for <span className="highlight-lime">Your Business Type</span>
@@ -211,21 +211,18 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
 
         {/* Business Category Buttons (Scrollable on mobile with touch momentum) */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 sm:flex-wrap sm:justify-center scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 touch-pan-x">
-          {solutionCategories.map((cat, idx) => {
+          {solutionCategories.map((cat) => {
             const isActive = activeTab === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`px-4 py-3 min-h-[44px] rounded-full font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2 transition-all cursor-pointer border flex-shrink-0 ${
+                className={`px-4 py-3 min-h-[44px] rounded-full font-mono text-xs uppercase tracking-widest font-bold flex items-center justify-center transition-all cursor-pointer border flex-shrink-0 ${
                   isActive
                     ? "bg-[#3B1B4E] border-[#3B1B4E] text-[#FAFAF8] shadow-md"
                     : "bg-white border-[#0B0B0C]/15 text-[#0B0B0C] hover:bg-[#0B0B0C]/5"
                 }`}
               >
-                <span className={`text-[10px] font-bold ${isActive ? "text-[#CCFF00]" : "text-[#3B1B4E]"}`}>
-                  0{idx + 1}
-                </span>
                 <span className="whitespace-nowrap">{cat.name}</span>
               </button>
             );

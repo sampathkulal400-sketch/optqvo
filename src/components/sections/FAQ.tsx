@@ -59,7 +59,7 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
           className="text-center mb-10 sm:mb-14"
         >
           <span className="font-mono text-xs uppercase tracking-widest text-[#FAFAF8] font-bold bg-[#3B1B4E] px-3.5 py-1 rounded-full inline-block mb-4">
-            07 / FREQUENTLY ASKED QUESTIONS
+            FREQUENTLY ASKED QUESTIONS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#0B0B0C] mb-4">
             Common <span className="highlight-lime">Questions</span>

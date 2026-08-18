@@ -54,7 +54,7 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
           className="text-center mb-10 sm:mb-14"
         >
           <span className="font-mono text-xs uppercase tracking-widest text-[#FAFAF8] font-bold bg-[#3B1B4E] px-3.5 py-1 rounded-full inline-block mb-4">
-            04 / CUSTOM BUSINESS PROBLEMS
+            CUSTOM BUSINESS PROBLEMS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#0B0B0C] mb-4">
             Have a Business Problem? <span className="highlight-lime">Let&apos;s Build the Solution.</span>
@@ -74,14 +74,10 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="rounded-3xl bg-white border border-[#0B0B0C]/15 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 shadow-md"
             >
-              <div className="flex items-start gap-4">
-                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2.5 py-1 rounded-lg flex-shrink-0 mt-0.5">
-                  0{i + 1}
-                </span>
-                <div>
-                  <h3 className="text-base sm:text-lg font-bold text-[#0B0B0C] mb-2 leading-snug">
-                    &ldquo;{scenario.question}&rdquo;
-                  </h3>
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-[#0B0B0C] mb-2 leading-snug">
+                  &ldquo;{scenario.question}&rdquo;
+                </h3>
                   <div className="flex items-center gap-1.5 font-mono text-xs font-bold text-[#3B1B4E] uppercase tracking-wider mb-1">
                     <span>→ OUR APPROACH:</span>
                   </div>
@@ -89,7 +85,6 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
                     {scenario.answer}
                   </p>
                 </div>
-              </div>
             </motion.div>
           ))}
         </div>

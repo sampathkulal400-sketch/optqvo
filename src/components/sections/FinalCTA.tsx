@@ -26,7 +26,7 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
           className="rounded-3xl bg-[#3B1B4E] text-[#FAFAF8] p-6 sm:p-12 lg:p-16 text-center shadow-2xl max-w-4xl mx-auto"
         >
           <span className="font-mono text-xs uppercase tracking-widest text-[#0B0B0C] font-bold bg-[#CCFF00] px-3.5 py-1 rounded-full inline-block mb-4">
-            08 / GET IN TOUCH
+            GET IN TOUCH
           </span>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#FAFAF8] mb-4 leading-tight">

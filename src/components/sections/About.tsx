@@ -20,7 +20,7 @@ export default function About() {
             className="lg:col-span-7 space-y-6"
           >
             <span className="font-mono text-xs uppercase tracking-widest text-[#0B0B0C] font-bold bg-[#CCFF00] px-3.5 py-1 rounded-full inline-block mb-2">
-              06 / WHY OPTQVO
+              WHY OPTQVO
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#FAFAF8] leading-snug">
               We Listen to Your Need & Build <span className="text-[#CCFF00]">Practical Digital Solutions.</span>
@@ -36,44 +36,24 @@ export default function About() {
 
             {/* Core Values / Commitments Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
-                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2 py-0.5 rounded flex-shrink-0 mt-0.5">
-                  01
-                </span>
-                <div>
-                  <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">AFFORDABLE & PRACTICAL</h4>
-                  <p className="text-xs text-[#0B0B0C]/70">Professional digital solutions without unnecessary complexity or cost.</p>
-                </div>
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md">
+                <h4 className="font-mono text-xs font-bold text-[#3B1B4E] uppercase tracking-wider mb-1">AFFORDABLE & PRACTICAL</h4>
+                <p className="text-xs text-[#0B0B0C]/70">Professional digital solutions without unnecessary complexity or cost.</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
-                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2 py-0.5 rounded flex-shrink-0 mt-0.5">
-                  02
-                </span>
-                <div>
-                  <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">DIRECT DEVELOPER ACCESS</h4>
-                  <p className="text-xs text-[#0B0B0C]/70">Talk directly on WhatsApp with the people who build your solution.</p>
-                </div>
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md">
+                <h4 className="font-mono text-xs font-bold text-[#3B1B4E] uppercase tracking-wider mb-1">DIRECT DEVELOPER ACCESS</h4>
+                <p className="text-xs text-[#0B0B0C]/70">Talk directly on WhatsApp with the people who build your solution.</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
-                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2 py-0.5 rounded flex-shrink-0 mt-0.5">
-                  03
-                </span>
-                <div>
-                  <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">FAST DELIVERY</h4>
-                  <p className="text-xs text-[#0B0B0C]/70">Most small business websites & digital tools go live in 1–3 weeks.</p>
-                </div>
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md">
+                <h4 className="font-mono text-xs font-bold text-[#3B1B4E] uppercase tracking-wider mb-1">FAST DELIVERY</h4>
+                <p className="text-xs text-[#0B0B0C]/70">Most small business websites & digital tools go live in 1–3 weeks.</p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
-                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2 py-0.5 rounded flex-shrink-0 mt-0.5">
-                  04
-                </span>
-                <div>
-                  <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">LONG-TERM SUPPORT</h4>
-                  <p className="text-xs text-[#0B0B0C]/70">We stay around after launch to handle maintenance, updates, & fixes.</p>
-                </div>
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md">
+                <h4 className="font-mono text-xs font-bold text-[#3B1B4E] uppercase tracking-wider mb-1">LONG-TERM SUPPORT</h4>
+                <p className="text-xs text-[#0B0B0C]/70">We stay around after launch to handle maintenance, updates, & fixes.</p>
               </div>
             </div>
           </motion.div>
@@ -87,48 +67,28 @@ export default function About() {
           >
             <div className="rounded-3xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 p-6 sm:p-8 space-y-6 shadow-xl">
               <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-[#3B1B4E] border-b border-[#0B0B0C]/10 pb-4">
-                OUR SIMPLE 4-STEP APPROACH
+                OUR PRACTICAL APPROACH
               </h3>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#3B1B4E] text-[#CCFF00] font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-[#0B0B0C]">Understand</h4>
-                    <p className="text-xs text-[#0B0B0C]/70">We listen to your business problem over WhatsApp or phone call.</p>
-                  </div>
+                <div className="p-3.5 rounded-2xl bg-white border border-[#0B0B0C]/10">
+                  <h4 className="text-sm font-bold text-[#0B0B0C] mb-0.5">Understand</h4>
+                  <p className="text-xs text-[#0B0B0C]/70">We listen to your business problem over WhatsApp or phone call.</p>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#3B1B4E] text-[#CCFF00] font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-[#0B0B0C]">Design</h4>
-                    <p className="text-xs text-[#0B0B0C]/70">We outline a practical layout and solution preview for your approval.</p>
-                  </div>
+                <div className="p-3.5 rounded-2xl bg-white border border-[#0B0B0C]/10">
+                  <h4 className="text-sm font-bold text-[#0B0B0C] mb-0.5">Design</h4>
+                  <p className="text-xs text-[#0B0B0C]/70">We outline a practical layout and solution preview for your approval.</p>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#3B1B4E] text-[#CCFF00] font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-[#0B0B0C]">Build</h4>
-                    <p className="text-xs text-[#0B0B0C]/70">We build your website, app, or tool using modern, clean code.</p>
-                  </div>
+                <div className="p-3.5 rounded-2xl bg-white border border-[#0B0B0C]/10">
+                  <h4 className="text-sm font-bold text-[#0B0B0C] mb-0.5">Build</h4>
+                  <p className="text-xs text-[#0B0B0C]/70">We build your website, app, or tool using modern, clean code.</p>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#CCFF00] text-[#0B0B0C] border border-[#0B0B0C]/20 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
-                    4
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-[#0B0B0C]">Deliver & Support</h4>
-                    <p className="text-xs text-[#0B0B0C]/70">We launch your application and remain available for support.</p>
-                  </div>
+                <div className="p-3.5 rounded-2xl bg-[#CCFF00]/20 border border-[#0B0B0C]/20">
+                  <h4 className="text-sm font-bold text-[#0B0B0C] mb-0.5">Deliver & Support</h4>
+                  <p className="text-xs text-[#0B0B0C]/75">We launch your application and remain available for support.</p>
                 </div>
               </div>
             </div>

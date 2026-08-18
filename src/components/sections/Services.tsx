@@ -133,7 +133,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
           className="text-center mb-10 sm:mb-14"
         >
           <span className="font-mono text-xs uppercase tracking-widest text-[#0B0B0C] font-bold bg-[#CCFF00] px-3.5 py-1 rounded-full inline-block mb-4">
-            02 / WHAT WE BUILD
+            WHAT WE BUILD
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#FAFAF8] mb-4">
             Our Digital <span className="text-[#CCFF00]">Services</span>
@@ -156,10 +156,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
                 className="group relative rounded-3xl bg-[#FAFAF8] text-[#0B0B0C] border border-[#0B0B0C]/15 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-lg"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-sm font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-3 py-1 rounded-lg">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+                  <div className="flex items-center justify-end mb-4">
                     <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#0B0B0C] bg-[#CCFF00] px-2.5 py-1 rounded-full border border-[#0B0B0C]/20">
                       SERVICE
                     </span>
