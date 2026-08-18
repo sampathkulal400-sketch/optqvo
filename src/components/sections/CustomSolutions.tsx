@@ -73,24 +73,24 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
         </motion.div>
 
         {/* Problem Scenario Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {problemScenarios.map((scenario, i) => (
             <motion.div
               key={scenario.question}
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`rounded-2xl glass border border-white/[0.08] ${scenario.borderColor} p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1`}
+              className={`rounded-2xl glass border border-white/[0.08] ${scenario.borderColor} p-4 sm:p-7 transition-all duration-300 hover:-translate-y-1`}
             >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center flex-shrink-0 mt-1">
-                  <HelpCircle className={`w-5 h-5 ${scenario.iconColor}`} />
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                  <HelpCircle className={`w-4 h-4 sm:w-5 sm:h-5 ${scenario.iconColor}`} />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 leading-snug">
+                  <h3 className="text-sm sm:text-lg font-bold text-white mb-1.5 leading-snug">
                     &ldquo;{scenario.question}&rdquo;
                   </h3>
-                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-400 mb-1">
+                  <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-emerald-400 mb-1">
                     <span>→ Our Approach:</span>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -107,22 +107,22 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
           initial={{ opacity: 0, scale: 0.96 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-3xl bg-gradient-to-r from-violet-900/30 via-slate-900 to-blue-900/30 border border-violet-500/30 p-8 sm:p-12 text-center shadow-2xl"
+          className="rounded-3xl bg-gradient-to-r from-violet-900/30 via-slate-900 to-blue-900/30 border border-violet-500/30 p-5 sm:p-10 lg:p-12 text-center shadow-2xl"
         >
-          <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
+          <h3 className="text-xl sm:text-3xl font-black text-white mb-3 sm:mb-4 leading-snug">
             Do you have a unique problem that doesn&apos;t fit a standard template?
           </h3>
-          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+          <p className="text-xs sm:text-base text-slate-300 max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
             Tell us what you are trying to improve. We will analyze your situation, explain the options in simple terms, and build a cost-effective solution.
           </p>
 
           <button
             onClick={() => onOpenEnquiry ? onOpenEnquiry("Custom Business Problem") : scrollTo("contact")}
-            className="btn-gradient inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-sm sm:text-base text-white shadow-xl shadow-violet-600/30 cursor-pointer border-none"
+            className="btn-gradient w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-base text-white shadow-xl shadow-violet-600/30 cursor-pointer border-none"
           >
-            <MessageSquare className="w-5 h-5" />
+            <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
             <span>Tell Us Your Problem</span>
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
           </button>
         </motion.div>
       </div>

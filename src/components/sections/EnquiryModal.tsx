@@ -41,7 +41,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -57,23 +57,23 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative w-full max-w-lg bg-[#0e0e14] border border-white/[0.12] rounded-3xl p-6 sm:p-8 shadow-2xl z-10 my-auto"
+            className="relative w-full max-w-lg bg-[#0e0e14] border border-white/[0.12] rounded-3xl p-5 sm:p-8 shadow-2xl z-10 my-auto max-h-[90vh] overflow-y-auto"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-slate-400 hover:text-white transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
 
             {/* Header */}
-            <div className="mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/25 text-violet-400 text-xs font-semibold mb-3">
+            <div className="mb-5 sm:mb-6 pr-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/25 text-violet-400 text-[11px] sm:text-xs font-semibold mb-2.5">
                 <MessageSquare className="w-3.5 h-3.5" />
                 Tell Us Your Problem
               </div>
-              <h3 className="text-2xl font-bold text-white tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
                 What problem are you trying to solve?
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">

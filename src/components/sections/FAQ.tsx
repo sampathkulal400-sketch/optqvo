@@ -61,16 +61,16 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
           className="text-center mb-8 sm:mb-10"
         >
           <span className="badge mb-4">FREQUENTLY ASKED QUESTIONS</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
             Common <span className="gradient-text">Questions</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto">
+          <p className="text-slate-400 text-sm sm:text-lg max-w-xl mx-auto">
             Everything you need to know before working with Optqvo — explained in simple words.
           </p>
         </motion.div>
 
         {/* FAQ Accordion List */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
@@ -83,11 +83,11 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer bg-transparent border-none"
+                  className="w-full flex items-center justify-between gap-3 p-4 sm:p-6 text-left cursor-pointer bg-transparent border-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm sm:text-base font-bold text-white leading-snug">{faq.q}</span>
-                  <div className={`w-7 h-7 rounded-lg border flex items-center justify-center flex-shrink-0 transition-colors ${
+                  <span className="text-xs sm:text-base font-bold text-white leading-snug">{faq.q}</span>
+                  <div className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg border flex items-center justify-center flex-shrink-0 transition-colors ${
                     isOpen ? "bg-violet-500/20 border-violet-500/40 text-violet-400" : "bg-white/[0.04] border-white/[0.08] text-slate-400"
                   }`}>
                     {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
@@ -103,7 +103,7 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/[0.04]">
+                      <div className="px-4 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/[0.04]">
                         {faq.a}
                       </div>
                     </motion.div>

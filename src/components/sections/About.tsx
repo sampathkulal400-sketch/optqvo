@@ -22,7 +22,7 @@ export default function About() {
             className="lg:col-span-7 space-y-6"
           >
             <span className="badge">ABOUT OPTQVO</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-snug">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-snug">
               We Listen to Your Need & Build <span className="gradient-text">Practical Digital Solutions.</span>
             </h2>
 
@@ -77,7 +77,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-5"
           >
-            <div className="rounded-3xl glass-strong border border-white/[0.1] p-8 space-y-6 shadow-2xl">
+            <div className="rounded-3xl glass-strong border border-white/[0.1] p-5 sm:p-8 space-y-6 shadow-2xl">
               <h3 className="text-lg font-bold text-white border-b border-white/[0.08] pb-4">
                 Our Simple 4-Step Approach
               </h3>

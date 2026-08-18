@@ -209,8 +209,8 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           </p>
         </motion.div>
 
-        {/* Business Category Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+        {/* Business Category Buttons (Scrollable on mobile) */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 sm:mb-8 sm:flex-wrap sm:justify-center scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
           {solutionCategories.map((cat) => {
             const Icon = cat.icon;
             const isActive = activeTab === cat.id;
@@ -218,14 +218,14 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer border ${
+                className={`px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer border flex-shrink-0 ${
                   isActive
                     ? "bg-violet-600 border-violet-500 text-white shadow-lg shadow-violet-600/25"
                     : "bg-white/[0.03] border-white/[0.07] text-slate-400 hover:text-white hover:border-white/[0.15]"
                 }`}
               >
-                <Icon className="w-4 h-4" />
-                <span>{cat.name}</span>
+                <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                <span className="whitespace-nowrap">{cat.name}</span>
               </button>
             );
           })}
@@ -237,29 +237,29 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="rounded-3xl glass-strong border border-white/[0.1] p-6 sm:p-10 shadow-2xl"
+          className="rounded-3xl glass-strong border border-white/[0.1] p-4 sm:p-8 lg:p-10 shadow-2xl"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-5">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/25 flex items-center justify-center text-violet-400">
-                  <IconComponent className="w-6 h-6" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-violet-500/10 border border-violet-500/25 flex items-center justify-center text-violet-400 flex-shrink-0">
+                  <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-violet-400">Industry Solution</span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-white">{activeCategory.headline}</h3>
+                  <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-violet-400">Industry Solution</span>
+                  <h3 className="text-xl sm:text-3xl font-black text-white leading-snug">{activeCategory.headline}</h3>
                 </div>
               </div>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-base text-slate-300 leading-relaxed">
                 {activeCategory.description}
               </p>
 
               {/* Feature Checklist */}
-              <div className="pt-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Included Capabilities:</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-300">
+              <div className="pt-1 sm:pt-2">
+                <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">Included Capabilities:</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-300">
                   {activeCategory.features.map((feat) => (
                     <div key={feat} className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
@@ -270,35 +270,35 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
               </div>
 
               {/* CTAs */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
+              <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button
                   onClick={() => onOpenEnquiry ? onOpenEnquiry(activeCategory.name) : scrollTo("contact")}
-                  className="btn-gradient px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white flex items-center gap-2 cursor-pointer border-none"
+                  className="btn-gradient w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white flex items-center justify-center gap-2 cursor-pointer border-none shadow-md"
                 >
                   <span>Get Solution For {activeCategory.name}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
                 </button>
               </div>
             </div>
 
             {/* Right Before & After Comparison */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl bg-[#08080d] border border-white/[0.08] p-6 space-y-4">
-                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-white/[0.08] pb-3">
+              <div className="rounded-2xl bg-[#08080d] border border-white/[0.08] p-4 sm:p-6 space-y-3 sm:space-y-4">
+                <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-white/[0.08] pb-2.5">
                   How It Makes Things Simple
                 </div>
 
-                <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300">
+                <div className="p-3 sm:p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300">
                   <p className="font-bold mb-1 text-red-400">Before Optqvo:</p>
-                  <p className="leading-relaxed">{activeCategory.simpleExample.from}</p>
+                  <p className="leading-relaxed text-[11px] sm:text-xs">{activeCategory.simpleExample.from}</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300">
+                <div className="p-3 sm:p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300">
                   <p className="font-bold mb-1 text-emerald-400">With Optqvo Solution:</p>
-                  <p className="leading-relaxed">{activeCategory.simpleExample.to}</p>
+                  <p className="leading-relaxed text-[11px] sm:text-xs">{activeCategory.simpleExample.to}</p>
                 </div>
 
-                <p className="text-[11px] text-slate-500 text-center pt-1">
+                <p className="text-[10px] sm:text-[11px] text-slate-500 text-center pt-1">
                   Customized specifically around your business rules & timing.
                 </p>
               </div>

@@ -83,34 +83,34 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
               className="rounded-3xl glass-strong border border-white/[0.1] overflow-hidden flex flex-col justify-between hover:border-white/[0.2] transition-all duration-300 shadow-2xl group"
             >
               {/* Top Banner / Mockup Header */}
-              <div className={`p-8 bg-gradient-to-br ${proj.gradient} border-b border-white/[0.08] relative`}>
-                <div className="flex items-center justify-between mb-4">
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full border ${proj.badgeColor}`}>
+              <div className={`p-5 sm:p-8 bg-gradient-to-br ${proj.gradient} border-b border-white/[0.08] relative`}>
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <span className={`text-[10px] sm:text-xs font-bold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border ${proj.badgeColor}`}>
                     {proj.tag}
                   </span>
                   <a
                     href={proj.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-xl bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-white hover:bg-white/[0.15] transition-colors"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-white hover:bg-white/[0.15] transition-colors"
                     aria-label={`Visit ${proj.name}`}
                   >
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </div>
 
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">{proj.category}</span>
-                <h3 className="text-2xl sm:text-3xl font-black text-white mt-1 mb-2">{proj.name}</h3>
+                <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400">{proj.category}</span>
+                <h3 className="text-xl sm:text-3xl font-black text-white mt-1 mb-2">{proj.name}</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-lg">
                   {proj.description}
                 </p>
               </div>
 
               {/* Bottom Body Details */}
-              <div className="p-6 sm:p-8 space-y-6">
+              <div className="p-4 sm:p-8 space-y-4 sm:space-y-6">
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">What We Built:</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-300">
+                  <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">What We Built:</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-300">
                     {proj.whatWeBuilt.map((item) => (
                       <div key={item} className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
@@ -120,16 +120,16 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-white/[0.07] flex items-center justify-between">
-                  <span className="text-xs text-slate-500 font-mono">{proj.url.replace("https://", "").replace("/", "")}</span>
+                <div className="pt-4 border-t border-white/[0.07] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                  <span className="text-xs text-slate-500 font-mono truncate">{proj.url.replace("https://", "").replace("/", "")}</span>
                   <a
                     href={proj.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] text-xs font-bold text-white transition-all no-underline"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] text-xs font-bold text-white transition-all no-underline"
                   >
                     <span>View Project Live</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-violet-400" />
+                    <ExternalLink className="w-3.5 h-3.5 text-violet-400 flex-shrink-0" />
                   </a>
                 </div>
               </div>
@@ -142,19 +142,19 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-2xl glass border border-white/[0.1] p-8 sm:p-10 text-center max-w-3xl mx-auto"
+          className="rounded-2xl glass border border-white/[0.1] p-5 sm:p-10 text-center max-w-3xl mx-auto"
         >
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+          <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 leading-snug">
             Want something like this for your business?
           </h3>
-          <p className="text-sm text-slate-400 mb-6">
+          <p className="text-xs sm:text-sm text-slate-400 mb-5 sm:mb-6">
             Tell us what you need and we will help you find and build the right digital solution.
           </p>
           <button
             onClick={() => onOpenEnquiry ? onOpenEnquiry("Portfolio Inquiry") : scrollTo("contact")}
-            className="btn-gradient inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white shadow-lg cursor-pointer border-none"
+            className="btn-gradient w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white shadow-lg cursor-pointer border-none"
           >
-            <MessageSquare className="w-4 h-4" />
+            <MessageSquare className="w-4 h-4 flex-shrink-0" />
             <span>Let&apos;s Talk</span>
           </button>
         </motion.div>

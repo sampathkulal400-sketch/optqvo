@@ -153,7 +153,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
                 initial={{ opacity: 0, y: 25 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="group relative rounded-2xl glass border border-white/[0.08] hover:border-white/[0.16] p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative rounded-2xl glass border border-white/[0.08] hover:border-white/[0.16] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -170,7 +170,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
 
                   <div className="space-y-2 mb-5">
                     <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">What We Provide:</p>
-                    <ul className="grid grid-cols-2 gap-1.5 text-xs text-slate-300">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-300">
                       {svc.whatWeProvide.map((item) => (
                         <li key={item} className="flex items-center gap-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" />
@@ -181,15 +181,16 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
-                  <span className="text-[11px] text-slate-400 italic truncate max-w-[65%]">
+                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between gap-2">
+                  <span className="text-[11px] text-slate-400 italic truncate max-w-[60%] sm:max-w-[65%]">
                     {svc.usefulFor}
                   </span>
                   <button
                     onClick={() => onOpenEnquiry ? onOpenEnquiry(svc.title) : scrollTo("contact")}
-                    className="text-xs font-bold text-violet-400 hover:text-violet-300 flex items-center gap-1 cursor-pointer bg-transparent border-none"
+                    className="text-xs font-bold text-violet-400 hover:text-violet-300 flex items-center gap-1 cursor-pointer bg-transparent border-none flex-shrink-0"
                   >
-                    Enquire <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Enquire</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </motion.div>
