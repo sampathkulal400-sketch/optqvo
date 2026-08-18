@@ -62,13 +62,14 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-[#0B0B0C]/5 border border-[#0B0B0C]/10 flex items-center justify-center text-[#0B0B0C] hover:bg-[#0B0B0C]/10 transition-colors"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 min-w-[40px] min-h-[40px] rounded-full bg-[#0B0B0C]/5 border border-[#0B0B0C]/10 flex items-center justify-center text-[#0B0B0C] hover:bg-[#0B0B0C]/10 transition-colors cursor-pointer"
+              aria-label="Close form"
             >
-              <X className="w-4 h-4" />
+              <X className="w-5 h-5" />
             </button>
 
             {/* Header */}
-            <div className="mb-5 sm:mb-6 pr-6">
+            <div className="mb-5 sm:mb-6 pr-8">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#3B1B4E] text-[#CCFF00] font-mono text-[11px] sm:text-xs font-bold uppercase tracking-widest mb-3">
                 <MessageSquare className="w-3.5 h-3.5" />
                 TELL US YOUR PROBLEM
@@ -91,7 +92,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                   placeholder="e.g. Ramesh Kumar"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-base sm:text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors"
                 />
               </div>
 
@@ -103,7 +104,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                     placeholder="e.g. Royal Restaurant"
                     value={businessName}
                     onChange={(e) => setBusinessName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-base sm:text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors"
                   />
                 </div>
                 <div>
@@ -114,7 +115,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                     placeholder="e.g. 9876543210"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-base sm:text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors"
                   />
                 </div>
               </div>
@@ -124,7 +125,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                 <select
                   value={businessType}
                   onChange={(e) => setBusinessType(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-sm text-[#0B0B0C] focus:outline-none focus:border-[#3B1B4E] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-base sm:text-sm text-[#0B0B0C] focus:outline-none focus:border-[#3B1B4E] transition-colors appearance-none bg-no-repeat"
                 >
                   <option value="Restaurant / Food">Restaurant / Cafe / Food</option>
                   <option value="Retail & Shop">Retail & Shop / Store</option>
@@ -149,7 +150,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                   placeholder="e.g. Customers keep asking for our menu on WhatsApp and we spend too much time sending photos. We need a simple digital menu."
                   value={problemText}
                   onChange={(e) => setProblemText(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-base sm:text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors resize-none"
                 />
               </div>
 
@@ -162,7 +163,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                   placeholder="e.g. ₹15,000 - ₹30,000 or Flexible"
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#0B0B0C]/20 text-base sm:text-sm text-[#0B0B0C] placeholder-[#0B0B0C]/40 focus:outline-none focus:border-[#3B1B4E] transition-colors"
                 />
               </div>
 

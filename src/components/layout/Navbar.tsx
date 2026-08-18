@@ -149,40 +149,52 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
         </div>
       </motion.header>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Backdrop & Drawer Navigation */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25 }}
-            className="fixed top-16 left-0 right-0 z-[99] bg-[#FAFAF8] border-b border-[#0B0B0C]/10 p-6 lg:hidden max-h-[85vh] overflow-y-auto shadow-xl"
-          >
-            <div className="space-y-1 mb-6">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollTo(link.href)}
-                  className="w-full text-left px-4 py-3 font-mono text-xs uppercase tracking-widest text-[#0B0B0C] hover:text-[#3B1B4E] hover:bg-[#0B0B0C]/5 rounded-xl transition-colors cursor-pointer bg-transparent border-none block"
-                >
-                  {link.label}
-                </button>
-              ))}
-            </div>
+          <>
+            {/* Dark blur backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileOpen(false)}
+              className="fixed inset-0 z-[98] bg-[#0B0B0C]/40 backdrop-blur-sm lg:hidden"
+              aria-hidden="true"
+            />
 
-            <button
-              onClick={() => {
-                setMobileOpen(false);
-                if (onOpenEnquiry) onOpenEnquiry();
-                else scrollTo("contact");
-              }}
-              className="btn-zip-plum w-full py-3.5 px-4 rounded-full flex items-center justify-center gap-2 cursor-pointer border-none shadow-md"
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="fixed top-16 left-0 right-0 z-[99] bg-[#FAFAF8] border-b border-[#0B0B0C]/10 p-6 lg:hidden max-h-[85vh] overflow-y-auto shadow-2xl"
             >
-              <MessageSquare className="w-4 h-4 text-[#CCFF00]" />
-              <span>Tell Us Your Problem</span>
-            </button>
-          </motion.div>
+              <div className="space-y-1 mb-6">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollTo(link.href)}
+                    className="w-full text-left px-4 py-3.5 min-h-[44px] font-mono text-xs uppercase tracking-widest text-[#0B0B0C] hover:text-[#3B1B4E] hover:bg-[#0B0B0C]/5 rounded-xl transition-colors cursor-pointer bg-transparent border-none flex items-center"
+                  >
+                    {link.label}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                onClick={() => {
+                  setMobileOpen(false);
+                  if (onOpenEnquiry) onOpenEnquiry();
+                  else scrollTo("contact");
+                }}
+                className="btn-zip-plum w-full py-4 px-4 min-h-[48px] rounded-full flex items-center justify-center gap-2 cursor-pointer border-none shadow-md"
+              >
+                <MessageSquare className="w-4 h-4 text-[#CCFF00]" />
+                <span>Tell Us Your Problem</span>
+              </button>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

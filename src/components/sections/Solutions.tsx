@@ -209,15 +209,15 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           </p>
         </motion.div>
 
-        {/* Business Category Buttons (Scrollable on mobile) */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 sm:flex-wrap sm:justify-center scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+        {/* Business Category Buttons (Scrollable on mobile with touch momentum) */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 sm:flex-wrap sm:justify-center scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 touch-pan-x">
           {solutionCategories.map((cat, idx) => {
             const isActive = activeTab === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`px-4 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2 transition-all cursor-pointer border flex-shrink-0 ${
+                className={`px-4 py-3 min-h-[44px] rounded-full font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2 transition-all cursor-pointer border flex-shrink-0 ${
                   isActive
                     ? "bg-[#3B1B4E] border-[#3B1B4E] text-[#FAFAF8] shadow-md"
                     : "bg-white border-[#0B0B0C]/15 text-[#0B0B0C] hover:bg-[#0B0B0C]/5"
