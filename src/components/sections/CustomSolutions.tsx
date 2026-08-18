@@ -44,30 +44,29 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
   };
 
   return (
-    <section id="custom-solutions" ref={ref} className="relative py-12 lg:py-16 overflow-hidden bg-[#09090e]">
+    <section id="custom-solutions" ref={ref} className="relative py-14 lg:py-20 overflow-hidden bg-[#FAF8F5]">
       <div className="absolute top-0 left-0 right-0 h-px glow-line" />
 
-      {/* Background radial glow */}
+      {/* Background soft glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] bg-violet-600/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] bg-indigo-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="section-wrap relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 sm:mb-10"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10 sm:mb-12"
         >
-          <span className="badge mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-violet-400" />
-            CUSTOM BUSINESS SOLUTIONS
+          <span className="font-mono text-xs uppercase tracking-widest text-indigo-700 font-bold bg-indigo-50 px-3 py-1 rounded-md border border-indigo-200 inline-block mb-3">
+            04 / CUSTOM BUSINESS PROBLEMS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
-            Have a Business Problem? <span className="gradient-text">Let&apos;s Build the Solution.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-stone-900 mb-4">
+            Have a Business Problem? <span className="highlight-bar">Let&apos;s Build the Solution.</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto font-normal">
             Not every business works the same way. If you have a problem that needs a digital solution, tell us about it. We will understand your requirement and build a solution around it.
           </p>
         </motion.div>
@@ -80,20 +79,20 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`rounded-2xl glass border border-white/[0.08] ${scenario.borderColor} p-4 sm:p-7 transition-all duration-300 hover:-translate-y-1`}
+              className="rounded-2xl bg-white border border-stone-200 p-4 sm:p-7 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-md"
             >
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
-                  <HelpCircle className={`w-4 h-4 sm:w-5 sm:h-5 ${scenario.iconColor}`} />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                  <HelpCircle className={`w-4 h-4 sm:w-5 sm:h-5 ${scenario.iconColor.replace('400', '600')}`} />
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-lg font-bold text-white mb-1.5 leading-snug">
+                  <h3 className="text-sm sm:text-lg font-bold text-stone-900 mb-1.5 leading-snug">
                     &ldquo;{scenario.question}&rdquo;
                   </h3>
-                  <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-emerald-400 mb-1">
+                  <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-emerald-700 mb-1">
                     <span>→ Our Approach:</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                     {scenario.answer}
                   </p>
                 </div>
@@ -107,18 +106,18 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
           initial={{ opacity: 0, scale: 0.96 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-3xl bg-gradient-to-r from-violet-900/30 via-slate-900 to-blue-900/30 border border-violet-500/30 p-5 sm:p-10 lg:p-12 text-center shadow-2xl"
+          className="rounded-3xl bg-gradient-to-br from-indigo-50/80 via-white to-stone-50 border border-indigo-200 p-5 sm:p-10 lg:p-12 text-center shadow-lg"
         >
-          <h3 className="text-xl sm:text-3xl font-black text-white mb-3 sm:mb-4 leading-snug">
+          <h3 className="text-xl sm:text-3xl font-black text-stone-900 mb-3 sm:mb-4 leading-snug">
             Do you have a unique problem that doesn&apos;t fit a standard template?
           </h3>
-          <p className="text-xs sm:text-base text-slate-300 max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+          <p className="text-xs sm:text-base text-stone-600 max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
             Tell us what you are trying to improve. We will analyze your situation, explain the options in simple terms, and build a cost-effective solution.
           </p>
 
           <button
             onClick={() => onOpenEnquiry ? onOpenEnquiry("Custom Business Problem") : scrollTo("contact")}
-            className="btn-gradient w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-base text-white shadow-xl shadow-violet-600/30 cursor-pointer border-none"
+            className="btn-gradient w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-base text-white shadow-md cursor-pointer border-none"
           >
             <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
             <span>Tell Us Your Problem</span>
