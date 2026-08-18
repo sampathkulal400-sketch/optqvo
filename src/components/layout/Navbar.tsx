@@ -63,14 +63,11 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           {/* Brand Logo */}
           <button
             onClick={() => scrollTo("home")}
-            className="flex items-center gap-2 bg-transparent border-none cursor-pointer p-0"
+            className="flex items-center gap-1 bg-transparent border-none cursor-pointer p-0 group"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/icon.png"
-              alt="Optqvo"
-              className="h-9 w-auto object-contain block"
-            />
+            <span className="font-mono text-xl font-black tracking-tighter text-[#0B0B0C] group-hover:text-[#3B1B4E] transition-colors">
+              OPTQVO<span className="text-[#3B1B4E]">.</span>
+            </span>
           </button>
 
           {/* Desktop Nav Links */}

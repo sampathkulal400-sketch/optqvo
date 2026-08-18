@@ -22,10 +22,14 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
 
           {/* Column 1: Brand Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/icon.png" alt="Optqvo" className="h-9 w-auto object-contain block brightness-0 invert" />
-            </div>
+            <button
+              onClick={() => scrollTo("home")}
+              className="flex items-center gap-1 bg-transparent border-none cursor-pointer p-0 text-left"
+            >
+              <span className="font-mono text-xl font-black tracking-tighter text-[#FAFAF8]">
+                OPTQVO<span className="text-[#CCFF00]">.</span>
+              </span>
+            </button>
 
             <p className="text-[#FAFAF8]/70 text-xs sm:text-sm leading-relaxed max-w-sm">
               Optqvo helps restaurants, shops, hotels, clinics, and growing businesses build practical digital solutions — from websites and mobile apps to online booking and business tools.

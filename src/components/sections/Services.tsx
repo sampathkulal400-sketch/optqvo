@@ -157,10 +157,10 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-2xl bg-[#3B1B4E] flex items-center justify-center text-[#CCFF00]">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#3B1B4E] bg-[#CCFF00] px-2.5 py-1 rounded-full border border-[#0B0B0C]/20">
+                    <span className="font-mono text-sm font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-3 py-1 rounded-lg">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#0B0B0C] bg-[#CCFF00] px-2.5 py-1 rounded-full border border-[#0B0B0C]/20">
                       SERVICE
                     </span>
                   </div>

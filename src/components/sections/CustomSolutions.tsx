@@ -75,9 +75,9 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
               className="rounded-3xl bg-white border border-[#0B0B0C]/15 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 shadow-md"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-2xl bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 flex items-center justify-center text-[#3B1B4E] flex-shrink-0 mt-0.5">
-                  <HelpCircle className="w-5 h-5" />
-                </div>
+                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2.5 py-1 rounded-lg flex-shrink-0 mt-0.5">
+                  0{i + 1}
+                </span>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-[#0B0B0C] mb-2 leading-snug">
                     &ldquo;{scenario.question}&rdquo;

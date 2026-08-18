@@ -211,8 +211,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
 
         {/* Business Category Buttons (Scrollable on mobile) */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 sm:flex-wrap sm:justify-center scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
-          {solutionCategories.map((cat) => {
-            const Icon = cat.icon;
+          {solutionCategories.map((cat, idx) => {
             const isActive = activeTab === cat.id;
             return (
               <button
@@ -224,7 +223,9 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
                     : "bg-white border-[#0B0B0C]/15 text-[#0B0B0C] hover:bg-[#0B0B0C]/5"
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#CCFF00]" : "text-[#3B1B4E]"}`} />
+                <span className={`text-[10px] font-bold ${isActive ? "text-[#CCFF00]" : "text-[#3B1B4E]"}`}>
+                  0{idx + 1}
+                </span>
                 <span className="whitespace-nowrap">{cat.name}</span>
               </button>
             );
@@ -242,14 +243,9 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-[#3B1B4E] flex items-center justify-center text-[#CCFF00] flex-shrink-0">
-                  <IconComponent className="w-6 h-6" />
-                </div>
-                <div>
-                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#3B1B4E]">INDUSTRY SOLUTION</span>
-                  <h3 className="text-xl sm:text-3xl font-black text-[#0B0B0C] leading-snug">{activeCategory.headline}</h3>
-                </div>
+              <div>
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#3B1B4E] inline-block mb-1">INDUSTRY SOLUTION</span>
+                <h3 className="text-xl sm:text-3xl font-black text-[#0B0B0C] leading-snug">{activeCategory.headline}</h3>
               </div>
 
               <p className="text-sm sm:text-base text-[#0B0B0C]/75 leading-relaxed">

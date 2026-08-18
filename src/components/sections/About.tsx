@@ -37,7 +37,9 @@ export default function About() {
             {/* Core Values / Commitments Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
+                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2 py-0.5 rounded flex-shrink-0 mt-0.5">
+                  01
+                </span>
                 <div>
                   <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">AFFORDABLE & PRACTICAL</h4>
                   <p className="text-xs text-[#0B0B0C]/70">Professional digital solutions without unnecessary complexity or cost.</p>
@@ -45,7 +47,9 @@ export default function About() {
               </div>
 
               <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
-                <HeartHandshake className="w-5 h-5 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
+                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2 py-0.5 rounded flex-shrink-0 mt-0.5">
+                  02
+                </span>
                 <div>
                   <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">DIRECT DEVELOPER ACCESS</h4>
                   <p className="text-xs text-[#0B0B0C]/70">Talk directly on WhatsApp with the people who build your solution.</p>
@@ -53,7 +57,9 @@ export default function About() {
               </div>
 
               <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
-                <Clock className="w-5 h-5 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
+                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2 py-0.5 rounded flex-shrink-0 mt-0.5">
+                  03
+                </span>
                 <div>
                   <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">FAST DELIVERY</h4>
                   <p className="text-xs text-[#0B0B0C]/70">Most small business websites & digital tools go live in 1–3 weeks.</p>
@@ -61,7 +67,9 @@ export default function About() {
               </div>
 
               <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
-                <Zap className="w-5 h-5 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
+                <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2 py-0.5 rounded flex-shrink-0 mt-0.5">
+                  04
+                </span>
                 <div>
                   <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">LONG-TERM SUPPORT</h4>
                   <p className="text-xs text-[#0B0B0C]/70">We stay around after launch to handle maintenance, updates, & fixes.</p>

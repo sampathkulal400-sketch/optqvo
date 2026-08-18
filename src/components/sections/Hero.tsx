@@ -113,9 +113,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                 {/* Practical Solution Card 1 */}
                 <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-[#0B0B0C]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-[#3B1B4E] transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 flex items-center justify-center text-[#3B1B4E] flex-shrink-0">
-                      <Utensils className="w-4 h-4" />
-                    </div>
+                    <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2.5 py-1 rounded-lg flex-shrink-0">
+                      01
+                    </span>
                     <div>
                       <h4 className="text-xs font-bold text-[#0B0B0C]">Digital QR Menu for Restaurants</h4>
                       <p className="text-[11px] text-[#0B0B0C]/65">Scan QR to view menu & order via WhatsApp</p>
@@ -127,9 +127,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                 {/* Practical Solution Card 2 */}
                 <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-[#0B0B0C]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-[#3B1B4E] transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 flex items-center justify-center text-[#3B1B4E] flex-shrink-0">
-                      <ShoppingBag className="w-4 h-4" />
-                    </div>
+                    <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2.5 py-1 rounded-lg flex-shrink-0">
+                      02
+                    </span>
                     <div>
                       <h4 className="text-xs font-bold text-[#0B0B0C]">Product Catalogue for Retail Shops</h4>
                       <p className="text-[11px] text-[#0B0B0C]/65">Showcase products online with quick WhatsApp inquiry</p>
@@ -141,9 +141,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                 {/* Practical Solution Card 3 */}
                 <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-[#0B0B0C]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-[#3B1B4E] transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 flex items-center justify-center text-[#3B1B4E] flex-shrink-0">
-                      <Calendar className="w-4 h-4" />
-                    </div>
+                    <span className="font-mono text-xs font-bold text-[#3B1B4E] bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 px-2.5 py-1 rounded-lg flex-shrink-0">
+                      03
+                    </span>
                     <div>
                       <h4 className="text-xs font-bold text-[#0B0B0C]">Appointment Booking for Salons & Clinics</h4>
                       <p className="text-[11px] text-[#0B0B0C]/65">Online booking calendar with instant reminders</p>
