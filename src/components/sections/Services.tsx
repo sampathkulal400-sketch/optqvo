@@ -123,24 +123,22 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
   };
 
   return (
-    <section id="services" ref={ref} className="relative py-14 lg:py-20 overflow-hidden bg-[#FAF8F5]">
-      <div className="absolute top-0 left-0 right-0 h-px glow-line" />
-
+    <section id="services" ref={ref} className="relative py-16 lg:py-24 overflow-hidden bg-[#3B1B4E] text-[#FAFAF8]">
       <div className="section-wrap">
         {/* Section Header with Zero4GenZ Monospace Tag */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 sm:mb-12"
+          className="text-center mb-10 sm:mb-14"
         >
-          <span className="font-mono text-xs uppercase tracking-widest text-indigo-700 font-bold bg-indigo-50 px-3 py-1 rounded-md border border-indigo-200 inline-block mb-3">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#0B0B0C] font-bold bg-[#CCFF00] px-3.5 py-1 rounded-full inline-block mb-4">
             02 / WHAT WE BUILD
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-stone-900 mb-4">
-            Our Digital <span className="highlight-bar">Services</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#FAFAF8] mb-4">
+            Our Digital <span className="text-[#CCFF00]">Services</span>
           </h2>
-          <p className="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto font-normal">
+          <p className="text-[#FAFAF8]/80 text-base sm:text-lg max-w-2xl mx-auto font-normal">
             Practical digital capabilities built to improve your online presence and solve business problems — explained simply.
           </p>
         </motion.div>
@@ -155,28 +153,28 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
                 initial={{ opacity: 0, y: 25 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="group relative rounded-2xl bg-white border border-stone-200 hover:border-stone-300 p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-md"
+                className="group relative rounded-3xl bg-[#FAFAF8] text-[#0B0B0C] border border-[#0B0B0C]/15 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-lg"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className={`w-11 h-11 rounded-xl ${svc.bgColor.replace('/10', '-50 border border-stone-200')} flex items-center justify-center`}>
-                      <Icon className={`w-5 h-5 ${svc.iconColor.replace('400', '600')}`} />
+                    <div className="w-11 h-11 rounded-2xl bg-[#3B1B4E] flex items-center justify-center text-[#CCFF00]">
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-stone-500 bg-stone-100 px-2.5 py-1 rounded-md border border-stone-200">
-                      Service
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#3B1B4E] bg-[#CCFF00] px-2.5 py-1 rounded-full border border-[#0B0B0C]/20">
+                      SERVICE
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-stone-900 mb-2 leading-snug">{svc.title}</h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-4">{svc.description}</p>
+                  <h3 className="text-lg font-bold text-[#0B0B0C] mb-2 leading-snug">{svc.title}</h3>
+                  <p className="text-xs sm:text-sm text-[#0B0B0C]/70 leading-relaxed mb-4">{svc.description}</p>
 
                   <div className="space-y-2 mb-5">
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-stone-400">What We Provide:</p>
+                    <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#0B0B0C]/50">WHAT WE PROVIDE:</p>
                     <div className="flex flex-wrap gap-1.5">
                       {svc.whatWeProvide.map((item) => (
                         <span
                           key={item}
-                          className="text-[11px] font-medium text-stone-700 bg-stone-100 border border-stone-200/80 px-2.5 py-1 rounded-lg"
+                          className="text-[11px] font-semibold text-[#0B0B0C] bg-[#0B0B0C]/5 border border-[#0B0B0C]/10 px-2.5 py-1 rounded-lg"
                         >
                           {item}
                         </span>
@@ -185,17 +183,17 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
                   </div>
                 </div>
 
-                <div className="pt-3.5 border-t border-stone-100 space-y-3">
-                  <p className="text-[11px] text-stone-500 leading-snug">
-                    <span className="text-stone-400 font-semibold uppercase tracking-wider">Useful for:</span>{" "}
-                    <span className="text-stone-700">{svc.usefulFor}</span>
+                <div className="pt-4 border-t border-[#0B0B0C]/10 space-y-3">
+                  <p className="text-[11px] text-[#0B0B0C]/60 leading-snug">
+                    <span className="font-mono text-[#0B0B0C]/40 font-bold uppercase tracking-wider">USEFUL FOR:</span>{" "}
+                    <span className="text-[#0B0B0C] font-medium">{svc.usefulFor}</span>
                   </p>
                   <button
                     onClick={() => onOpenEnquiry ? onOpenEnquiry(svc.title) : scrollTo("contact")}
-                    className="w-full py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-xs font-bold text-indigo-700 flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                    className="btn-zip-plum w-full py-3 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-1.5 transition-all cursor-pointer border-none"
                   >
-                    <span>Enquire About {svc.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>ENQUIRE ABOUT {svc.title.toUpperCase()}</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#CCFF00]" />
                   </button>
                 </div>
               </motion.div>

@@ -9,9 +9,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" ref={ref} className="relative py-12 lg:py-16 overflow-hidden bg-[#FAF8F5]">
-      <div className="absolute top-0 left-0 right-0 h-px glow-line" />
-
+    <section id="about" ref={ref} className="relative py-16 lg:py-24 overflow-hidden bg-[#3B1B4E] text-[#FAFAF8]">
       <div className="section-wrap">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Text Column */}
@@ -21,52 +19,52 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6"
           >
-            <span className="font-mono text-xs uppercase tracking-widest text-indigo-700 font-bold bg-indigo-50 px-3 py-1 rounded-md border border-indigo-200 inline-block mb-2">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#0B0B0C] font-bold bg-[#CCFF00] px-3.5 py-1 rounded-full inline-block mb-2">
               06 / WHY OPTQVO
             </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-stone-900 leading-snug">
-              We Listen to Your Need & Build <span className="highlight-bar">Practical Digital Solutions.</span>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#FAFAF8] leading-snug">
+              We Listen to Your Need & Build <span className="text-[#CCFF00]">Practical Digital Solutions.</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-[#FAFAF8]/90 leading-relaxed">
               Optqvo is a digital solutions team that helps businesses improve their online presence and solve daily business problems through simple, well-crafted technology.
             </p>
 
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#FAFAF8]/75 leading-relaxed">
               We don&apos;t confuse you with complicated tech buzzwords or bloated software packages. Instead, we sit down with you, understand your exact challenge — whether it&apos;s getting more customers, accepting bookings, or managing your menu online — and build a solution that works.
             </p>
 
             {/* Core Values / Commitments Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="p-4 rounded-xl bg-white border border-stone-200 shadow-sm flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" />
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold text-stone-900 mb-1">Affordable & Practical</h4>
-                  <p className="text-xs text-stone-600">Professional digital solutions without unnecessary complexity or cost.</p>
+                  <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">AFFORDABLE & PRACTICAL</h4>
+                  <p className="text-xs text-[#0B0B0C]/70">Professional digital solutions without unnecessary complexity or cost.</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-white border border-stone-200 shadow-sm flex items-start gap-3">
-                <HeartHandshake className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
+                <HeartHandshake className="w-5 h-5 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold text-stone-900 mb-1">Direct Developer Access</h4>
-                  <p className="text-xs text-stone-600">Talk directly on WhatsApp with the people who build your solution.</p>
+                  <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">DIRECT DEVELOPER ACCESS</h4>
+                  <p className="text-xs text-[#0B0B0C]/70">Talk directly on WhatsApp with the people who build your solution.</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-white border border-stone-200 shadow-sm flex items-start gap-3">
-                <Clock className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
+                <Clock className="w-5 h-5 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold text-stone-900 mb-1">Fast Delivery</h4>
-                  <p className="text-xs text-stone-600">Most small business websites & digital tools go live in 1–3 weeks.</p>
+                  <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">FAST DELIVERY</h4>
+                  <p className="text-xs text-[#0B0B0C]/70">Most small business websites & digital tools go live in 1–3 weeks.</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-white border border-stone-200 shadow-sm flex items-start gap-3">
-                <Zap className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <div className="p-5 rounded-2xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 shadow-md flex items-start gap-3">
+                <Zap className="w-5 h-5 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold text-stone-900 mb-1">Long-Term Support</h4>
-                  <p className="text-xs text-stone-600">We stay around after launch to handle maintenance, updates, & fixes.</p>
+                  <h4 className="font-mono text-xs font-bold text-[#0B0B0C] uppercase tracking-wider mb-1">LONG-TERM SUPPORT</h4>
+                  <p className="text-xs text-[#0B0B0C]/70">We stay around after launch to handle maintenance, updates, & fixes.</p>
                 </div>
               </div>
             </div>
@@ -79,49 +77,49 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-5"
           >
-            <div className="rounded-3xl bg-white border border-stone-200 p-5 sm:p-8 space-y-6 shadow-md">
-              <h3 className="text-lg font-bold text-stone-900 border-b border-stone-100 pb-4">
-                Our Simple 4-Step Approach
+            <div className="rounded-3xl bg-[#FAFAF8] text-[#0B0B0C] border border-white/20 p-6 sm:p-8 space-y-6 shadow-xl">
+              <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-[#3B1B4E] border-b border-[#0B0B0C]/10 pb-4">
+                OUR SIMPLE 4-STEP APPROACH
               </h3>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-[#3B1B4E] text-[#CCFF00] font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
                     1
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-stone-900">Understand</h4>
-                    <p className="text-xs text-stone-600">We listen to your business problem over WhatsApp or phone call.</p>
+                    <h4 className="text-sm font-bold text-[#0B0B0C]">Understand</h4>
+                    <p className="text-xs text-[#0B0B0C]/70">We listen to your business problem over WhatsApp or phone call.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-[#3B1B4E] text-[#CCFF00] font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
                     2
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-stone-900">Design</h4>
-                    <p className="text-xs text-stone-600">We outline a practical layout and solution preview for your approval.</p>
+                    <h4 className="text-sm font-bold text-[#0B0B0C]">Design</h4>
+                    <p className="text-xs text-[#0B0B0C]/70">We outline a practical layout and solution preview for your approval.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-[#3B1B4E] text-[#CCFF00] font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
                     3
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-stone-900">Build</h4>
-                    <p className="text-xs text-stone-600">We build your website, app, or tool using modern, clean code.</p>
+                    <h4 className="text-sm font-bold text-[#0B0B0C]">Build</h4>
+                    <p className="text-xs text-[#0B0B0C]/70">We build your website, app, or tool using modern, clean code.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-[#CCFF00] text-[#0B0B0C] border border-[#0B0B0C]/20 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
                     4
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-stone-900">Deliver & Support</h4>
-                    <p className="text-xs text-stone-600">We launch your application and remain available for support.</p>
+                    <h4 className="text-sm font-bold text-[#0B0B0C]">Deliver & Support</h4>
+                    <p className="text-xs text-[#0B0B0C]/70">We launch your application and remain available for support.</p>
                   </div>
                 </div>
               </div>

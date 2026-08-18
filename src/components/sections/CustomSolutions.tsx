@@ -44,55 +44,48 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
   };
 
   return (
-    <section id="custom-solutions" ref={ref} className="relative py-14 lg:py-20 overflow-hidden bg-[#FAF8F5]">
-      <div className="absolute top-0 left-0 right-0 h-px glow-line" />
-
-      {/* Background soft glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] bg-indigo-500/5 rounded-full blur-3xl" />
-      </div>
-
+    <section id="custom-solutions" ref={ref} className="relative py-16 lg:py-24 overflow-hidden bg-[#FAFAF8] text-[#0B0B0C]">
       <div className="section-wrap relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 sm:mb-12"
+          className="text-center mb-10 sm:mb-14"
         >
-          <span className="font-mono text-xs uppercase tracking-widest text-indigo-700 font-bold bg-indigo-50 px-3 py-1 rounded-md border border-indigo-200 inline-block mb-3">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#FAFAF8] font-bold bg-[#3B1B4E] px-3.5 py-1 rounded-full inline-block mb-4">
             04 / CUSTOM BUSINESS PROBLEMS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-stone-900 mb-4">
-            Have a Business Problem? <span className="highlight-bar">Let&apos;s Build the Solution.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#0B0B0C] mb-4">
+            Have a Business Problem? <span className="highlight-lime">Let&apos;s Build the Solution.</span>
           </h2>
-          <p className="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto font-normal">
+          <p className="text-[#0B0B0C]/75 text-base sm:text-lg max-w-2xl mx-auto font-normal">
             Not every business works the same way. If you have a problem that needs a digital solution, tell us about it. We will understand your requirement and build a solution around it.
           </p>
         </motion.div>
 
         {/* Problem Scenario Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-10 sm:mb-14">
           {problemScenarios.map((scenario, i) => (
             <motion.div
               key={scenario.question}
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="rounded-2xl bg-white border border-stone-200 p-4 sm:p-7 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-md"
+              className="rounded-3xl bg-white border border-[#0B0B0C]/15 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 shadow-md"
             >
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
-                  <HelpCircle className={`w-4 h-4 sm:w-5 sm:h-5 ${scenario.iconColor.replace('400', '600')}`} />
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-2xl bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 flex items-center justify-center text-[#3B1B4E] flex-shrink-0 mt-0.5">
+                  <HelpCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-lg font-bold text-stone-900 mb-1.5 leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-[#0B0B0C] mb-2 leading-snug">
                     &ldquo;{scenario.question}&rdquo;
                   </h3>
-                  <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-emerald-700 mb-1">
-                    <span>→ Our Approach:</span>
+                  <div className="flex items-center gap-1.5 font-mono text-xs font-bold text-[#3B1B4E] uppercase tracking-wider mb-1">
+                    <span>→ OUR APPROACH:</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#0B0B0C]/75 leading-relaxed">
                     {scenario.answer}
                   </p>
                 </div>
@@ -101,27 +94,31 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
           ))}
         </div>
 
-        {/* Big Interactive Problem Box */}
+        {/* Big Interactive Problem Box (Plum Surface with Lime Button) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-3xl bg-gradient-to-br from-indigo-50/80 via-white to-stone-50 border border-indigo-200 p-5 sm:p-10 lg:p-12 text-center shadow-lg"
+          className="rounded-3xl bg-[#3B1B4E] text-[#FAFAF8] p-6 sm:p-12 lg:p-14 text-center shadow-2xl"
         >
-          <h3 className="text-xl sm:text-3xl font-black text-stone-900 mb-3 sm:mb-4 leading-snug">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#0B0B0C] font-bold bg-[#CCFF00] px-3.5 py-1 rounded-full inline-block mb-4">
+            TAILORED SOFTWARE & AUTOMATION
+          </span>
+
+          <h3 className="text-2xl sm:text-4xl font-black text-[#FAFAF8] mb-4 leading-snug">
             Do you have a unique problem that doesn&apos;t fit a standard template?
           </h3>
-          <p className="text-xs sm:text-base text-stone-600 max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+          <p className="text-sm sm:text-lg text-[#FAFAF8]/80 max-w-xl mx-auto mb-8 leading-relaxed font-normal">
             Tell us what you are trying to improve. We will analyze your situation, explain the options in simple terms, and build a cost-effective solution.
           </p>
 
           <button
             onClick={() => onOpenEnquiry ? onOpenEnquiry("Custom Business Problem") : scrollTo("contact")}
-            className="btn-gradient w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-xs sm:text-base text-white shadow-md cursor-pointer border-none"
+            className="btn-zip-lime w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-mono text-xs uppercase tracking-widest text-[#0B0B0C] shadow-lg cursor-pointer border-none"
           >
-            <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-            <span>Tell Us Your Problem</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+            <MessageSquare className="w-4 h-4 flex-shrink-0" />
+            <span>TELL US YOUR PROBLEM</span>
+            <ArrowRight className="w-4 h-4 flex-shrink-0" />
           </button>
         </motion.div>
       </div>

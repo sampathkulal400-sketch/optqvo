@@ -49,30 +49,28 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
   };
 
   return (
-    <section id="faq" ref={ref} className="relative py-14 lg:py-20 overflow-hidden bg-[#F5F2ED]">
-      <div className="absolute top-0 left-0 right-0 h-px glow-line" />
-
+    <section id="faq" ref={ref} className="relative py-16 lg:py-24 overflow-hidden bg-[#FAFAF8] text-[#0B0B0C]">
       <div className="section-wrap">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 sm:mb-12"
+          className="text-center mb-10 sm:mb-14"
         >
-          <span className="font-mono text-xs uppercase tracking-widest text-indigo-700 font-bold bg-indigo-50 px-3 py-1 rounded-md border border-indigo-200 inline-block mb-3">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#FAFAF8] font-bold bg-[#3B1B4E] px-3.5 py-1 rounded-full inline-block mb-4">
             07 / FREQUENTLY ASKED QUESTIONS
           </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-stone-900 mb-4">
-            Common <span className="highlight-bar">Questions</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#0B0B0C] mb-4">
+            Common <span className="highlight-lime">Questions</span>
           </h2>
-          <p className="text-stone-600 text-sm sm:text-lg max-w-xl mx-auto font-normal">
+          <p className="text-[#0B0B0C]/75 text-base sm:text-lg max-w-xl mx-auto font-normal">
             Everything you need to know before working with Optqvo — explained in simple words.
           </p>
         </motion.div>
 
         {/* FAQ Accordion List */}
-        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
+        <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
@@ -81,18 +79,18 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
                 initial={{ opacity: 0, y: 15 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="rounded-2xl bg-white border border-stone-200 hover:border-stone-300 overflow-hidden transition-all shadow-sm"
+                className="rounded-3xl bg-white border border-[#0B0B0C]/15 overflow-hidden transition-all shadow-sm"
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between gap-3 p-4 sm:p-6 text-left cursor-pointer bg-transparent border-none"
+                  className="w-full flex items-center justify-between gap-3 p-5 sm:p-6 text-left cursor-pointer bg-transparent border-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-xs sm:text-base font-bold text-stone-900 leading-snug">{faq.q}</span>
-                  <div className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg border flex items-center justify-center flex-shrink-0 transition-colors ${
-                    isOpen ? "bg-indigo-50 border-indigo-200 text-indigo-700" : "bg-stone-100 border-stone-200 text-stone-600"
+                  <span className="text-sm sm:text-base font-bold text-[#0B0B0C] leading-snug">{faq.q}</span>
+                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
+                    isOpen ? "bg-[#3B1B4E] text-[#CCFF00]" : "bg-[#0B0B0C]/5 text-[#0B0B0C]"
                   }`}>
-                    {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </button>
 
@@ -105,7 +103,7 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-4 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100">
+                      <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#0B0B0C]/75 leading-relaxed border-t border-[#0B0B0C]/10">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -118,13 +116,13 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
 
         {/* Additional Help Callout */}
         <div className="text-center mt-12">
-          <p className="text-xs sm:text-sm text-stone-600">
+          <p className="text-xs sm:text-sm text-[#0B0B0C]/75">
             Have a different question about your business?{" "}
             <button
               onClick={() => onOpenEnquiry ? onOpenEnquiry("FAQ Question") : scrollTo("contact")}
-              className="text-indigo-600 font-bold hover:underline cursor-pointer bg-transparent border-none inline-flex items-center gap-1"
+              className="font-mono text-xs text-[#3B1B4E] font-bold hover:underline cursor-pointer bg-transparent border-none inline-flex items-center gap-1"
             >
-              <MessageSquare className="w-3.5 h-3.5" />
+              <MessageSquare className="w-3.5 h-3.5 text-[#3B1B4E]" />
               Ask us directly
             </button>
           </p>

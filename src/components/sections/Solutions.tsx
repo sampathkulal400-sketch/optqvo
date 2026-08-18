@@ -189,9 +189,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
   };
 
   return (
-    <section id="solutions" ref={ref} className="relative py-14 lg:py-20 overflow-hidden bg-[#F5F2ED]">
-      <div className="absolute top-0 left-0 right-0 h-px glow-line" />
-
+    <section id="solutions" ref={ref} className="relative py-16 lg:py-24 overflow-hidden bg-[#FAFAF8] text-[#0B0B0C]">
       <div className="section-wrap">
         {/* Section Header */}
         <motion.div
@@ -200,19 +198,19 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           transition={{ duration: 0.5 }}
           className="text-center mb-10 sm:mb-12"
         >
-          <span className="font-mono text-xs uppercase tracking-widest text-indigo-700 font-bold bg-indigo-50 px-3 py-1 rounded-md border border-indigo-200 inline-block mb-3">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#FAFAF8] font-bold bg-[#3B1B4E] px-3.5 py-1 rounded-full inline-block mb-4">
             03 / SOLUTIONS BY INDUSTRY
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-stone-900 mb-4">
-            Solutions Built for <span className="highlight-bar">Your Business Type</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#0B0B0C] mb-4">
+            Solutions Built for <span className="highlight-lime">Your Business Type</span>
           </h2>
-          <p className="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto font-normal">
+          <p className="text-[#0B0B0C]/75 text-base sm:text-lg max-w-2xl mx-auto font-normal">
             We understand the specific problems of your industry. Select your business type to see how Optqvo can help.
           </p>
         </motion.div>
 
         {/* Business Category Buttons (Scrollable on mobile) */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 sm:mb-8 sm:flex-wrap sm:justify-center scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 sm:flex-wrap sm:justify-center scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
           {solutionCategories.map((cat) => {
             const Icon = cat.icon;
             const isActive = activeTab === cat.id;
@@ -220,13 +218,13 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer border flex-shrink-0 ${
+                className={`px-4 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest font-bold flex items-center gap-2 transition-all cursor-pointer border flex-shrink-0 ${
                   isActive
-                    ? "bg-indigo-600 border-indigo-600 text-white shadow-md shadow-indigo-600/20"
-                    : "bg-white border-stone-200 text-stone-700 hover:bg-stone-50 hover:border-stone-300"
+                    ? "bg-[#3B1B4E] border-[#3B1B4E] text-[#FAFAF8] shadow-md"
+                    : "bg-white border-[#0B0B0C]/15 text-[#0B0B0C] hover:bg-[#0B0B0C]/5"
                 }`}
               >
-                <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#CCFF00]" : "text-[#3B1B4E]"}`} />
                 <span className="whitespace-nowrap">{cat.name}</span>
               </button>
             );
@@ -239,32 +237,32 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="rounded-3xl bg-white border border-stone-200 p-4 sm:p-8 lg:p-10 shadow-xl"
+          className="rounded-3xl bg-white border border-[#0B0B0C]/15 p-6 sm:p-10 lg:p-12 shadow-xl"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
+            <div className="lg:col-span-7 space-y-5">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 flex-shrink-0">
-                  <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
+                <div className="w-12 h-12 rounded-2xl bg-[#3B1B4E] flex items-center justify-center text-[#CCFF00] flex-shrink-0">
+                  <IconComponent className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-indigo-600">Industry Solution</span>
-                  <h3 className="text-xl sm:text-3xl font-black text-stone-900 leading-snug">{activeCategory.headline}</h3>
+                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#3B1B4E]">INDUSTRY SOLUTION</span>
+                  <h3 className="text-xl sm:text-3xl font-black text-[#0B0B0C] leading-snug">{activeCategory.headline}</h3>
                 </div>
               </div>
 
-              <p className="text-xs sm:text-base text-stone-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-[#0B0B0C]/75 leading-relaxed">
                 {activeCategory.description}
               </p>
 
               {/* Feature Checklist */}
-              <div className="pt-1 sm:pt-2">
-                <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-400 mb-2.5">Included Capabilities:</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-stone-700">
+              <div className="pt-2">
+                <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#0B0B0C]/50 mb-3">INCLUDED CAPABILITIES:</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-[#0B0B0C]">
                   {activeCategory.features.map((feat) => (
-                    <div key={feat} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <div key={feat} className="flex items-start gap-2 font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-[#3B1B4E] flex-shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
                   ))}
@@ -272,36 +270,36 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
               </div>
 
               {/* CTAs */}
-              <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button
                   onClick={() => onOpenEnquiry ? onOpenEnquiry(activeCategory.name) : scrollTo("contact")}
-                  className="btn-gradient w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white flex items-center justify-center gap-2 cursor-pointer border-none shadow-md"
+                  className="btn-zip-plum px-7 py-4 rounded-full font-mono text-xs uppercase tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer border-none shadow-md"
                 >
-                  <span>Get Solution For {activeCategory.name}</span>
-                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
+                  <span>GET SOLUTION FOR {activeCategory.name.toUpperCase()}</span>
+                  <ArrowRight className="w-4 h-4 text-[#CCFF00]" />
                 </button>
               </div>
             </div>
 
             {/* Right Before & After Comparison */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl bg-stone-50 border border-stone-200 p-4 sm:p-6 space-y-3 sm:space-y-4">
-                <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-500 border-b border-stone-200 pb-2.5">
-                  How It Makes Things Simple
+              <div className="rounded-2xl bg-[#FAFAF8] border border-[#0B0B0C]/15 p-5 sm:p-6 space-y-4">
+                <div className="font-mono text-xs font-bold uppercase tracking-widest text-[#0B0B0C]/60 border-b border-[#0B0B0C]/10 pb-3">
+                  HOW IT MAKES THINGS SIMPLE
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-900">
-                  <p className="font-bold mb-1 text-rose-700">Before Optqvo:</p>
-                  <p className="leading-relaxed text-[11px] sm:text-xs text-rose-800">{activeCategory.simpleExample.from}</p>
+                <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-900">
+                  <p className="font-mono font-bold mb-1 uppercase tracking-wider text-rose-700">BEFORE OPTQVO:</p>
+                  <p className="leading-relaxed text-xs text-rose-800">{activeCategory.simpleExample.from}</p>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
-                  <p className="font-bold mb-1 text-emerald-700">With Optqvo Solution:</p>
-                  <p className="leading-relaxed text-[11px] sm:text-xs text-emerald-800">{activeCategory.simpleExample.to}</p>
+                <div className="p-4 rounded-xl bg-[#CCFF00]/30 border border-[#0B0B0C]/20 text-xs text-[#0B0B0C]">
+                  <p className="font-mono font-bold mb-1 uppercase tracking-wider text-[#3B1B4E]">WITH OPTQVO SOLUTION:</p>
+                  <p className="leading-relaxed text-xs text-[#0B0B0C] font-medium">{activeCategory.simpleExample.to}</p>
                 </div>
 
-                <p className="text-[10px] sm:text-[11px] text-stone-500 text-center pt-1">
-                  Customized specifically around your business rules & timing.
+                <p className="font-mono text-[10px] text-[#0B0B0C]/60 text-center uppercase tracking-wider pt-1">
+                  Customized around your business rules
                 </p>
               </div>
             </div>

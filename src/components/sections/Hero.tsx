@@ -19,24 +19,24 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
   };
 
   return (
-    <section id="home" ref={ref} className="relative flex flex-col justify-between pt-20 pb-8 sm:pt-24 sm:pb-12 overflow-hidden bg-[#FAF8F5]">
-      {/* Background hairlines & dot grid */}
+    <section id="home" ref={ref} className="relative flex flex-col justify-between pt-20 pb-8 sm:pt-24 sm:pb-12 overflow-hidden bg-[#FAFAF8]">
+      {/* Background hairlines & subtle grid */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="blob absolute -top-24 -left-16 w-[550px] h-[550px] bg-indigo-500/5 filter blur-[80px]" />
-        <div className="blob blob-delay-1 absolute top-1/3 -right-20 w-[450px] h-[450px] bg-blue-500/5 filter blur-[80px]" />
-        <div className="dot-grid absolute inset-0 opacity-40" />
+        <div className="blob absolute -top-24 -left-16 w-[550px] h-[550px] bg-[#3B1B4E]/5 filter blur-[80px]" />
+        <div className="blob blob-delay-1 absolute top-1/3 -right-20 w-[450px] h-[450px] bg-[#CCFF00]/10 filter blur-[80px]" />
+        <div className="dot-grid absolute inset-0 opacity-30" />
       </div>
 
       <motion.div style={{ y: yText, opacity: opacText }} className="relative z-10 w-full">
         <div className="section-wrap">
-          {/* Top Monospace Tagline */}
+          {/* Top Monospace Badge */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             className="flex items-center gap-2 mb-4"
           >
-            <span className="font-mono text-xs uppercase tracking-widest text-indigo-700 font-bold bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-200">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#CCFF00] font-bold bg-[#3B1B4E] px-3.5 py-1 rounded-full">
               01 / PRACTICAL DIGITAL SOLUTIONS
             </span>
           </motion.div>
@@ -48,11 +48,11 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[1.1] mb-5"
+                className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0B0B0C] leading-[1.1] mb-5"
               >
                 HAVE A BUSINESS PROBLEM?{" "}
                 <span className="block mt-1">
-                  <span className="highlight-bar">BUILD THE SOLUTION.</span>
+                  <span className="highlight-lime">BUILD THE SOLUTION.</span>
                 </span>
               </motion.h1>
 
@@ -60,9 +60,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-base sm:text-xl text-stone-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl font-normal"
+                className="text-base sm:text-xl text-[#0B0B0C]/75 leading-relaxed mb-6 sm:mb-8 max-w-2xl font-normal"
               >
-                Optqvo helps restaurant owners, shops, hotels, clinics, and SMEs build practical digital tools — from custom websites and QR menus to online booking and business tools. <span className="font-semibold text-stone-900">No tech jargon. No corporate fluff.</span>
+                Optqvo helps restaurant owners, shops, hotels, clinics, and SMEs build practical digital tools — from custom websites and QR menus to online booking and business tools. <span className="font-bold text-[#0B0B0C]">No tech jargon. No corporate fluff.</span>
               </motion.p>
 
               {/* Action Buttons */}
@@ -74,17 +74,17 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
               >
                 <motion.button
                   onClick={() => onOpenEnquiry ? onOpenEnquiry() : scrollTo("contact")}
-                  className="btn-gradient w-full sm:w-auto px-7 py-4 rounded-full font-mono text-xs uppercase tracking-widest text-white flex items-center justify-center gap-2.5 shadow-md cursor-pointer border-none"
+                  className="btn-zip-plum w-full sm:w-auto px-8 py-4 rounded-full font-mono text-xs uppercase tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2.5 shadow-md cursor-pointer border-none"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <MessageSquare className="w-4 h-4 flex-shrink-0" />
+                  <MessageSquare className="w-4 h-4 text-[#CCFF00] flex-shrink-0" />
                   <span>TELL US YOUR PROBLEM</span>
                 </motion.button>
 
                 <motion.button
                   onClick={() => scrollTo("solutions")}
-                  className="w-full sm:w-auto px-6 py-4 rounded-full font-mono text-xs uppercase tracking-widest text-stone-700 bg-white border border-stone-300 hover:bg-stone-50 hover:text-stone-950 transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm"
+                  className="btn-zip-outline w-full sm:w-auto px-8 py-4 rounded-full font-mono text-xs uppercase tracking-widest text-[#0B0B0C] transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -100,67 +100,67 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                 initial={{ opacity: 0, scale: 0.96, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="relative rounded-3xl bg-white border border-stone-200 p-5 sm:p-6 shadow-xl space-y-3.5"
+                className="relative rounded-3xl bg-white border border-[#0B0B0C]/15 p-5 sm:p-6 shadow-xl space-y-3.5"
               >
-                <div className="flex items-center justify-between border-b border-stone-200/80 pb-3 mb-2">
+                <div className="flex items-center justify-between border-b border-[#0B0B0C]/10 pb-3 mb-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                    <span className="font-mono text-xs font-bold text-stone-900 tracking-wider uppercase">Optqvo Capabilities</span>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#CCFF00] border border-[#0B0B0C]" />
+                    <span className="font-mono text-xs font-bold text-[#0B0B0C] tracking-wider uppercase">Optqvo Workflows</span>
                   </div>
-                  <span className="font-mono text-[10px] text-stone-500 uppercase tracking-widest">Built For You</span>
+                  <span className="font-mono text-[10px] text-[#0B0B0C]/60 uppercase tracking-widest">Built For You</span>
                 </div>
 
                 {/* Practical Solution Card 1 */}
-                <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-indigo-300 transition-colors">
+                <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-[#0B0B0C]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-[#3B1B4E] transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-600 flex-shrink-0">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 flex items-center justify-center text-[#3B1B4E] flex-shrink-0">
                       <Utensils className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-stone-900">Digital QR Menu for Restaurants</h4>
-                      <p className="text-[11px] text-stone-500">Scan QR to view menu & order via WhatsApp</p>
+                      <h4 className="text-xs font-bold text-[#0B0B0C]">Digital QR Menu for Restaurants</h4>
+                      <p className="text-[11px] text-[#0B0B0C]/65">Scan QR to view menu & order via WhatsApp</p>
                     </div>
                   </div>
-                  <span className="self-start sm:self-auto font-mono text-[10px] text-emerald-800 font-bold px-2 py-0.5 rounded bg-emerald-50 border border-emerald-200">ACTIVE</span>
+                  <span className="self-start sm:self-auto font-mono text-[10px] text-[#0B0B0C] font-bold px-2 py-0.5 rounded bg-[#CCFF00] border border-[#0B0B0C]/20">ACTIVE</span>
                 </div>
 
                 {/* Practical Solution Card 2 */}
-                <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-indigo-300 transition-colors">
+                <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-[#0B0B0C]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-[#3B1B4E] transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 flex-shrink-0">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 flex items-center justify-center text-[#3B1B4E] flex-shrink-0">
                       <ShoppingBag className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-stone-900">Product Catalogue for Retail Shops</h4>
-                      <p className="text-[11px] text-stone-500">Showcase products online with quick WhatsApp inquiry</p>
+                      <h4 className="text-xs font-bold text-[#0B0B0C]">Product Catalogue for Retail Shops</h4>
+                      <p className="text-[11px] text-[#0B0B0C]/65">Showcase products online with quick WhatsApp inquiry</p>
                     </div>
                   </div>
-                  <span className="self-start sm:self-auto font-mono text-[10px] text-blue-800 font-bold px-2 py-0.5 rounded bg-blue-50 border border-blue-200">READY</span>
+                  <span className="self-start sm:self-auto font-mono text-[10px] text-[#0B0B0C] font-bold px-2 py-0.5 rounded bg-[#CCFF00] border border-[#0B0B0C]/20">READY</span>
                 </div>
 
                 {/* Practical Solution Card 3 */}
-                <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-indigo-300 transition-colors">
+                <div className="p-3.5 rounded-2xl bg-[#FAFAF8] border border-[#0B0B0C]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:border-[#3B1B4E] transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 flex-shrink-0">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#3B1B4E]/10 border border-[#3B1B4E]/20 flex items-center justify-center text-[#3B1B4E] flex-shrink-0">
                       <Calendar className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-stone-900">Appointment Booking for Salons & Clinics</h4>
-                      <p className="text-[11px] text-stone-500">Online booking calendar with instant reminders</p>
+                      <h4 className="text-xs font-bold text-[#0B0B0C]">Appointment Booking for Salons & Clinics</h4>
+                      <p className="text-[11px] text-[#0B0B0C]/65">Online booking calendar with instant reminders</p>
                     </div>
                   </div>
-                  <span className="self-start sm:self-auto font-mono text-[10px] text-indigo-800 font-bold px-2 py-0.5 rounded bg-indigo-50 border border-indigo-200">LIVE</span>
+                  <span className="self-start sm:self-auto font-mono text-[10px] text-[#0B0B0C] font-bold px-2 py-0.5 rounded bg-[#CCFF00] border border-[#0B0B0C]/20">LIVE</span>
                 </div>
 
                 {/* Custom Solution Callout */}
-                <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 flex items-center justify-between gap-2 mt-2">
+                <div className="p-4 rounded-2xl bg-[#3B1B4E] text-[#FAFAF8] flex items-center justify-between gap-2 mt-2">
                   <div>
-                    <p className="text-xs font-bold text-stone-900">Have a unique business problem?</p>
-                    <p className="text-[11px] text-stone-600">We build custom digital tools for your exact needs.</p>
+                    <p className="text-xs font-bold text-[#FAFAF8]">Have a unique business problem?</p>
+                    <p className="text-[11px] text-[#FAFAF8]/75">We build custom digital tools for your exact needs.</p>
                   </div>
                   <button
                     onClick={() => onOpenEnquiry ? onOpenEnquiry() : scrollTo("contact")}
-                    className="font-mono text-xs font-bold text-indigo-700 hover:text-indigo-900 underline underline-offset-2 cursor-pointer flex-shrink-0 border-none bg-transparent"
+                    className="font-mono text-xs font-bold text-[#CCFF00] hover:underline underline-offset-2 cursor-pointer flex-shrink-0 border-none bg-transparent"
                   >
                     TELL US →
                   </button>
@@ -170,22 +170,22 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
           </div>
 
           {/* Zero4GenZ 4-Column Hairline Bar at bottom of Hero */}
-          <div className="mt-12 sm:mt-16 pt-6 border-t border-stone-200 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <div className="border-l-2 border-indigo-600 pl-3">
-              <span className="font-mono text-[11px] font-bold text-indigo-700 uppercase tracking-widest">01 / WEBSITES</span>
-              <p className="text-xs text-stone-600 font-medium mt-0.5">Fast, mobile-friendly design</p>
+          <div className="mt-12 sm:mt-16 pt-6 border-t border-[#0B0B0C]/15 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div className="border-l-2 border-[#3B1B4E] pl-3">
+              <span className="font-mono text-[11px] font-bold text-[#3B1B4E] uppercase tracking-widest">01 / WEBSITES</span>
+              <p className="text-xs text-[#0B0B0C]/70 font-medium mt-0.5">Fast, mobile-friendly design</p>
             </div>
-            <div className="border-l-2 border-blue-600 pl-3">
-              <span className="font-mono text-[11px] font-bold text-blue-700 uppercase tracking-widest">02 / QR MENUS</span>
-              <p className="text-xs text-stone-600 font-medium mt-0.5">Digital menus & ordering</p>
+            <div className="border-l-2 border-[#3B1B4E] pl-3">
+              <span className="font-mono text-[11px] font-bold text-[#3B1B4E] uppercase tracking-widest">02 / QR MENUS</span>
+              <p className="text-xs text-[#0B0B0C]/70 font-medium mt-0.5">Digital menus & ordering</p>
             </div>
-            <div className="border-l-2 border-emerald-600 pl-3">
-              <span className="font-mono text-[11px] font-bold text-emerald-700 uppercase tracking-widest">03 / BOOKINGS</span>
-              <p className="text-xs text-stone-600 font-medium mt-0.5">Calendars & online forms</p>
+            <div className="border-l-2 border-[#3B1B4E] pl-3">
+              <span className="font-mono text-[11px] font-bold text-[#3B1B4E] uppercase tracking-widest">03 / BOOKINGS</span>
+              <p className="text-xs text-[#0B0B0C]/70 font-medium mt-0.5">Calendars & online forms</p>
             </div>
-            <div className="border-l-2 border-amber-600 pl-3">
-              <span className="font-mono text-[11px] font-bold text-amber-800 uppercase tracking-widest">04 / CUSTOM TOOLS</span>
-              <p className="text-xs text-stone-600 font-medium mt-0.5">Tailored software & apps</p>
+            <div className="border-l-2 border-[#FF5C00] pl-3">
+              <span className="font-mono text-[11px] font-bold text-[#FF5C00] uppercase tracking-widest">04 / CUSTOM TOOLS</span>
+              <p className="text-xs text-[#0B0B0C]/70 font-medium mt-0.5">Tailored software & apps</p>
             </div>
           </div>
         </div>

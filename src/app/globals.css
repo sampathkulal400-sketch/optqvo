@@ -31,150 +31,166 @@ html {
 }
 
 body {
-  background-color: #FAF8F5;
-  color: #1C1917;
+  background-color: #FAFAF8;
+  color: #0B0B0C;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* ─── Custom Scrollbar ──────────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #FAF8F5; }
-::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
-::selection { background: #E0E7FF; color: #3730A3; }
-
-/* ─── Card Surfaces & Elevation ─────────────────────────────────── */
-.glass {
-  background: #FFFFFF;
-  border: 1px solid #E7E5E4;
-  box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
-}
-.glass-strong {
-  background: #FFFFFF;
-  border: 1px solid #D6D3D1;
-  box-shadow: 0 10px 30px -4px rgba(28, 25, 23, 0.06);
+/* ─── Zero4GenZ Design System Tokens ────────────────────────────── */
+:root {
+  --bone: #FAFAF8;
+  --plum: #3B1B4E;
+  --ink: #0B0B0C;
+  --lime: #CCFF00;
+  --amber: #FF5C00;
+  --hair: rgba(11, 11, 12, 0.12);
+  --hair-plum: rgba(250, 250, 248, 0.15);
 }
 
-/* ─── Typography & Gradient Text ────────────────────────────────── */
-.gradient-text {
-  background: linear-gradient(120deg, #1C1917 0%, #4338CA 70%, #2563EB 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.gradient-text-subtle {
-  background: linear-gradient(120deg, #44403C 0%, #4F46E5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.surface-bone {
+  background-color: #FAFAF8;
+  color: #0B0B0C;
 }
 
-/* ─── Primary Button ────────────────────────────────────────────── */
-.btn-gradient {
-  background: #4F46E5;
-  color: #FFFFFF;
-  transition: all 0.2s ease;
+.surface-plum {
+  background-color: #3B1B4E;
+  color: #FAFAF8;
+}
+
+.surface-lime {
+  background-color: #CCFF00;
+  color: #0B0B0C;
+}
+
+.surface-amber {
+  background-color: #FF5C00;
+  color: #0B0B0C;
+}
+
+.surface-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(11, 11, 12, 0.12);
+}
+
+.hair-border {
+  border-color: rgba(11, 11, 12, 0.12);
+}
+
+.hair-border-plum {
+  border-color: rgba(250, 250, 248, 0.15);
+}
+
+/* ZERO Highlight Bar with Lime Accent */
+.highlight-lime {
   position: relative;
-  overflow: hidden;
-  z-index: 0;
+  display: inline-block;
+  color: #0B0B0C;
+  font-weight: 900;
 }
-.btn-gradient::before {
+.highlight-lime::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: #4338CA;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: #CCFF00;
   z-index: -1;
+  border-radius: 2px;
 }
-.btn-gradient:hover::before { opacity: 1; }
-.btn-gradient:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.25);
-}
-.btn-gradient:active { transform: translateY(0); }
 
-/* ─── Badge ─────────────────────────────────────────────────────── */
+.highlight-amber {
+  color: #FF5C00;
+}
+
+/* ZERO Buttons */
+.btn-zip-plum {
+  background-color: #3B1B4E;
+  color: #FAFAF8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+.btn-zip-plum:hover {
+  background-color: #2F153F;
+  transform: scale(1.02);
+}
+
+.btn-zip-outline {
+  border: 1px solid rgba(11, 11, 12, 0.25);
+  background-color: transparent;
+  color: #0B0B0C;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+.btn-zip-outline:hover {
+  border-color: #0B0B0C;
+  background-color: rgba(11, 11, 12, 0.03);
+  transform: scale(1.02);
+}
+
+.btn-zip-lime {
+  background-color: #CCFF00;
+  color: #0B0B0C;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+.btn-gradient {
+  background-color: #3B1B4E;
+  color: #FAFAF8;
+  transition: all 0.25s ease;
+}
+.btn-gradient:hover {
+  background-color: #2F153F;
+  transform: translateY(-1px);
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 5px 14px;
   border-radius: 100px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: #EEF2FF;
-  border: 1px solid #C7D2FE;
-  color: #4338CA;
+  background: #3B1B4E;
+  color: #CCFF00;
+  border: 1px solid #3B1B4E;
 }
 
-/* ─── Dot Grid Background ───────────────────────────────────────── */
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(28, 25, 23, 0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-/* ─── Section Gradient ──────────────────────────────────────────── */
-.section-gradient {
-  background: linear-gradient(180deg, transparent 0%, rgba(244, 240, 234, 0.6) 50%, transparent 100%);
-}
-
-/* ─── Glow Line Divider ─────────────────────────────────────────── */
 .glow-line {
   height: 1px;
-  background: #E7E5E4;
+  background: rgba(11, 11, 12, 0.12);
 }
 
-/* ─── Zero4GenZ Design System Extensions ───────────────────────── */
-.section-num {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #4F46E5;
+.glass {
+  background: #FFFFFF;
+  border: 1px solid rgba(11, 11, 12, 0.12);
 }
 
-.highlight-bar {
-  position: relative;
-  display: inline-block;
-  color: #1C1917;
-  font-weight: 900;
-}
-.highlight-bar::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: rgba(99, 102, 241, 0.2);
-  z-index: -1;
-  border-radius: 2px;
-}
-
-.hair {
-  border-color: rgba(229, 231, 235, 0.9);
-}
-
-.surface-bone {
-  background-color: #FAF8F5;
-  color: #1C1917;
-}
-
-.surface-plum {
-  background-color: #1C1917;
-  color: #FAF8F5;
-}
-
-.surface-cream-alt {
-  background-color: #F5F2ED;
-  color: #1C1917;
+.glass-strong {
+  background: #FFFFFF;
+  border: 1px solid rgba(11, 11, 12, 0.18);
 }
 
 /* ─── Stat Number ───────────────────────────────────────────────── */

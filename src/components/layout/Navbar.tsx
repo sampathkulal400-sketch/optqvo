@@ -55,7 +55,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           scrolled
-            ? "bg-[#FAF8F5]/90 backdrop-blur-xl border-b border-stone-200/80 shadow-sm"
+            ? "bg-[#FAFAF8]/90 backdrop-blur-xl border-b border-[#0B0B0C]/10 shadow-sm"
             : "bg-transparent border-b border-transparent"
         }`}
       >
@@ -74,7 +74,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           </button>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => {
               if (link.hasDropdown) {
                 return (
@@ -86,7 +86,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                   >
                     <button
                       onClick={() => scrollTo(link.href)}
-                      className="px-3.5 py-2 text-xs font-semibold text-stone-700 hover:text-stone-950 hover:bg-stone-200/50 rounded-lg transition-colors cursor-pointer bg-transparent border-none flex items-center gap-1"
+                      className="px-3.5 py-2 font-mono text-xs uppercase tracking-widest text-[#0B0B0C]/75 hover:text-[#0B0B0C] rounded-lg transition-colors cursor-pointer bg-transparent border-none flex items-center gap-1"
                     >
                       {link.label}
                       <ChevronDown className="w-3.5 h-3.5 opacity-70" />
@@ -100,13 +100,13 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 8 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 w-56 p-2 rounded-2xl bg-white border border-stone-200 shadow-xl z-50 space-y-0.5"
+                          className="absolute top-full left-0 w-56 p-2 rounded-2xl bg-[#FAFAF8] border border-[#0B0B0C]/15 shadow-xl z-50 space-y-0.5"
                         >
                           {solutionDropdownItems.map((item) => (
                             <button
                               key={item.label}
                               onClick={() => scrollTo(item.href)}
-                              className="w-full text-left px-3 py-2 text-xs font-medium text-stone-700 hover:text-indigo-700 hover:bg-indigo-50 rounded-xl transition-colors cursor-pointer bg-transparent border-none block"
+                              className="w-full text-left px-3 py-2 font-mono text-xs uppercase tracking-wider text-[#0B0B0C]/80 hover:text-[#3B1B4E] hover:bg-[#3B1B4E]/10 rounded-xl transition-colors cursor-pointer bg-transparent border-none block"
                             >
                               {item.label}
                             </button>
@@ -122,7 +122,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="px-3.5 py-2 text-xs font-semibold text-stone-700 hover:text-stone-950 hover:bg-stone-200/50 rounded-lg transition-colors cursor-pointer bg-transparent border-none"
+                  className="px-3.5 py-2 font-mono text-xs uppercase tracking-widest text-[#0B0B0C]/75 hover:text-[#0B0B0C] rounded-lg transition-colors cursor-pointer bg-transparent border-none"
                 >
                   {link.label}
                 </button>
@@ -134,9 +134,9 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => onOpenEnquiry ? onOpenEnquiry() : scrollTo("contact")}
-              className="btn-gradient px-4 py-2 rounded-xl text-xs font-bold text-white flex items-center gap-2 cursor-pointer border-none shadow-md"
+              className="btn-zip-plum px-5 py-2.5 rounded-full flex items-center gap-2 cursor-pointer border-none shadow-sm"
             >
-              <MessageSquare className="w-3.5 h-3.5" />
+              <MessageSquare className="w-3.5 h-3.5 text-[#CCFF00]" />
               <span>Tell Us Your Problem</span>
             </button>
           </div>
@@ -144,7 +144,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
           {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg bg-stone-100 border border-stone-200 text-stone-700 cursor-pointer"
+            className="lg:hidden p-2 rounded-lg bg-[#0B0B0C]/5 border border-[#0B0B0C]/10 text-[#0B0B0C] cursor-pointer"
             aria-label="Toggle Menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -160,14 +160,14 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-16 left-0 right-0 z-[99] bg-[#FAF8F5] border-b border-stone-200 p-6 lg:hidden max-h-[85vh] overflow-y-auto shadow-xl"
+            className="fixed top-16 left-0 right-0 z-[99] bg-[#FAFAF8] border-b border-[#0B0B0C]/10 p-6 lg:hidden max-h-[85vh] overflow-y-auto shadow-xl"
           >
             <div className="space-y-1 mb-6">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="w-full text-left px-4 py-3 text-sm font-semibold text-stone-800 hover:text-indigo-600 hover:bg-stone-100 rounded-xl transition-colors cursor-pointer bg-transparent border-none block"
+                  className="w-full text-left px-4 py-3 font-mono text-xs uppercase tracking-widest text-[#0B0B0C] hover:text-[#3B1B4E] hover:bg-[#0B0B0C]/5 rounded-xl transition-colors cursor-pointer bg-transparent border-none block"
                 >
                   {link.label}
                 </button>
@@ -180,9 +180,9 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 if (onOpenEnquiry) onOpenEnquiry();
                 else scrollTo("contact");
               }}
-              className="btn-gradient w-full py-3.5 px-4 rounded-xl text-sm font-bold text-white flex items-center justify-center gap-2 cursor-pointer border-none shadow-lg"
+              className="btn-zip-plum w-full py-3.5 px-4 rounded-full flex items-center justify-center gap-2 cursor-pointer border-none shadow-md"
             >
-              <MessageSquare className="w-4 h-4" />
+              <MessageSquare className="w-4 h-4 text-[#CCFF00]" />
               <span>Tell Us Your Problem</span>
             </button>
           </motion.div>

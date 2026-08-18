@@ -16,22 +16,22 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Optqvo%2C%20I%27d%20like%20to%20discuss%20a%20digital%20solution%20for%20my%20business.`;
 
   return (
-    <footer className="relative bg-[#F5F2ED] border-t border-stone-200 overflow-hidden text-stone-600 text-xs">
-      <div className="section-wrap py-10">
+    <footer className="relative bg-[#0B0B0C] border-t border-white/10 overflow-hidden text-[#FAFAF8] text-xs">
+      <div className="section-wrap py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
 
           {/* Column 1: Brand Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/icon.png" alt="Optqvo" className="h-9 w-auto object-contain block" />
+              <img src="/icon.png" alt="Optqvo" className="h-9 w-auto object-contain block brightness-0 invert" />
             </div>
 
-            <p className="text-stone-600 text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p className="text-[#FAFAF8]/70 text-xs sm:text-sm leading-relaxed max-w-sm">
               Optqvo helps restaurants, shops, hotels, clinics, and growing businesses build practical digital solutions — from websites and mobile apps to online booking and business tools.
             </p>
 
-            <p className="text-xs font-semibold text-indigo-700">
+            <p className="font-mono text-xs font-bold text-[#CCFF00] uppercase tracking-wider">
               Made in India. Simple digital solutions for growing businesses.
             </p>
 
@@ -40,9 +40,9 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold hover:bg-emerald-100 transition-colors no-underline shadow-sm"
+                className="btn-zip-lime inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#CCFF00] text-[#0B0B0C] font-mono text-xs font-bold uppercase no-underline shadow-sm"
               >
-                <MessageSquare className="w-4 h-4 text-emerald-600" />
+                <MessageSquare className="w-4 h-4 text-[#0B0B0C]" />
                 <span>Chat Directly on WhatsApp</span>
               </a>
             </div>
@@ -50,8 +50,8 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
 
           {/* Column 2: Navigation Links (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900">Navigation</h4>
-            <ul className="space-y-2 text-stone-600 list-none p-0 m-0">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#CCFF00]">Navigation</h4>
+            <ul className="space-y-2 text-[#FAFAF8]/70 list-none p-0 m-0">
               {[
                 { label: "Home", id: "home" },
                 { label: "Our Services", id: "services" },
@@ -65,10 +65,10 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
                 <li key={item.id}>
                   <button
                     onClick={() => scrollTo(item.id)}
-                    className="hover:text-indigo-700 transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-stone-600 flex items-center gap-1 group"
+                    className="hover:text-[#CCFF00] transition-colors cursor-pointer bg-transparent border-none p-0 font-mono text-xs text-[#FAFAF8]/70 flex items-center gap-1 group uppercase tracking-wider"
                   >
                     <span>{item.label}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-indigo-600" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#CCFF00]" />
                   </button>
                 </li>
               ))}
@@ -77,8 +77,8 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
 
           {/* Column 3: Industry Solutions (4 cols) */}
           <div className="lg:col-span-4 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Solutions by Business Type</h4>
-            <div className="grid grid-cols-2 gap-2 text-slate-400">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#CCFF00]">Solutions by Business Type</h4>
+            <div className="grid grid-cols-2 gap-2 text-[#FAFAF8]/70">
               {[
                 "Restaurants & Cafes",
                 "Retail & Shops",
@@ -92,7 +92,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
                 <button
                   key={cat}
                   onClick={() => scrollTo("solutions")}
-                  className="text-left hover:text-white transition-colors cursor-pointer bg-transparent border-none p-0 text-xs text-slate-400 truncate"
+                  className="text-left hover:text-[#CCFF00] transition-colors cursor-pointer bg-transparent border-none p-0 font-mono text-xs text-[#FAFAF8]/70 truncate uppercase tracking-wider"
                 >
                   • {cat}
                 </button>
@@ -102,7 +102,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
             <div className="pt-4">
               <button
                 onClick={() => onOpenEnquiry ? onOpenEnquiry("Footer Inquiry") : scrollTo("contact")}
-                className="w-full py-3 px-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-xs font-bold text-white transition-all cursor-pointer"
+                className="w-full py-3.5 px-5 rounded-full bg-[#3B1B4E] hover:bg-[#2F153F] border border-white/20 font-mono text-xs font-bold uppercase tracking-widest text-[#FAFAF8] transition-all cursor-pointer shadow-sm"
               >
                 Tell Us Your Problem →
               </button>
@@ -112,7 +112,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#FAFAF8]/50">
           <p>© {new Date().getFullYear()} Optqvo. All rights reserved.</p>
           <p>Practical Digital Solutions for Growing Businesses.</p>
         </div>
