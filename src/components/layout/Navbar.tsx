@@ -183,13 +183,6 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               transition={{ duration: 0.25, ease: "easeOut" }}
               className="fixed top-20 left-4 right-4 z-[99] bg-[#F8F8F5] border border-[#0A0A0D]/12 rounded-3xl p-5 sm:p-6 lg:hidden max-h-[82vh] overflow-y-auto shadow-2xl space-y-4"
             >
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A0A0D]/04 border border-[#0A0A0D]/08 font-mono text-[10px] text-[#52525C] uppercase tracking-wider font-semibold w-fit">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CCFF00] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]"></span>
-                </span>
-                <span>Available for Q1 / Q2 Projects</span>
-              </div>
 
               <div className="space-y-1">
                 {navLinks.map((link) => (

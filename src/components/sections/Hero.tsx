@@ -182,7 +182,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
-                    <span className="font-medium">12+ Businesses Helped</span>
+                    <span className="font-medium">Direct Developer Access</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
