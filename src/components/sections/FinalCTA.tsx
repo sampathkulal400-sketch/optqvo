@@ -41,11 +41,11 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
             </span>
 
             <h2 className="display-hero-title text-[#FAFAF8]">
-              Have a problem you&apos;d like to solve?
+              Still Running Your Business on WhatsApp Forwards and Notebooks?
             </h2>
 
             <p className="text-base sm:text-2xl text-[#FAFAF8]/80 max-w-2xl mx-auto leading-relaxed font-normal">
-              Tell us what you are trying to improve. We will diagnose your situation, suggest practical digital tools, and give you a fixed quote.
+              You are losing time, money, and customers to competitors who have digitised. Let us build you a clean, simple digital system that just works.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -58,7 +58,7 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
                 className="btn-zip-lime w-full sm:w-auto px-10 py-4 min-h-[54px] rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] flex items-center justify-center gap-3 shadow-xl cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 flex-shrink-0" />
-                <span>TELL US YOUR PROBLEM</span>
+                <span>GET A FREE PLAN IN 24 HOURS</span>
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </button>
             </div>
@@ -71,11 +71,11 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
               </div>
               <div className="flex items-center justify-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0" />
-                <span>NO SURPRISE INVOICES</span>
+                <span>NO COMMITMENT REQUIRED</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0" />
-                <span>SAME-DAY WHATSAPP REPLY</span>
+                <span>ONLY 3-4 PROJECTS / MONTH</span>
               </div>
             </div>
           </div>

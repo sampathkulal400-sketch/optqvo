@@ -5,16 +5,16 @@ import { useRef } from "react";
 import { Check, BarChart3, DollarSign, Users, Package, TrendingUp, Activity, Target, FileText, Lock } from "lucide-react";
 
 const features = [
-  { icon: DollarSign, label: "Expense Tracking", color: "text-violet-400" },
-  { icon: TrendingUp, label: "Revenue Analytics", color: "text-blue-400" },
-  { icon: Users, label: "Employee Performance", color: "text-cyan-400" },
-  { icon: Package, label: "Inventory Monitoring", color: "text-emerald-400" },
-  { icon: BarChart3, label: "Sales Reports", color: "text-fuchsia-400" },
-  { icon: Activity, label: "Real-Time Charts", color: "text-amber-400" },
-  { icon: Target, label: "KPI Tracking", color: "text-rose-400" },
-  { icon: BarChart3, label: "Business Insights", color: "text-indigo-400" },
-  { icon: FileText, label: "Financial Reports", color: "text-sky-400" },
-  { icon: Lock, label: "Role-Based Access", color: "text-slate-400" },
+  { icon: DollarSign, label: "Track Every Rupee", color: "text-violet-400" },
+  { icon: TrendingUp, label: "Grow Your Income", color: "text-blue-400" },
+  { icon: Users, label: "Reward Top Staff", color: "text-cyan-400" },
+  { icon: Package, label: "Never Run Out", color: "text-emerald-400" },
+  { icon: BarChart3, label: "Clear Sales Data", color: "text-fuchsia-400" },
+  { icon: Activity, label: "Live Visual Updates", color: "text-amber-400" },
+  { icon: Target, label: "Hit Your Goals", color: "text-rose-400" },
+  { icon: BarChart3, label: "Spot Hidden Trends", color: "text-indigo-400" },
+  { icon: FileText, label: "Stress-Free Taxes", color: "text-sky-400" },
+  { icon: Lock, label: "Protect Your Data", color: "text-slate-400" },
 ];
 
 function DashboardPreview() {
@@ -165,14 +165,14 @@ export default function Dashboard() {
             >
               <span className="badge mb-4">Custom Dashboards</span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
-                Your Business,{" "}
-                <span className="gradient-text">Fully Visible</span>
+                Stop Guessing.{" "}
+                <span className="gradient-text">Start Knowing.</span>
               </h2>
               <p className="text-slate-400 text-base leading-relaxed mb-6">
-                We build custom business intelligence dashboards that consolidate your entire operation into a single, beautiful interface. From financial data to employee performance — see everything, act faster.
+                The human brain isn't built to process scattered spreadsheets. We build a single, beautiful screen that gives you instant clarity. Spot problems before they happen and make decisions with total confidence.
               </p>
               <p className="text-slate-500 text-sm leading-relaxed mb-8">
-                Every dashboard we build is fully custom to your business logic, data sources and team structure. No generic templates — just precision-engineered insight tools that become the command center of your business.
+                You don't need another confusing tool. You need a command center designed exactly for how you think and work. Reclaim your time and eliminate the anxiety of not knowing your numbers.
               </p>
 
               {/* Features */}

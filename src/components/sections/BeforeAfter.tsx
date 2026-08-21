@@ -5,20 +5,20 @@ import { useRef } from "react";
 import { X, Check } from "lucide-react";
 
 const before = [
-  "Manual Work",
-  "Paper Records",
-  "Slow Processes",
-  "Missed Leads",
-  "Scattered Data",
+  "Wasted Hours",
+  "Lost Customers",
+  "Stress & Confusion",
+  "Human Errors",
+  "Burning Money",
 ];
 
 const after = [
-  "Full Automation",
-  "Smart Workflows",
-  "Centralized Dashboard",
-  "Real-Time Analytics",
-  "Higher Productivity",
-  "Better Decisions",
+  "Time Reclaimed",
+  "Happy Customers",
+  "Peace of Mind",
+  "Zero Mistakes",
+  "Higher Profits",
+  "Total Control",
 ];
 
 export default function BeforeAfter() {
@@ -39,11 +39,11 @@ export default function BeforeAfter() {
         >
           <span className="badge mb-4">The Transformation</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
-            Before & After{" "}
-            <span className="gradient-text">Optqvo</span>
+            The Cost of <span className="text-red-400">Chaos</span> vs{" "}
+            <span className="gradient-text">Clarity</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            See the difference intelligent software makes for businesses that partner with us.
+            Stop losing sleep over messy operations. See what happens when you finally take control of your business.
           </p>
         </motion.div>
 
@@ -65,8 +65,8 @@ export default function BeforeAfter() {
                 <X className="w-5 h-5 text-red-400" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Without Optqvo</h3>
-                <p className="text-xs text-slate-500">Manual operations</p>
+                <h3 className="text-lg font-bold text-white">The Old Way</h3>
+                <p className="text-xs text-slate-500">Drowning in daily tasks</p>
               </div>
             </div>
             <ul className="space-y-3">
@@ -95,8 +95,8 @@ export default function BeforeAfter() {
                   ))}
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-red-400 font-medium">Declining KPIs</p>
-                  <p className="text-xs text-slate-600">No visibility</p>
+                  <p className="text-xs text-red-400 font-medium">Losing Money</p>
+                  <p className="text-xs text-slate-600">High Anxiety</p>
                 </div>
               </div>
             </div>
@@ -114,8 +114,8 @@ export default function BeforeAfter() {
                 <Check className="w-5 h-5 text-emerald-400" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">With Optqvo</h3>
-                <p className="text-xs text-slate-500">Intelligent automation</p>
+                <h3 className="text-lg font-bold text-white">The Optqvo Way</h3>
+                <p className="text-xs text-slate-500">Effortless growth</p>
               </div>
             </div>
             <ul className="space-y-3">
@@ -144,8 +144,8 @@ export default function BeforeAfter() {
                   ))}
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-emerald-400 font-medium">Growing KPIs</p>
-                  <p className="text-xs text-slate-600">Full visibility</p>
+                  <p className="text-xs text-emerald-400 font-medium">Growing Revenue</p>
+                  <p className="text-xs text-slate-600">Deep Confidence</p>
                 </div>
               </div>
             </div>

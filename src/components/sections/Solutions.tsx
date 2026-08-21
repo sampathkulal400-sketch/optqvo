@@ -229,13 +229,13 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
-            <span>●</span> INDUSTRY BLUEPRINTS
+            <span>●</span> BUSINESS TYPES
           </span>
           <h2 className="display-section-title text-[#0A0A0D] mb-4">
-            Engineered For <span className="highlight-lime">Your Business Sector.</span>
+            Built Specifically For <span className="highlight-lime">Your Business Type.</span>
           </h2>
           <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-2xl mx-auto">
-            Select your industry below to inspect the tailored digital tools, ordering flows, and operational systems we build.
+            Choose your business type below to see the simple tools, booking systems, and everyday solutions we build.
           </p>
         </motion.div>
 
@@ -278,7 +278,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
                     {currentSolution.badge}
                   </span>
                   <span className="font-mono text-xs text-[#848492] font-semibold">
-                    SECTOR BLUEPRINT
+                    INDUSTRY SOLUTION
                   </span>
                 </div>
 
@@ -294,7 +294,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
               {/* Feature Capabilities Checklist */}
               <div className="space-y-3 pt-2">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#28113B] block">
-                  SYSTEM CAPABILITIES INCLUDED:
+                  WHAT YOU GET:
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {currentSolution.features.map((feature) => (
@@ -314,7 +314,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
             <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-[#F8F8F5] p-6 sm:p-8 rounded-2xl border border-[#0A0A0D]/08">
               <div className="space-y-4">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-[#848492] font-bold block">
-                  PRACTICAL IMPACT TRANSFORMATION:
+                  HOW IT HELPS YOUR BUSINESS:
                 </span>
 
                 <div className="p-4 rounded-xl bg-rose-50 border border-rose-200/60 space-y-1">

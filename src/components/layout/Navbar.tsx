@@ -72,7 +72,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CCFF00] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]"></span>
               </span>
-              <span>Available for Q1 / Q2 Projects</span>
+              <span>3 Project Slots Open — Fills Fast</span>
             </div>
           </div>
 

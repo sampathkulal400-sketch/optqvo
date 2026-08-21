@@ -27,8 +27,8 @@ const reasons = [
   },
   {
     icon: Brain,
-    title: "Smart Automation",
-    description: "We set up automations that handle your repetitive tasks — from lead follow-ups to invoice generation — so your team doesn't have to.",
+    title: "Stop Losing Leads While You Sleep",
+    description: "Every missed WhatsApp message is lost money. We set up systems that reply to customers instantly, 24/7.",
     gradient: "from-fuchsia-500/10 to-fuchsia-500/0",
     iconColor: "text-fuchsia-400",
     iconBg: "bg-fuchsia-500/10",
@@ -103,11 +103,10 @@ export default function WhyChooseUs() {
         >
           <span className="badge mb-4">Why Optqvo</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
-            Built for <span className="gradient-text">Indian Businesses</span>
+            For Business Owners Who Are <span className="gradient-text">Done Wasting Time</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            We&apos;re a small, focused team that builds real products for real businesses —
-            no bloat, no outsourcing, no disappearing after launch.
+            You don't need another generic tool that collects dust. You need systems that actually save you hours and generate revenue.
           </p>
         </motion.div>
 

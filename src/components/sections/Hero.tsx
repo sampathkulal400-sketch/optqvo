@@ -130,9 +130,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   transition={{ duration: 0.55, delay: 0.08 }}
                   className="display-hero-title text-[#0A0A0D]"
                 >
-                  HAVE A BUSINESS PROBLEM?{" "}
+                  EVERY DAY YOU WAIT,{" "}
                   <span className="block mt-1 sm:mt-2">
-                    <span className="highlight-lime">BUILD THE SOLUTION.</span>
+                    <span className="highlight-lime">A COMPETITOR WINS.</span>
                   </span>
                 </motion.h1>
 
@@ -161,7 +161,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                     className="btn-zip-plum w-full sm:w-auto px-7 sm:px-8 py-4 min-h-[50px] sm:min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-3 shadow-lg cursor-pointer group"
                   >
                     <MessageSquare className="w-4 h-4 text-[#CCFF00] group-hover:scale-110 transition-transform" />
-                    <span>TELL US YOUR PROBLEM</span>
+                    <span>JUST TELL US WHAT YOU SELL</span>
                     <ArrowRight className="w-4 h-4 text-[#CCFF00] group-hover:translate-x-0.5 transition-transform" />
                   </button>
 
@@ -178,11 +178,11 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                 <div className="pt-5 sm:pt-6 border-t border-[#0A0A0D]/08 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 font-mono text-[11px] text-[#50505C]">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
-                    <span className="font-medium">100% Fixed-Price Quote</span>
+                    <span className="font-medium">₹0 Surprise Fees</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
-                    <span className="font-medium">Same-Day WhatsApp Reply</span>
+                    <span className="font-medium">12+ Businesses Helped</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />

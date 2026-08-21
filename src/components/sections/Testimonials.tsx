@@ -19,10 +19,9 @@ export default function Testimonials() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="badge mb-4">Early Adopters</span>
+          <span className="badge mb-4">Founding Clients</span>
           <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-6">
-            Building{" "}
-            <span className="gradient-text">Together</span>
+            Join Businesses <span className="gradient-text">Already Scaling</span>
           </h2>
         </motion.div>
 
@@ -48,9 +47,7 @@ export default function Testimonials() {
           {/* Quote */}
           <blockquote>
             <p className="text-2xl sm:text-3xl font-light text-white leading-relaxed mb-8">
-              &ldquo;We&apos;re currently partnering with our first businesses and offering{" "}
-              <strong className="font-bold gradient-text">early adopter pricing</strong> while building
-              long-term relationships built on results.&rdquo;
+              &ldquo;We&apos;re currently onboarding a select group of businesses as <strong className="font-bold gradient-text">founding clients</strong>. You get our lowest possible pricing forever, in exchange for a case study once you see results.&rdquo;
             </p>
           </blockquote>
 
@@ -68,9 +65,9 @@ export default function Testimonials() {
           {/* Early adopter benefits */}
           <div className="mt-10 grid sm:grid-cols-3 gap-4">
             {[
-              { label: "Early Adopter Pricing", desc: "Exclusive rates for founding clients" },
-              { label: "Direct Access", desc: "Work directly with the founding team" },
-              { label: "Priority Roadmap", desc: "Shape the product and direction" },
+              { label: "Locked-In Pricing", desc: "You keep founding rates forever, even as we grow." },
+              { label: "Direct Access", desc: "Skip the queue. Work directly with the lead engineers." },
+              { label: "Priority Support", desc: "Your requests go straight to the top of our list." },
             ].map((b) => (
               <div key={b.label} className="rounded-xl bg-white/[0.03] border border-white/[0.05] p-4">
                 <p className="text-sm font-semibold text-white mb-1">{b.label}</p>
@@ -89,7 +86,7 @@ export default function Testimonials() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          Become an Early Partner
+          Claim a Founding Slot
         </motion.button>
       </div>
     </section>

@@ -10,28 +10,28 @@ interface FAQProps {
 
 const faqs = [
   {
-    q: "How do I get started with Optqvo?",
-    a: "Simply tap 'Tell Us Your Problem' or message us directly on WhatsApp. Tell us what your business does and what problem you are trying to solve. We reply the same day with practical options, timeline, and an exact price quote.",
+    q: "My business is small — is this really for me?",
+    a: "Absolutely. We don't build massive enterprise software. We build clean, simple tools specifically for small and medium businesses—like a digital menu for a cafe, or an automatic booking page for a clinic. If you want to save time and look professional, this is for you.",
   },
   {
-    q: "Do I need to be technical to work with Optqvo?",
-    a: "Not at all. You just describe what you want to achieve for your business. We explain everything in plain language and handle all design, software coding, domain setup, cloud hosting, and technical integrations for you.",
+    q: "How is Optqvo different from a freelancer?",
+    a: "Freelancers often juggle too many projects and disappear when things break. We are a dedicated engineering team. You get a fixed quote, a clear timeline, and a team that actually stays around to maintain and update your system after it goes live.",
+  },
+  {
+    q: "What if I don't like what you build?",
+    a: "You won't have to guess. Before we write a single line of code, we show you an exact plan and visual sketch of what we are building. We don't start until you are 100% happy with the approach.",
   },
   {
     q: "How much will a website or digital solution cost?",
-    a: "We provide affordable, practical pricing tailored to small and medium businesses. After understanding your requirement, we give you a clear, fixed quote before starting — with no surprise fees later.",
-  },
-  {
-    q: "How long will my project take to complete?",
-    a: "Simple websites, landing pages, and digital QR menus take 1–2 weeks. Custom booking systems, mobile apps, or business tools typically take 3–5 weeks. We give you a realistic timeline upfront.",
+    a: "We provide affordable pricing tailored to your exact needs. After a quick chat to understand your problem, we give you a clear, fixed quote before starting — zero surprise fees, zero hidden costs.",
   },
   {
     q: "Can you help automate repetitive work in WhatsApp or Excel?",
-    a: "Yes! This is one of our most popular services. We help businesses automate WhatsApp customer alerts, lead follow-ups, order notifications, and data sync so you save hours every week.",
+    a: "Yes! This is our most requested service. We set up systems that automatically send WhatsApp customer alerts, follow up on leads, and generate invoices, saving you 15+ hours every single week.",
   },
   {
     q: "What happens after my website or app goes live?",
-    a: "We stay on to support you. We handle web hosting, security backups, updates, and small changes so your website stays online and runs smoothly without you worrying.",
+    a: "We handle the boring stuff. We manage the web hosting, security backups, and technical updates so your website stays online 24/7. You just focus on running your business.",
   },
 ];
 

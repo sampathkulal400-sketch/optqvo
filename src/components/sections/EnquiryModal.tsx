@@ -163,7 +163,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                   type="text"
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
-                  placeholder="e.g. Sri Krishna Sweets, Puttur"
+                  placeholder="e.g. The Daily Grind Cafe"
                   className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
                 />
               </div>

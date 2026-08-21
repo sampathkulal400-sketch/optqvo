@@ -18,11 +18,11 @@ interface ProjectType {
 }
 
 const projectTypes: ProjectType[] = [
-  { id: "website", name: "Website / Landing Page", icon: Globe, baseWeeks: 2, description: "Responsive business website built for conversion & SEO" },
-  { id: "mobile", name: "Mobile App (iOS/Android)", icon: Smartphone, baseWeeks: 6, description: "Native or cross-platform mobile application" },
-  { id: "software", name: "Custom Software / CRM", icon: Code2, baseWeeks: 4, description: "Tailored management system, ERP, or internal tool" },
-  { id: "automation", name: "Business Automation", icon: Zap, baseWeeks: 1, description: "Automated workflows, data syncing & WhatsApp alerts" },
-  { id: "dashboard", name: "Custom Dashboard", icon: BarChart3, baseWeeks: 2, description: "Real-time analytics & reporting command center" },
+  { id: "website", name: "Website / Landing Page", icon: Globe, baseWeeks: 2, description: "Professional business website that looks great on mobile" },
+  { id: "mobile", name: "Mobile App (iOS/Android)", icon: Smartphone, baseWeeks: 6, description: "Custom app for iPhones and Android phones" },
+  { id: "software", name: "Custom Software / CRM", icon: Code2, baseWeeks: 4, description: "Custom software to run your daily operations" },
+  { id: "automation", name: "Business Automation", icon: Zap, baseWeeks: 1, description: "Automate your daily tasks and send WhatsApp alerts" },
+  { id: "dashboard", name: "Custom Dashboard", icon: BarChart3, baseWeeks: 2, description: "Live dashboard to track your business growth" },
 ];
 
 interface FeatureOption {
@@ -32,12 +32,12 @@ interface FeatureOption {
 }
 
 const featureOptions: FeatureOption[] = [
-  { id: "auth", label: "User Login & Accounts", extraDays: 3 },
-  { id: "payments", label: "UPI & Payment Gateway", extraDays: 4 },
-  { id: "admin", label: "Admin Control Panel", extraDays: 5 },
+  { id: "auth", label: "Customer Login Accounts", extraDays: 3 },
+  { id: "payments", label: "Online UPI Payments", extraDays: 4 },
+  { id: "admin", label: "Private Owner Dashboard", extraDays: 5 },
   { id: "whatsapp", label: "Automated WhatsApp Alerts", extraDays: 3 },
-  { id: "database", label: "Cloud Database & API", extraDays: 4 },
-  { id: "crm", label: "CRM & Customer Management", extraDays: 5 },
+  { id: "database", label: "Secure Cloud Storage", extraDays: 4 },
+  { id: "crm", label: "Customer Management System", extraDays: 5 },
 ];
 
 export default function ProjectEstimator() {
