@@ -44,7 +44,7 @@ export default function Home() {
         {/* 4. Custom Solutions: Dedicated Problem Solver Section */}
         <CustomSolutions onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 5. Our Work: Real Verified Projects (Gokarna Purohita & SN Cranes Puttur) */}
+        {/* 5. Our Work: Real Verified Projects (SN Cranes Puttur) */}
         <Portfolio onOpenEnquiry={handleOpenEnquiry} />
 
         {/* 6. About: Simple, Trustworthy Story */}
