@@ -14,6 +14,9 @@ import {
   Cpu,
   Database,
   Smartphone,
+  TrendingUp,
+  Clock,
+  ArrowUpRight,
 } from "lucide-react";
 
 interface CustomSolutionsProps {
@@ -22,40 +25,59 @@ interface CustomSolutionsProps {
 
 const transformations = [
   {
-    id: "inquiry-friction",
-    icon: Smartphone,
-    problem: "Customers repeatedly ask the exact same menu, timing, and pricing questions over phone calls.",
-    approach: "Deploy an instant WhatsApp automated assistant and clean interactive digital menu.",
-    solution: "24/7 automated inquiry responder with 1-tap WhatsApp catalog checkout.",
-    result: "Saves 15+ hours of manual staff chatting weekly and never misses an after-hours lead.",
-    tag: "CUSTOMER EXPERIENCE",
+    id: "manual-to-automated",
+    title: "Manual Processes → Automated Workflows",
+    icon: Zap,
+    tag: "WORKFLOW AUTOMATION",
+    problem: "Staff spend 3+ hours daily replying to identical menu questions, confirming orders manually, and typing repetitive WhatsApp messages.",
+    approach: "Deploy custom webhook triggers and instant WhatsApp automation scripts connected to the ordering portal.",
+    solution: "24/7 intelligent automated inquiry responder with 1-tap WhatsApp catalog and instant order confirmations.",
+    result: "Reclaims 15+ staff hours weekly and converts after-hours inquiries while you sleep.",
+    metric: "15+ Hours Saved / Week",
   },
   {
-    id: "manual-records",
+    id: "scattered-to-organized",
+    title: "Scattered Information → Organized Systems",
     icon: Database,
-    problem: "Staff manage bookings, orders, and customer entries in loose paper diaries and messy spreadsheets.",
-    approach: "Build a single responsive internal dashboard synced directly with Google Sheets and WhatsApp.",
-    solution: "Unified operational dashboard with live slot management and auto-confirmations.",
-    result: "Zero double-bookings, 100% data audit visibility, and automated reminder alerts.",
     tag: "OPERATIONAL ACCURACY",
+    problem: "Customer contacts, booking logs, and payment receipts are scattered across paper diaries, phone notes, and personal WhatsApp chats.",
+    approach: "Engineer a single secure cloud dashboard synced in real time with Google Sheets, PostgreSQL, and team notifications.",
+    solution: "Unified operational dashboard with live calendar slots, automated customer lookup, and real-time audit logs.",
+    result: "Zero double-bookings, 100% data audit visibility, and automated reminder alerts.",
+    metric: "100% Record Accuracy",
   },
   {
-    id: "disconnected-tools",
+    id: "disconnected-to-integrated",
+    title: "Disconnected Tools → Integrated Pipeline",
     icon: RefreshCw,
-    problem: "Payment gateway, Google forms, and client emails are disconnected, requiring manual copy-pasting.",
-    approach: "Architect seamless webhook pipes that sync every customer transaction instantly.",
-    solution: "Automated event pipeline: payment received → invoice generated → WhatsApp alert sent.",
+    tag: "SYSTEM INTEGRATION",
+    problem: "Payment gateway, booking forms, and client receipts are disconnected silos, requiring staff to copy-paste transaction IDs manually.",
+    approach: "Architect robust API pipes connecting payment triggers directly to instant PDF receipt generation and WhatsApp dispatches.",
+    solution: "Automated event pipeline: Payment Received → Automated Receipt Generated → Instant WhatsApp Confirmation.",
     result: "Instant customer gratification with 0 seconds of repetitive staff data-entry.",
-    tag: "SYSTEM AUTOMATION",
+    metric: "0s Manual Entry Delay",
   },
   {
-    id: "bespoke-rules",
+    id: "slow-to-efficient",
+    title: "Slow Processes → Lightning-Fast Operations",
     icon: Cpu,
-    problem: "Business has unique custom pricing, member tiers, or field rental rules that standard SaaS tools reject.",
-    approach: "Engineer a lightweight, tailor-made web portal built specifically for your exact business rules.",
-    solution: "Custom web application with custom calculations, member authentication, and reporting.",
-    result: "A proprietary asset that matches your exact business model with no monthly SaaS lock-in.",
-    tag: "CUSTOM SOFTWARE",
+    tag: "SPEED & SCALE",
+    problem: "Complex calculations, rental pricing quotes, or membership discounts take 20 minutes to calculate by hand for each customer.",
+    approach: "Build an interactive instant web calculator with custom business pricing algorithms and one-tap PDF quote export.",
+    solution: "Interactive pricing & instant quotation engine configured around your company's proprietary pricing tiers.",
+    result: "Cuts quote turnaround from 4 hours to 10 seconds, accelerating deal closures.",
+    metric: "98% Faster Quotations",
+  },
+  {
+    id: "basic-to-premium",
+    title: "Basic Experiences → High-Converting Digital Presence",
+    icon: Smartphone,
+    tag: "CUSTOMER EXPERIENCE",
+    problem: "Generic static pages with blurry photos and confusing layouts make high-value clients doubt your business credibility.",
+    approach: "Design an authoritative, mobile-first digital flagship with crisp specifications, clear proof, and effortless inquiry flows.",
+    solution: "Custom responsive web application engineered for sub-second speeds, smooth animations, and maximum conversion rates.",
+    result: "Transforms casual online visitors into high-confidence qualified inbound inquiries.",
+    metric: "3.2x Higher Inquiries",
   },
 ];
 
@@ -64,11 +86,8 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const currentTransformation = transformations[selectedIdx];
+  const current = transformations[selectedIdx];
+  const IconComp = current.icon;
 
   return (
     <section
@@ -87,172 +106,150 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
           <span className="badge-plum mb-4">
             <span>●</span> TRANSFORMATION ENGINE
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0A0A0D] mb-4">
+          <h2 className="display-section-title text-[#0A0A0D] mb-4">
             Turning Daily Friction Into <span className="highlight-lime">Automated Systems.</span>
           </h2>
-          <p className="text-[#52525C] text-base sm:text-xl font-normal">
-            See how technology turns manual bottlenecks into automated, reliable workflows for growing businesses.
+          <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-2xl mx-auto">
+            Explore how modern software engineering turns manual bottlenecks into smooth, automated business workflows.
           </p>
         </motion.div>
 
-        {/* Interactive Problem → Solution Storytelling Matrix */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Transformation Nav Buttons */}
-          <div className="lg:col-span-4 space-y-3">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#878794] font-bold block mb-2 px-1">
-              SELECT SCENARIO:
-            </span>
+        {/* Asymmetric Interactive Transformation Storytelling */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          {/* Left Selector List (5 cols) */}
+          <div className="lg:col-span-5 space-y-2.5">
             {transformations.map((item, idx) => {
               const isSelected = selectedIdx === idx;
-              const IconComp = item.icon;
+              const ItemIcon = item.icon;
+
               return (
-                <div
+                <button
                   key={item.id}
                   onClick={() => setSelectedIdx(idx)}
-                  className={`p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer ${
+                  className={`w-full text-left p-5 rounded-2xl transition-all duration-200 cursor-pointer border flex items-center justify-between gap-3 ${
                     isSelected
-                      ? "bg-[#28113B] text-[#FAFAF8] border-[#28113B] shadow-md -translate-y-0.5"
-                      : "bg-white text-[#0A0A0D] border-[#0A0A0D]/08 hover:border-[#0A0A0D]/20"
+                      ? "bg-[#28113B] text-[#FAFAF8] border-[#28113B] shadow-md translate-x-1"
+                      : "bg-[#FFFFFF] text-[#0A0A0D] border-[#0A0A0D]/10 hover:border-[#0A0A0D]/25"
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-2 mb-1">
-                    <span
-                      className={`font-mono text-[10px] uppercase font-bold tracking-wider ${
-                        isSelected ? "text-[#CCFF00]" : "text-[#878794]"
+                  <div className="flex items-center gap-3.5">
+                    <div
+                      className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                        isSelected
+                          ? "bg-white/15 text-[#CCFF00]"
+                          : "bg-[#0A0A0D]/05 text-[#28113B]"
                       }`}
                     >
-                      {item.tag}
-                    </span>
-                    <span
-                      className={`font-mono text-xs font-bold ${
-                        isSelected ? "text-[#CCFF00]" : "text-[#0A0A0D]/40"
-                      }`}
-                    >
-                      0{idx + 1}
-                    </span>
+                      <ItemIcon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span
+                        className={`font-mono text-[9px] font-bold uppercase tracking-wider block ${
+                          isSelected ? "text-[#CCFF00]" : "text-[#848492]"
+                        }`}
+                      >
+                        {item.tag}
+                      </span>
+                      <h4
+                        className={`text-sm sm:text-base font-bold leading-snug ${
+                          isSelected ? "text-[#FAFAF8]" : "text-[#0A0A0D]"
+                        }`}
+                      >
+                        {item.title}
+                      </h4>
+                    </div>
                   </div>
-                  <h4 className="text-sm font-bold leading-snug line-clamp-2">
-                    {item.problem}
-                  </h4>
-                </div>
+
+                  <ArrowRight
+                    className={`w-4 h-4 flex-shrink-0 ${
+                      isSelected ? "text-[#CCFF00]" : "text-[#848492]"
+                    }`}
+                  />
+                </button>
               );
             })}
           </div>
 
-          {/* Right Detailed 4-Stage Architecture Canvas */}
-          <div className="lg:col-span-8">
-            <motion.div
-              key={currentTransformation.id}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.35 }}
-              className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] space-y-6"
-            >
-              {/* Header */}
-              <div className="flex items-center justify-between border-b border-[#0A0A0D]/08 pb-4">
-                <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#28113B] flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#CCFF00] border border-[#0A0A0D]" />
-                  ENGINEERING TRANSFORMATION PIPELINE
-                </span>
-                <span className="font-mono text-xs text-[#878794] font-bold">
-                  STEP 0{selectedIdx + 1} OF 04
+          {/* Right Detailed Problem → Approach → Solution → Result Matrix (7 cols) */}
+          <motion.div
+            key={current.id}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+            className="lg:col-span-7 rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.06)] space-y-6"
+          >
+            <div className="flex items-center justify-between pb-4 border-b border-[#0A0A0D]/08">
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#CCFF00] text-[#0A0A0D] uppercase tracking-widest">
+                  {current.tag}
                 </span>
               </div>
-
-              {/* 4 Steps: Problem → Approach → Solution → Result */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* 1. The Problem */}
-                <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200/80 space-y-2">
-                  <div className="flex items-center justify-between font-mono text-[10px] font-bold text-rose-800 uppercase tracking-widest">
-                    <span>1. BOTTLENECK</span>
-                    <span className="text-rose-600 font-extrabold">PROBLEM</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-rose-950 font-medium leading-relaxed">
-                    {currentTransformation.problem}
-                  </p>
-                </div>
-
-                {/* 2. Our Approach */}
-                <div className="p-5 rounded-2xl bg-[#28113B]/05 border border-[#28113B]/15 space-y-2">
-                  <div className="flex items-center justify-between font-mono text-[10px] font-bold text-[#28113B] uppercase tracking-widest">
-                    <span>2. METHODOLOGY</span>
-                    <span className="text-[#28113B] font-extrabold">APPROACH</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#0A0A0D] font-medium leading-relaxed">
-                    {currentTransformation.approach}
-                  </p>
-                </div>
-
-                {/* 3. The Solution */}
-                <div className="p-5 rounded-2xl bg-[#CCFF00]/20 border border-[#0A0A0D]/15 space-y-2">
-                  <div className="flex items-center justify-between font-mono text-[10px] font-bold text-[#0A0A0D] uppercase tracking-widest">
-                    <span>3. DEPLOYED TECH</span>
-                    <span className="text-[#28113B] font-extrabold">SOLUTION</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#0A0A0D] font-semibold leading-relaxed">
-                    {currentTransformation.solution}
-                  </p>
-                </div>
-
-                {/* 4. The Result */}
-                <div className="p-5 rounded-2xl bg-emerald-50/80 border border-emerald-200 space-y-2">
-                  <div className="flex items-center justify-between font-mono text-[10px] font-bold text-emerald-800 uppercase tracking-widest">
-                    <span>4. MEASURED VALUE</span>
-                    <span className="text-emerald-700 font-extrabold">RESULT</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-emerald-950 font-semibold leading-relaxed">
-                    {currentTransformation.result}
-                  </p>
-                </div>
+              <div className="flex items-center gap-2 font-mono text-xs text-[#28113B] font-bold bg-[#28113B]/06 px-3 py-1 rounded-full border border-[#28113B]/15">
+                <TrendingUp className="w-3.5 h-3.5 text-[#28113B]" />
+                <span>{current.metric}</span>
               </div>
+            </div>
 
-              {/* Action Strip */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#0A0A0D]/08">
-                <span className="text-xs text-[#52525C] font-medium">
-                  Have a similar friction point in your business?
+            {/* The 4-Stage Architectural Progression */}
+            <div className="space-y-4">
+              {/* Problem */}
+              <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200/60">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-rose-700 block mb-1">
+                  1. THE OPERATIONAL FRICTION:
                 </span>
-                <button
-                  onClick={() => onOpenEnquiry ? onOpenEnquiry(currentTransformation.tag) : scrollTo("contact")}
-                  className="btn-zip-plum px-7 py-3 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full sm:w-auto"
-                >
-                  <MessageSquare className="w-3.5 h-3.5 text-[#CCFF00]" />
-                  <span>SOLVE THIS FOR MY BUSINESS</span>
-                </button>
+                <p className="text-xs sm:text-sm text-[#0A0A0D]/85 font-normal leading-relaxed">
+                  {current.problem}
+                </p>
               </div>
-            </motion.div>
-          </div>
+
+              {/* Approach */}
+              <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/60">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-blue-700 block mb-1">
+                  2. OPTQVO ENGINEERING APPROACH:
+                </span>
+                <p className="text-xs sm:text-sm text-[#0A0A0D]/85 font-normal leading-relaxed">
+                  {current.approach}
+                </p>
+              </div>
+
+              {/* Solution */}
+              <div className="p-4 rounded-2xl bg-[#F8F8F5] border border-[#0A0A0D]/10">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#28113B] block mb-1">
+                  3. DELIVERED DIGITAL SYSTEM:
+                </span>
+                <p className="text-xs sm:text-sm text-[#0A0A0D] font-medium leading-relaxed">
+                  {current.solution}
+                </p>
+              </div>
+
+              {/* Result */}
+              <div className="p-4 rounded-2xl bg-emerald-50/80 border border-emerald-300/70">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-emerald-800 block mb-1">
+                  4. MEASURED BUSINESS OUTCOME:
+                </span>
+                <p className="text-xs sm:text-sm text-[#0A0A0D] font-bold leading-relaxed">
+                  {current.result}
+                </p>
+              </div>
+            </div>
+
+            {/* Action Row */}
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="text-xs text-[#848492] font-mono">
+                Have a similar challenge in your operations?
+              </span>
+              <button
+                onClick={() =>
+                  onOpenEnquiry ? onOpenEnquiry(current.title) : undefined
+                }
+                className="btn-zip-plum px-7 py-3.5 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer shadow-md w-full sm:w-auto"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-[#CCFF00]" />
+                <span>SOLVE THIS PROBLEM</span>
+              </button>
+            </div>
+          </motion.div>
         </div>
-
-        {/* High-Impact Bespoke Callout Banner */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="rounded-3xl bg-[#28113B] text-[#FAFAF8] p-8 sm:p-12 lg:p-14 text-center shadow-2xl relative overflow-hidden"
-        >
-          <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <span className="badge-lime">
-              <span>●</span> BESPOKE SOFTWARE & AUTOMATION
-            </span>
-
-            <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#FAFAF8] leading-tight">
-              Have a unique problem that doesn&apos;t fit a standard template?
-            </h3>
-
-            <p className="text-base sm:text-lg text-[#FAFAF8]/80 leading-relaxed font-normal">
-              Tell us what you are trying to improve. We analyze your situation, explain the architecture in plain English, and build a cost-effective system.
-            </p>
-
-            <button
-              onClick={() => onOpenEnquiry ? onOpenEnquiry("Custom Problem") : scrollTo("contact")}
-              className="btn-zip-lime px-9 py-4 rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] inline-flex items-center justify-center gap-2.5 shadow-xl cursor-pointer"
-            >
-              <MessageSquare className="w-4 h-4 flex-shrink-0" />
-              <span>TELL US YOUR UNIQUE PROBLEM</span>
-              <ArrowRight className="w-4 h-4 flex-shrink-0" />
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

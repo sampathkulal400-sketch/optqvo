@@ -11,6 +11,9 @@ import {
   CheckCircle2,
   Sparkles,
   ArrowRight,
+  Workflow,
+  Cpu,
+  Layers,
 } from "lucide-react";
 
 export default function About() {
@@ -21,26 +24,30 @@ export default function About() {
     {
       title: "Real Problems Over Buzzwords",
       description:
-        "We never push bloated software you don't need. If a simple digital menu or WhatsApp automation solves your problem, that's exactly what we build.",
+        "We never push bloated software you don't need. If a simple digital menu, WhatsApp trigger, or booking portal solves your operational friction, that's exactly what we build.",
       tag: "PRACTICAL FOCUS",
+      icon: Cpu,
     },
     {
       title: "Direct Developer Contact",
       description:
-        "No call-center queues or ticketing friction. You communicate directly over WhatsApp with the engineers architecting and maintaining your product.",
+        "Zero middleman account managers or ticketing delays. You collaborate directly with the engineers architecting, building, and maintaining your live system.",
       tag: "ZERO BUREAUCRACY",
+      icon: MessageSquare,
     },
     {
       title: "Fast 1–3 Week Delivery",
       description:
-        "Small businesses can't wait 6 months for a website. We work in rapid, focused sprint cycles to get your digital tools live and generating revenue fast.",
+        "Growing businesses cannot wait 6 months for a website. We work in focused sprint cycles to get your digital tools live and generating revenue rapidly.",
       tag: "SPEED TO MARKET",
+      icon: Zap,
     },
     {
-      title: "Long-Term Ownership & Care",
+      title: "Dedicated Cloud Care",
       description:
-        "Launch day is just the beginning. We handle cloud hosting, security monitoring, domain SSL, and continuous updates so you stay stress-free.",
-      tag: "DEDICATED SUPPORT",
+        "Launch day is just step one. We monitor cloud hosting, SSL certificates, security backups, and handle ongoing technical updates so you remain stress-free.",
+      tag: "LONG-TERM CARE",
+      icon: ShieldCheck,
     },
   ];
 
@@ -48,22 +55,22 @@ export default function About() {
     {
       step: "01",
       name: "Listen & Diagnose",
-      detail: "We discuss your exact operational bottlenecks over a casual WhatsApp or phone conversation.",
+      detail: "We analyze your exact operational bottlenecks over a casual WhatsApp or phone conversation.",
     },
     {
       step: "02",
       name: "Architecture Blueprint",
-      detail: "We outline the exact screen layouts, user journeys, and cost estimate for your approval.",
+      detail: "We outline the exact screen layouts, user journeys, and a fixed price quote for your review.",
     },
     {
       step: "03",
       name: "Precision Engineering",
-      detail: "We build with modern React/Next.js and clean APIs — tested on all devices before launch.",
+      detail: "We build with modern Next.js and clean APIs — tested thoroughly across all screen sizes.",
     },
     {
       step: "04",
-      name: "Launch & Monitor",
-      detail: "Your system goes live with full DNS setup, automated backups, and ongoing support.",
+      name: "Launch & Support",
+      detail: "Your system goes live with automated backups, custom DNS setup, and ongoing developer care.",
     },
   ];
 
@@ -71,7 +78,7 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="relative py-20 lg:py-32 overflow-hidden bg-[#0B0B0E] text-[#FAFAF8]"
+      className="relative py-20 lg:py-32 overflow-hidden bg-[#09090C] text-[#FAFAF8]"
     >
       {/* Ambient Dark Pattern */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -92,7 +99,7 @@ export default function About() {
               <span>●</span> WHY OPTQVO
             </span>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#FAFAF8] leading-[1.08]">
+            <h2 className="display-section-title text-[#FAFAF8]">
               We Solve Business Friction. <span className="text-[#CCFF00]">We Don&apos;t Sell Jargon.</span>
             </h2>
 
@@ -101,68 +108,102 @@ export default function About() {
             </p>
 
             <p className="text-sm sm:text-base text-[#FAFAF8]/65 leading-relaxed font-normal">
-              Most business owners are tired of overcomplicated software agencies that disappear after launch. We believe in high-clarity communication, fixed pricing without surprise invoices, and building digital tools that actually save you time every day.
+              Most software agencies push complicated, overpriced platforms that collect dust. We do the opposite: we diagnose the daily bottlenecks slowing down your business, and build clean software that just works.
             </p>
           </motion.div>
 
-          {/* Right Execution Pipeline Canvas */}
+          {/* Right Stat / Value Highlights Box */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-5"
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="lg:col-span-5 p-7 sm:p-9 rounded-3xl bg-white/04 border border-white/10 space-y-6"
           >
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#15151A] border border-white/10 space-y-5 shadow-2xl">
-              <div className="flex items-center justify-between border-b border-white/08 pb-3">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#CCFF00] font-bold">
-                  HOW WE DELIVER PROJECTS
-                </span>
-                <span className="font-mono text-[10px] text-[#878794] uppercase font-semibold">
-                  4-STEP SPRINT
-                </span>
-              </div>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-[#CCFF00] font-bold block">
+              OUR CORE PROMISES:
+            </span>
 
-              <div className="space-y-3">
-                {executionSteps.map((s) => (
-                  <div
-                    key={s.step}
-                    className="p-3.5 rounded-2xl bg-white/04 border border-white/06 hover:border-white/15 transition-colors"
-                  >
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-mono text-xs font-bold text-[#CCFF00]">
-                        {s.step}
-                      </span>
-                      <h4 className="text-sm font-bold text-[#FAFAF8]">{s.name}</h4>
-                    </div>
-                    <p className="text-xs text-[#FAFAF8]/65 leading-relaxed">{s.detail}</p>
-                  </div>
-                ))}
+            <div className="space-y-4 font-mono text-xs">
+              <div className="flex items-start gap-3 text-white/90">
+                <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0 mt-0.5" />
+                <span>100% Custom Code — No generic clunky templates</span>
+              </div>
+              <div className="flex items-start gap-3 text-white/90">
+                <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0 mt-0.5" />
+                <span>Direct WhatsApp communication with your developer</span>
+              </div>
+              <div className="flex items-start gap-3 text-white/90">
+                <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0 mt-0.5" />
+                <span>Transparent fixed quotes with zero hidden hourly fees</span>
+              </div>
+              <div className="flex items-start gap-3 text-white/90">
+                <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0 mt-0.5" />
+                <span>Lightning-fast cloud hosting & mobile-first UI</span>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* 4 Core Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {engineeringPillars.map((p, i) => (
-            <motion.div
-              key={p.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="p-6 rounded-3xl bg-[#121217] border border-white/08 hover:border-white/20 transition-all flex flex-col justify-between space-y-4"
-            >
-              <div className="space-y-3">
-                <span className="font-mono text-[10px] uppercase tracking-widest font-extrabold text-[#CCFF00]">
-                  {p.tag}
+        {/* 4 Engineering Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {engineeringPillars.map((pillar, idx) => {
+            const PillarIcon = pillar.icon;
+            return (
+              <motion.div
+                key={pillar.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="p-6 sm:p-7 rounded-3xl bg-white/04 border border-white/08 hover:border-white/20 transition-all duration-300 space-y-4"
+              >
+                <div className="w-10 h-10 rounded-2xl bg-white/08 flex items-center justify-center text-[#CCFF00]">
+                  <PillarIcon className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-[#CCFF00] font-bold block mb-1">
+                    {pillar.tag}
+                  </span>
+                  <h4 className="text-lg font-bold text-[#FAFAF8]">
+                    {pillar.title}
+                  </h4>
+                </div>
+                <p className="text-xs sm:text-sm text-white/70 font-normal leading-relaxed">
+                  {pillar.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* 4-Step Execution Process Roadmap */}
+        <div className="pt-8 border-t border-white/10 space-y-8">
+          <div className="text-center max-w-xl mx-auto space-y-2">
+            <span className="font-mono text-xs text-[#CCFF00] uppercase font-bold tracking-widest">
+              HOW WE WORK
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-black text-[#FAFAF8]">
+              From Problem To Live System in 4 Steps
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {executionSteps.map((step) => (
+              <div
+                key={step.step}
+                className="p-6 rounded-2xl bg-white/03 border border-white/06 space-y-2 relative"
+              >
+                <span className="font-mono text-2xl font-black text-[#CCFF00]/40">
+                  {step.step}
                 </span>
-                <h3 className="text-base font-bold text-[#FAFAF8] leading-snug">{p.title}</h3>
-                <p className="text-xs text-[#FAFAF8]/65 leading-relaxed font-normal">
-                  {p.description}
+                <h5 className="text-base font-bold text-[#FAFAF8]">
+                  {step.name}
+                </h5>
+                <p className="text-xs text-white/70 font-normal leading-relaxed">
+                  {step.detail}
                 </p>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

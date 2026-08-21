@@ -1,30 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
 
 /* ─── Global Design Tokens ───────────────────────────────────────── */
 :root {
   --bg-bone: #F8F8F5;
   --bg-card: #FFFFFF;
-  --bg-card-subtle: #F1F1ED;
-  --bg-dark: #0B0B0E;
-  --bg-dark-card: #15151A;
+  --bg-card-subtle: #F2F2ED;
+  --bg-dark: #09090C;
+  --bg-dark-card: #131318;
   --ink-primary: #0A0A0D;
-  --ink-secondary: #52525C;
-  --ink-tertiary: #878794;
+  --ink-secondary: #50505C;
+  --ink-tertiary: #848492;
   --brand-plum: #28113B;
-  --brand-plum-hover: #1E0C2C;
+  --brand-plum-hover: #1D0A2C;
   --brand-lime: #CCFF00;
-  --brand-lime-hover: #B8E600;
+  --brand-lime-hover: #BAE600;
   --border-hairline: rgba(10, 10, 13, 0.08);
   --border-hairline-strong: rgba(10, 10, 13, 0.16);
-  --border-dark-hairline: rgba(255, 255, 255, 0.1);
+  --border-dark-hairline: rgba(255, 255, 255, 0.09);
+  --border-dark-strong: rgba(255, 255, 255, 0.16);
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 /* ─── Layout Wrappers ────────────────────────────────────────────── */
 .section-wrap {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1340px;
   margin-left: auto;
   margin-right: auto;
   padding-left: clamp(1.25rem, 5vw, 4rem);
@@ -54,7 +55,7 @@ body {
   min-height: 100vh;
 }
 
-/* ─── Typography & Display Utilities ─────────────────────────────── */
+/* ─── Monospace Tag Utility ──────────────────────────────────────── */
 .font-mono-tag {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -75,13 +76,13 @@ body {
   bottom: 0.12em;
   left: 0;
   width: 100%;
-  height: 0.35em;
+  height: 0.32em;
   background: var(--brand-lime);
   z-index: -1;
   border-radius: 2px;
 }
 
-/* ─── Refined Editorial Buttons ──────────────────────────────────── */
+/* ─── High-Contrast Technology Buttons ────────────────────────────── */
 .btn-zip-plum {
   background-color: var(--brand-plum);
   color: #FAFAF8;
@@ -91,7 +92,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 9999px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +101,7 @@ body {
 .btn-zip-plum:hover {
   background-color: var(--brand-plum-hover);
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px -6px rgba(40, 17, 59, 0.35);
+  box-shadow: 0 12px 24px -6px rgba(40, 17, 59, 0.35);
 }
 
 .btn-zip-outline {
@@ -113,14 +114,14 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 9999px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 .btn-zip-outline:hover {
   border-color: var(--ink-primary);
-  background-color: rgba(10, 10, 13, 0.04);
+  background-color: rgba(10, 10, 13, 0.05);
   transform: translateY(-1px);
 }
 
@@ -133,7 +134,7 @@ body {
   text-transform: uppercase;
   font-weight: 800;
   border-radius: 9999px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -142,15 +143,15 @@ body {
 .btn-zip-lime:hover {
   background-color: var(--brand-lime-hover);
   transform: translateY(-1px);
-  box-shadow: 0 12px 28px -6px rgba(204, 255, 0, 0.45);
+  box-shadow: 0 14px 30px -6px rgba(204, 255, 0, 0.45);
 }
 
 /* ─── Badges & Tags ──────────────────────────────────────────────── */
 .badge-plum {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.85rem;
+  gap: 0.45rem;
+  padding: 0.38rem 0.9rem;
   border-radius: 9999px;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -165,8 +166,8 @@ body {
 .badge-lime {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.85rem;
+  gap: 0.45rem;
+  padding: 0.38rem 0.9rem;
   border-radius: 9999px;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -181,11 +182,11 @@ body {
 .badge-subtle {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.75rem;
+  gap: 0.4rem;
+  padding: 0.32rem 0.8rem;
   border-radius: 9999px;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -196,12 +197,12 @@ body {
 
 /* ─── Grid Hairlines & Subtle Patterns ───────────────────────────── */
 .dot-grid {
-  background-image: radial-gradient(rgba(10, 10, 13, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(10, 10, 13, 0.11) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 .dark-dot-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -213,21 +214,38 @@ body {
   border-color: var(--border-hairline-strong);
 }
 
-/* ─── Tech Animation Elements ────────────────────────────────────── */
-@keyframes pulseSubtle {
-  0%, 100% { opacity: 0.9; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.97); }
+/* ─── Tech Pulse & Signal Stream ─────────────────────────────────── */
+@keyframes pulseSignal {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
 }
-.pulse-subtle {
-  animation: pulseSubtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.signal-stream {
+  animation: pulseSignal 2.4s ease-in-out infinite;
 }
 
 @keyframes pingDot {
   0% { transform: scale(1); opacity: 1; }
-  75%, 100% { transform: scale(2.2); opacity: 0; }
+  75%, 100% { transform: scale(2.4); opacity: 0; }
 }
 .dot-ping {
-  animation: pingDot 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: pingDot 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* ─── Editorial Typography Scaling ───────────────────────────────── */
+.display-hero-title {
+  font-size: clamp(2.5rem, 6.5vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+}
+
+.display-section-title {
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 900;
 }
 
 /* ─── Responsive & Smooth Scrolling ──────────────────────────────── */

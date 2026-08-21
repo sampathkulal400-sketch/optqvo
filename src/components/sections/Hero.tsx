@@ -14,6 +14,11 @@ import {
   Layers,
   Sparkles,
   Terminal,
+  Activity,
+  ShieldCheck,
+  ArrowUpRight,
+  Workflow,
+  RefreshCw,
 } from "lucide-react";
 
 interface HeroProps {
@@ -27,8 +32,8 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const yText = useTransform(scrollYProgress, [0, 1], [0, 40]);
-  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const yText = useTransform(scrollYProgress, [0, 1], [0, 35]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -37,44 +42,58 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
   const workflowNodes = [
     {
       id: 0,
-      title: "Customer Touchpoint",
-      badge: "INPUT",
-      metric: "< 0.4s response",
+      phase: "PHASE 01",
+      badge: "INGESTION & CAPTURE",
+      title: "Customer Touchpoint Layer",
+      tagline: "Frictionless intent capture across mobile & web",
+      metric: "< 350ms response",
       icon: Smartphone,
-      description: "Digital QR Menu, Online Booking Form, or Custom Web App capturing customer orders & intent.",
-      status: "LIVE & SYNCED",
+      description: "Digital QR menus, instant booking forms, web applications, and customer portals capturing orders with zero app downloads.",
+      status: "LIVE STREAM",
+      activeTelemetry: "24/7 Multi-channel Traffic Ingestion",
+      events: ["Table Scan Verified", "Booking Slot Selected", "Customer Inquiry Logged"],
       color: "#28113B",
       accent: "#CCFF00",
     },
     {
       id: 1,
-      title: "Smart Automation Core",
-      badge: "LOGIC",
+      phase: "PHASE 02",
+      badge: "LOGIC & AUTOMATION",
+      title: "Intelligent Event Pipeline",
+      tagline: "Zero manual data-entry or copy-paste friction",
       metric: "100% Automated",
       icon: Cpu,
-      description: "Direct WhatsApp notifications, instant invoice dispatch, CRM syncing, and scheduled follow-ups.",
-      status: "ROUTING EVENTS",
-      color: "#1E293B",
+      description: "Automated webhook routers dispatching instant WhatsApp order alerts, auto-generating PDF invoices, and synchronizing customer CRM entries.",
+      status: "ROUTING REALTIME",
+      activeTelemetry: "Zero Manual Intervention Required",
+      events: ["Instant WhatsApp Alert Sent", "PDF Invoice Generated", "Inventory Synced"],
+      color: "#181824",
       accent: "#38BDF8",
     },
     {
       id: 2,
-      title: "Unified Business Dashboard",
-      badge: "CONTROL",
-      metric: "Real-time Metrics",
+      phase: "PHASE 03",
+      badge: "CONTROL & INSIGHTS",
+      title: "Unified Operational Hub",
+      tagline: "Complete visibility for business owners & managers",
+      metric: "99.9% Cloud Uptime",
       icon: Database,
-      description: "Simple operational hub for store managers: order tracking, booking calendar, and revenue logs.",
+      description: "Clean, responsive business dashboards replacing messy spreadsheets — tracking daily revenue, active orders, customer history, and team tasks.",
       status: "SECURE CLOUD",
-      color: "#14532D",
+      activeTelemetry: "Live Sync with Google Sheets / DB",
+      events: ["Revenue Analytics Live", "Team Dispatch Updated", "Encrypted Cloud Backup"],
+      color: "#112217",
       accent: "#4ADE80",
     },
   ];
+
+  const activeData = workflowNodes[activeNode];
 
   return (
     <section
       id="home"
       ref={ref}
-      className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden bg-[#F8F8F5]"
+      className="relative pt-28 pb-16 sm:pt-36 sm:pb-28 overflow-hidden bg-[#F8F8F5]"
     >
       {/* Background Subtle Tech Matrix & Ambient Blur */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -90,220 +109,204 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="flex items-center gap-3 mb-6"
+            className="flex flex-wrap items-center gap-3 mb-6"
           >
             <span className="badge-plum">
-              <span>●</span> PRACTICAL DIGITAL SOLUTIONS
+              <span>●</span> PRACTICAL DIGITAL SYSTEMS
             </span>
-            <span className="hidden sm:inline-block font-mono text-[11px] text-[#52525C] uppercase tracking-widest font-semibold">
-              Software • Automation • Web • Mobile
+            <span className="hidden sm:inline-block font-mono text-[11px] text-[#50505C] uppercase tracking-widest font-semibold">
+              Software Engineering • Automations • Web • Mobile
             </span>
           </motion.div>
 
-          {/* Main Hero Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.1 }}
-                className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#0A0A0D] leading-[1.05]"
-              >
-                HAVE A BUSINESS PROBLEM?{" "}
-                <span className="block mt-2">
-                  <span className="highlight-lime">BUILD THE SOLUTION.</span>
-                </span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg sm:text-2xl text-[#52525C] leading-relaxed max-w-2xl font-normal"
-              >
-                Optqvo helps restaurants, shops, hotels, clinics, and growing enterprises build practical digital tools — from custom websites and QR ordering to automated WhatsApp systems and business dashboards.{" "}
-                <span className="font-bold text-[#0A0A0D]">
-                  No tech jargon. No corporate fluff.
-                </span>
-              </motion.p>
-
-              {/* Action Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2"
-              >
-                <button
-                  onClick={() => onOpenEnquiry ? onOpenEnquiry() : scrollTo("contact")}
-                  className="btn-zip-plum px-8 py-4 min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2.5 shadow-lg cursor-pointer"
+          {/* Main Hero Asymmetric Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+            {/* Left Column: Bold Typography & Action Triggers (7 cols) */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
+              <div className="space-y-6">
+                <motion.h1
+                  initial={{ opacity: 0, y: 22 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.08 }}
+                  className="display-hero-title text-[#0A0A0D]"
                 >
-                  <MessageSquare className="w-4 h-4 text-[#CCFF00] flex-shrink-0" />
-                  <span>TELL US YOUR PROBLEM</span>
-                </button>
-
-                <button
-                  onClick={() => scrollTo("solutions")}
-                  className="btn-zip-outline px-8 py-4 min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] flex items-center justify-center gap-2 shadow-sm cursor-pointer"
-                >
-                  <span>EXPLORE SOLUTIONS</span>
-                  <ArrowRight className="w-4 h-4 text-[#0A0A0D] flex-shrink-0" />
-                </button>
-              </motion.div>
-
-              {/* Trust Metric Hairline Strip */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="pt-6 border-t border-[#0A0A0D]/10 grid grid-cols-3 gap-4"
-              >
-                <div>
-                  <div className="font-mono text-xl sm:text-2xl font-black text-[#0A0A0D]">1–3 Wks</div>
-                  <div className="font-mono text-[11px] uppercase tracking-wider text-[#878794] font-semibold">Fast Deployment</div>
-                </div>
-                <div>
-                  <div className="font-mono text-xl sm:text-2xl font-black text-[#0A0A0D]">Direct</div>
-                  <div className="font-mono text-[11px] uppercase tracking-wider text-[#878794] font-semibold">WhatsApp Access</div>
-                </div>
-                <div>
-                  <div className="font-mono text-xl sm:text-2xl font-black text-[#0A0A0D]">Fixed</div>
-                  <div className="font-mono text-[11px] uppercase tracking-wider text-[#878794] font-semibold">No Surprise Pricing</div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Right Interactive Tech Architecture Visual */}
-            <div className="lg:col-span-5">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.96, y: 24 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.06)] space-y-6"
-              >
-                {/* Tech Terminal Header */}
-                <div className="flex items-center justify-between border-b border-[#0A0A0D]/08 pb-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#CCFF00] border border-[#0A0A0D]/30" />
-                    <span className="font-mono text-xs font-bold text-[#0A0A0D] tracking-wider uppercase">
-                      Optqvo Architecture Matrix
-                    </span>
-                  </div>
-                  <span className="font-mono text-[10px] text-[#878794] uppercase tracking-widest font-semibold">
-                    CONNECTED ECOSYSTEM
+                  HAVE A BUSINESS PROBLEM?{" "}
+                  <span className="block mt-2">
+                    <span className="highlight-lime">BUILD THE SOLUTION.</span>
                   </span>
-                </div>
+                </motion.h1>
 
-                {/* Architecture Step Selector */}
-                <div className="space-y-3">
-                  {workflowNodes.map((node, idx) => {
-                    const isSelected = activeNode === node.id;
-                    const IconComp = node.icon;
-                    return (
-                      <div
-                        key={node.id}
-                        onClick={() => setActiveNode(node.id)}
-                        className={`p-4 rounded-2xl border transition-all duration-300 cursor-pointer ${
-                          isSelected
-                            ? "bg-[#28113B] text-[#FAFAF8] border-[#28113B] shadow-md -translate-y-0.5"
-                            : "bg-[#F8F8F5] text-[#0A0A0D] border-[#0A0A0D]/08 hover:border-[#0A0A0D]/25"
-                        }`}
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-2.5">
-                            <div
-                              className={`w-8 h-8 rounded-xl flex items-center justify-center ${
-                                isSelected ? "bg-white/10 text-[#CCFF00]" : "bg-[#0A0A0D]/06 text-[#28113B]"
-                              }`}
-                            >
-                              <IconComp className="w-4 h-4" />
-                            </div>
-                            <div>
-                              <h4 className="text-xs sm:text-sm font-bold leading-tight">{node.title}</h4>
-                              <span
-                                className={`font-mono text-[10px] tracking-wider uppercase font-semibold ${
-                                  isSelected ? "text-[#CCFF00]" : "text-[#878794]"
-                                }`}
-                              >
-                                {node.badge} • {node.metric}
-                              </span>
-                            </div>
-                          </div>
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.16 }}
+                  className="text-base sm:text-xl lg:text-2xl text-[#50505C] font-normal leading-relaxed max-w-2xl"
+                >
+                  We engineer tailor-made digital systems, WhatsApp automations, fast web applications, and operational dashboards for businesses that want to operate smarter and scale faster.
+                </motion.p>
+              </div>
 
-                          <span
-                            className={`font-mono text-[10px] font-bold px-2 py-0.5 rounded ${
-                              isSelected
-                                ? "bg-[#CCFF00] text-[#0A0A0D]"
-                                : "bg-[#0A0A0D]/08 text-[#0A0A0D]"
-                            }`}
-                          >
-                            {node.status}
-                          </span>
-                        </div>
-
-                        {isSelected && (
-                          <motion.p
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            className="text-xs text-[#FAFAF8]/80 leading-relaxed pt-1"
-                          >
-                            {node.description}
-                          </motion.p>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Live Action Integration Box */}
-                <div className="p-4 rounded-2xl bg-[#0A0A0D] text-[#FAFAF8] flex items-center justify-between gap-3">
-                  <div className="space-y-0.5">
-                    <div className="flex items-center gap-1.5 font-mono text-[11px] text-[#CCFF00] font-bold uppercase">
-                      <Sparkles className="w-3.5 h-3.5 text-[#CCFF00]" />
-                      <span>Custom Built For You</span>
-                    </div>
-                    <p className="text-xs text-[#FAFAF8]/70">
-                      No generic templates. Built around your real business workflows.
-                    </p>
-                  </div>
+              {/* Action Buttons & Secondary Exploration */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.24 }}
+                className="space-y-6 pt-2"
+              >
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <button
-                    onClick={() => onOpenEnquiry ? onOpenEnquiry() : scrollTo("contact")}
-                    className="font-mono text-xs font-bold text-[#CCFF00] hover:underline underline-offset-4 cursor-pointer bg-transparent border-none flex-shrink-0"
+                    onClick={() =>
+                      onOpenEnquiry ? onOpenEnquiry("Hero Primary CTA") : scrollTo("contact")
+                    }
+                    className="btn-zip-plum px-8 py-4 min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-3 shadow-lg cursor-pointer group"
                   >
-                    BUILD →
+                    <MessageSquare className="w-4 h-4 text-[#CCFF00] group-hover:scale-110 transition-transform" />
+                    <span>TELL US YOUR PROBLEM</span>
+                    <ArrowRight className="w-4 h-4 text-[#CCFF00] group-hover:translate-x-0.5 transition-transform" />
+                  </button>
+
+                  <button
+                    onClick={() => scrollTo("work")}
+                    className="btn-zip-outline px-8 py-4 min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <span>INSPECT SHIPPED WORK</span>
+                    <ArrowUpRight className="w-4 h-4 text-[#50505C]" />
                   </button>
                 </div>
+
+                {/* Supporting Trust & Performance Proof Strip */}
+                <div className="pt-6 border-t border-[#0A0A0D]/08 grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-[11px] text-[#50505C]">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
+                    <span className="font-medium">100% Fixed-Price Quote</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
+                    <span className="font-medium">Same-Day WhatsApp Reply</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
+                    <span className="font-medium">Rapid 1–3 Week Delivery</span>
+                  </div>
+                </div>
               </motion.div>
             </div>
-          </div>
 
-          {/* 4-Pillar Hairline Bottom Strip */}
-          <div className="mt-14 sm:mt-20 pt-8 border-t border-[#0A0A0D]/10 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="border-l-2 border-[#28113B] pl-3">
-              <span className="font-mono text-[11px] font-bold text-[#28113B] uppercase tracking-widest">
-                CUSTOM WEBSITES
-              </span>
-              <p className="text-xs text-[#52525C] font-medium mt-1">High-speed, conversion-focused</p>
-            </div>
-            <div className="border-l-2 border-[#28113B] pl-3">
-              <span className="font-mono text-[11px] font-bold text-[#28113B] uppercase tracking-widest">
-                QR & ORDERING
-              </span>
-              <p className="text-xs text-[#52525C] font-medium mt-1">Instant digital menus & catalog</p>
-            </div>
-            <div className="border-l-2 border-[#28113B] pl-3">
-              <span className="font-mono text-[11px] font-bold text-[#28113B] uppercase tracking-widest">
-                AUTOMATIONS
-              </span>
-              <p className="text-xs text-[#52525C] font-medium mt-1">WhatsApp & business workflows</p>
-            </div>
-            <div className="border-l-2 border-[#28113B] pl-3">
-              <span className="font-mono text-[11px] font-bold text-[#28113B] uppercase tracking-widest">
-                BESPOKE TOOLS
-              </span>
-              <p className="text-xs text-[#52525C] font-medium mt-1">Dashboards & tailor-made apps</p>
-            </div>
+            {/* Right Column: Original Interactive System Architecture Visualizer (5 cols) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-5 flex flex-col"
+            >
+              <div className="rounded-3xl bg-[#09090C] text-[#FAFAF8] p-6 sm:p-7 border border-white/10 shadow-[0_24px_50px_rgba(0,0,0,0.14)] flex flex-col justify-between h-full relative overflow-hidden">
+                {/* Visualizer Header Bar */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                      <span className="font-mono text-[10px] text-white/50 uppercase tracking-widest ml-2">
+                        SYSTEM ARCHITECTURE ENGINE
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/06 border border-white/10 font-mono text-[10px] text-[#CCFF00]">
+                      <Activity className="w-3 h-3 animate-pulse" />
+                      <span>LIVE TELEMETRY</span>
+                    </div>
+                  </div>
+
+                  {/* Interactive Phase Selectors */}
+                  <div className="grid grid-cols-3 gap-1.5 p-1 bg-white/05 rounded-2xl border border-white/08">
+                    {workflowNodes.map((node, idx) => {
+                      const isSelected = activeNode === idx;
+                      const IconComponent = node.icon;
+                      return (
+                        <button
+                          key={node.id}
+                          onClick={() => setActiveNode(idx)}
+                          className={`p-2.5 rounded-xl text-left transition-all duration-200 cursor-pointer border-none flex flex-col gap-1 ${
+                            isSelected
+                              ? "bg-white/15 text-[#FAFAF8] shadow-sm"
+                              : "bg-transparent text-white/50 hover:text-white/80 hover:bg-white/05"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="font-mono text-[9px] font-bold text-[#CCFF00] uppercase">
+                              {node.phase}
+                            </span>
+                            <IconComponent className="w-3.5 h-3.5" />
+                          </div>
+                          <span className="font-mono text-[10px] font-bold truncate">
+                            {node.badge}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Active Node Live Showcase Panel */}
+                <div className="my-5 p-5 rounded-2xl bg-white/04 border border-white/08 space-y-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <span className="font-mono text-[10px] uppercase font-bold text-[#CCFF00] tracking-wider block">
+                        {activeData.badge} • {activeData.metric}
+                      </span>
+                      <h4 className="text-lg sm:text-xl font-black text-[#FAFAF8] mt-0.5">
+                        {activeData.title}
+                      </h4>
+                    </div>
+                    <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#CCFF00] flex-shrink-0">
+                      <activeData.icon className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-normal">
+                    {activeData.description}
+                  </p>
+
+                  {/* Live Simulated Event Dispatch Stream */}
+                  <div className="space-y-1.5 pt-2 border-t border-white/08">
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-white/40 block">
+                      EXECUTED AUTOMATION EVENTS:
+                    </span>
+                    <div className="space-y-1">
+                      {activeData.events.map((evt, i) => (
+                        <div
+                          key={evt}
+                          className="flex items-center justify-between font-mono text-[10px] text-white/90 bg-white/04 px-2.5 py-1.5 rounded-lg border border-white/05"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00]" />
+                            <span>{evt}</span>
+                          </div>
+                          <span className="text-emerald-400 font-bold">200 OK</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Visualizer Footer Bar */}
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between font-mono text-[10px] text-white/60">
+                  <span>TAP TABS TO INSPECT PIPELINE</span>
+                  <button
+                    onClick={() =>
+                      onOpenEnquiry
+                        ? onOpenEnquiry(activeData.title)
+                        : scrollTo("contact")
+                    }
+                    className="text-[#CCFF00] hover:underline cursor-pointer bg-transparent border-none p-0 flex items-center gap-1 font-bold"
+                  >
+                    <span>BUILD THIS FOR YOUR BUSINESS</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>

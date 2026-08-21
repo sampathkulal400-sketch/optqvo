@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   Sparkles,
   ArrowUpRight,
+  MessageSquare,
 } from "lucide-react";
 
 interface SolutionsProps {
@@ -43,7 +44,7 @@ const solutionCategories: SolutionCategory[] = [
       "Make it frictionless for diners to scan, view high-res food photos, place WhatsApp orders, and reserve tables without app downloads.",
     features: [
       "Digital QR Menu (Customers scan & browse live menu instantly)",
-      "Instant price & item updates from mobile without reprinting",
+      "Instant price & item updates from mobile without reprinting costs",
       "Direct WhatsApp order dispatch & table reservation confirmations",
       "Google Maps location, directions, and reviews integration",
       "Daily chef specials, discounts & customer feedback capture",
@@ -71,7 +72,7 @@ const solutionCategories: SolutionCategory[] = [
       "Promotion banners for seasonal sales and festive discounts",
     ],
     simpleExample: {
-      from: "Answering 'Is this in stock? What is the price?' 50 times a day on personal calls...",
+      from: "Answering 'Is this in stock? What is the price?' 50 times a day on personal phone calls...",
       to: "Customers browse your online catalog with prices and tap WhatsApp with the exact item ready to buy.",
     },
   },
@@ -99,64 +100,64 @@ const solutionCategories: SolutionCategory[] = [
   {
     id: "salon",
     name: "Salons & Spas",
-    badge: "SLOT APPOINTMENTS",
+    badge: "SLOT SCHEDULING",
     icon: Scissors,
-    headline: "Transparent Service Menu & Smart Appointment Booking",
+    headline: "Service Rate Card & Online Appointment Booking",
     description:
-      "Allow clients to explore treatments, transparent pricing, and book exact appointment slots without phone tag.",
+      "Display your complete treatment menu, pricing, stylist profiles, and let clients book appointment slots online.",
     features: [
-      "Clean digital service menu with pricing and package options",
-      "Interactive time slot booking calendar",
-      "Automated WhatsApp reminder sent to clients before appointment",
-      "Stylist & therapist profile showcases with portfolio photos",
-      "Seasonal bridal & festive beauty package booking",
-      "Customer feedback & Google review boost system",
+      "Service & price menu with duration and treatment details",
+      "Online appointment booking calendar for clients",
+      "Automated WhatsApp appointment reminder notifications",
+      "Stylist / artist portfolio & before-after showcase",
+      "Promotional package offers & bridal package inquiries",
+      "Customer review showcase & Google Maps directions",
     ],
     simpleExample: {
-      from: "Managing client appointments manually in a paper diary with frequent no-shows...",
-      to: "Clients select their service, pick a date & time slot online, and get automatic WhatsApp reminders.",
+      from: "Double-booking appointments written in paper diaries and clients showing up at the wrong hour...",
+      to: "Clients select their service, pick a free time slot, and get an automated WhatsApp confirmation.",
     },
   },
   {
     id: "clinic",
     name: "Clinics & Doctors",
-    badge: "PATIENT SCHEDULING",
+    badge: "PATIENT APPOINTMENTS",
     icon: Stethoscope,
-    headline: "Patient Appointment Portal & Doctor Information Hub",
+    headline: "Doctor Profile, Consultation Timings & Patient Inquiries",
     description:
-      "Help patients verify doctor timings, clinic specialties, and submit appointment requests with zero friction.",
+      "Build patient trust with a professional clinic website, doctor qualifications, clinic timings, and appointment request forms.",
     features: [
-      "Professional clinic website with doctor credentials & timings",
-      "Patient appointment inquiry form with instant SMS/WhatsApp alert",
-      "Department listings (Dental, Ortho, Physio, General Medicine)",
-      "Clinic location map, parking info & emergency contact numbers",
-      "Frequently asked patient prep guidelines (e.g. fasting tests)",
-      "Simple staff dashboard to view upcoming daily appointments",
+      "Doctor qualifications, specialties & department overview",
+      "Clinic consultation timings & visiting consultant schedule",
+      "Easy patient appointment request form via WhatsApp",
+      "Clinic address, parking info, Google Maps & emergency number",
+      "Patient care guidelines & common health FAQs",
+      "Diagnostic services, lab test list & sample collection info",
     ],
     simpleExample: {
-      from: "Front desk phone constantly busy while patients wait in line for basic scheduling info...",
-      to: "Patients verify doctor availability online and confirm their token number in advance.",
+      from: "Receptionist constantly busy answering patient calls for clinic timings and consultation fees...",
+      to: "Patients verify doctor availability online and book their consultation slot in 30 seconds.",
     },
   },
   {
     id: "education",
     name: "Education & Coaching",
-    badge: "ADMISSIONS & COURSES",
+    badge: "STUDENT ADMISSIONS",
     icon: GraduationCap,
-    headline: "Course Prospectus & Online Admission Lead Engine",
+    headline: "Course Catalog, Faculty Showcase & Admission Lead Capture",
     description:
-      "Present curriculum, faculty credentials, batch timings, and capture qualified student admission inquiries.",
+      "Attract more students with an impressive academy website featuring courses, batch schedules, fees, and instant inquiry forms.",
     features: [
-      "Modern institute website with course & batch details",
-      "Online prospectus download with automatic WhatsApp lead capture",
-      "Direct admission registration & inquiry forms",
-      "Faculty profiles, student success stories & testimonials",
-      "Notice board for exam timetables and results announcements",
-      "Inquiry tracking system for admissions counselors",
+      "Course curriculum, batch timings & fee structure display",
+      "Student registration & admission inquiry capture forms",
+      "Faculty profiles, qualifications & teaching achievements",
+      "Toppers gallery, student testimonials & result showcases",
+      "Downloadable course syllabus brochure (PDF)",
+      "Instant WhatsApp inquiry button for parent counseling",
     ],
     simpleExample: {
-      from: "Distributing paper flyers that get thrown away with no way to track interested leads...",
-      to: "Students download the digital syllabus online and your team receives their contact lead immediately.",
+      from: "Distributing printed paper flyers that get lost, with zero way to track interested parents...",
+      to: "Parents find your courses online, download the syllabus, and submit an admission inquiry directly.",
     },
   },
   {
@@ -164,188 +165,189 @@ const solutionCategories: SolutionCategory[] = [
     name: "Real Estate & Builders",
     badge: "PROPERTY SHOWCASE",
     icon: Building2,
-    headline: "High-Impact Property Showcases & Buyer Lead Capture",
+    headline: "Property Listings, Floor Plans & Site Visit Bookings",
     description:
-      "Display residential and commercial properties with floor plans, site tours, and direct agent connection.",
+      "Showcase residential and commercial properties with high-resolution photo galleries, floor plans, and site visit scheduling.",
     features: [
-      "Interactive property listings with image galleries & floor plans",
-      "Location filters, price tags, and neighborhood landmark maps",
-      "One-tap 'Schedule Site Visit' and WhatsApp agent chat buttons",
-      "Automated brochure download with lead phone verification",
-      "Agent profile directory and contact cards",
-      "Simple CRM dashboard to organize buyer inquiries",
+      "Property gallery, specifications, amenities & floor plans",
+      "Location map, nearby landmarks & connectivity highlights",
+      "Schedule a Site Visit booking form connected to sales team",
+      "Downloadable project brochure & price breakdown request",
+      "Direct WhatsApp chat with property sales executive",
+      "Legal approval status & RERA registration badge display",
     ],
     simpleExample: {
-      from: "Sending bulky 20MB PDFs over WhatsApp that get lost in client chat threads...",
-      to: "Buyers browse interactive property tours online and book a site visit in two taps.",
+      from: "Sending messy property photos individually over WhatsApp to 30 different prospective buyers...",
+      to: "A dedicated property link with high-res photos, floor plans, and a 'Schedule Site Visit' button.",
     },
   },
   {
-    id: "professional",
+    id: "services",
     name: "Professional Services",
-    badge: "PORTFOLIO & CONSULTATIONS",
+    badge: "TRUST & CLIENT PORTFOLIO",
     icon: Briefcase,
-    headline: "High-Trust Portfolios & Client Consultation Engine",
+    headline: "Authoritative Business Website & Consultation Inquiries",
     description:
-      "Designed for architects, designers, chartered accountants, and consultants to win high-ticket clients.",
+      "Establish credibility for your CA firm, legal practice, architectural studio, consultancy, or B2B agency.",
     features: [
-      "Editorial case study and past project showcase layout",
-      "Client consultation booking and inquiry forms",
-      "Transparent service breakdowns and engagement models",
-      "Client testimonials, awards, and industry credentials",
-      "Direct WhatsApp and phone quick-dial integration",
-      "Fast cloud hosting optimized for search engine visibility",
+      "Professional firm overview, partner credentials & expertise",
+      "Detailed service scope & industry specialization breakdown",
+      "Consultation booking & project requirement intake forms",
+      "Client case studies, past projects & credential badges",
+      "Google Reviews integration & client testimonial quotes",
+      "Office location, contact details & working hours display",
     ],
     simpleExample: {
-      from: "Relying purely on unpredictable word-of-mouth with no central place to prove expertise...",
-      to: "A high-trust digital portfolio that showcases completed projects and attracts qualified consultations.",
+      from: "Prospects googling your business find nothing, creating doubts about your company's credibility...",
+      to: "A polished digital flagship that positions your firm as an established industry authority.",
     },
   },
 ];
 
 export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
-  const [activeTab, setActiveTab] = useState<string>("restaurant");
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [activeTab, setActiveTab] = useState<string>("restaurant");
 
-  const activeCategory =
-    solutionCategories.find((cat) => cat.id === activeTab) || solutionCategories[0];
-  const IconComponent = activeCategory.icon;
-
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const currentSolution =
+    solutionCategories.find((cat) => cat.id === activeTab) ||
+    solutionCategories[0];
+  const IconComponent = currentSolution.icon;
 
   return (
     <section
       id="solutions"
       ref={ref}
-      className="relative py-20 lg:py-32 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+      className="relative py-20 lg:py-32 overflow-hidden bg-[#F2F2ED] text-[#0A0A0D]"
     >
-      <div className="section-wrap">
+      <div className="section-wrap relative z-10 space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
-            <span>●</span> TAILORED ARCHITECTURES
+            <span>●</span> INDUSTRY BLUEPRINTS
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0A0A0D] mb-4">
-            Solutions Built for <span className="highlight-lime">Your Business Type</span>
+          <h2 className="display-section-title text-[#0A0A0D] mb-4">
+            Engineered For <span className="highlight-lime">Your Business Sector.</span>
           </h2>
-          <p className="text-[#52525C] text-base sm:text-xl max-w-2xl mx-auto font-normal">
-            Every industry has unique operational friction. Select your sector to explore how Optqvo removes it.
+          <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-2xl mx-auto">
+            Select your industry below to inspect the tailored digital tools, ordering flows, and operational systems we build.
           </p>
         </motion.div>
 
-        {/* Industry Pill Selector Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 sm:flex-wrap sm:justify-center scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 touch-pan-x">
+        {/* Sector Tabs Navigation Matrix */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none max-w-5xl mx-auto justify-start lg:justify-center">
           {solutionCategories.map((cat) => {
             const isActive = activeTab === cat.id;
+            const TabIcon = cat.icon;
             return (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`px-5 py-3 rounded-full font-mono text-xs uppercase tracking-widest font-bold flex items-center justify-center transition-all duration-200 cursor-pointer flex-shrink-0 border ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer whitespace-nowrap border ${
                   isActive
-                    ? "bg-[#28113B] border-[#28113B] text-[#FAFAF8] shadow-md scale-102"
-                    : "bg-[#FFFFFF] border-[#0A0A0D]/10 text-[#52525C] hover:text-[#0A0A0D] hover:border-[#0A0A0D]/25"
+                    ? "bg-[#28113B] text-[#CCFF00] border-[#28113B] shadow-md scale-105"
+                    : "bg-[#FFFFFF] text-[#50505C] border-[#0A0A0D]/10 hover:border-[#0A0A0D]/25 hover:text-[#0A0A0D]"
                 }`}
               >
-                <span className="whitespace-nowrap">{cat.name}</span>
+                <TabIcon className="w-3.5 h-3.5" />
+                <span>{cat.name}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Detailed Interactive Showcase Box */}
+        {/* Detailed Industry Solution Showcase Card */}
         <motion.div
-          key={activeCategory.id}
+          key={currentSolution.id}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
+          className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-8 sm:p-12 lg:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.06)]"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Content Column */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            {/* Left Breakdown (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="space-y-2">
-                <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#28113B] flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#CCFF00] border border-[#0A0A0D]/40" />
-                  {activeCategory.badge}
-                </span>
-                <h3 className="text-2xl sm:text-4xl font-black text-[#0A0A0D] leading-tight">
-                  {activeCategory.headline}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#CCFF00] text-[#0A0A0D] uppercase tracking-widest">
+                    {currentSolution.badge}
+                  </span>
+                  <span className="font-mono text-xs text-[#848492] font-semibold">
+                    SECTOR BLUEPRINT
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-4xl font-black text-[#0A0A0D] tracking-tight leading-tight">
+                  {currentSolution.headline}
                 </h3>
+
+                <p className="text-sm sm:text-base text-[#50505C] font-normal leading-relaxed">
+                  {currentSolution.description}
+                </p>
               </div>
 
-              <p className="text-base sm:text-lg text-[#52525C] leading-relaxed font-normal">
-                {activeCategory.description}
-              </p>
-
-              {/* Feature Checklist */}
-              <div className="pt-2">
-                <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#878794] mb-4">
-                  INCLUDED SYSTEM CAPABILITIES:
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-[#0A0A0D]">
-                  {activeCategory.features.map((feat) => (
-                    <div key={feat} className="flex items-start gap-2.5 font-medium">
+              {/* Feature Capabilities Checklist */}
+              <div className="space-y-3 pt-2">
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#28113B] block">
+                  SYSTEM CAPABILITIES INCLUDED:
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {currentSolution.features.map((feature) => (
+                    <div
+                      key={feature}
+                      className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0A0A0D] font-medium"
+                    >
                       <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0 mt-0.5" />
-                      <span className="leading-snug">{feat}</span>
+                      <span>{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <button
-                  onClick={() => onOpenEnquiry ? onOpenEnquiry(activeCategory.name) : scrollTo("contact")}
-                  className="btn-zip-plum px-8 py-4 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer shadow-md"
-                >
-                  <span>GET SOLUTION FOR {activeCategory.name.toUpperCase()}</span>
-                  <ArrowRight className="w-4 h-4 text-[#CCFF00]" />
-                </button>
-              </div>
             </div>
 
-            {/* Right Before & After Transformation Card */}
-            <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-[#F8F8F5] border border-[#0A0A0D]/10 p-6 sm:p-7 space-y-4 shadow-sm">
-                <div className="flex items-center justify-between border-b border-[#0A0A0D]/08 pb-3">
-                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#52525C]">
-                    OPERATIONAL TRANSFORMATION
-                  </span>
-                  <span className="font-mono text-[10px] text-[#878794] uppercase font-semibold">
-                    REAL METRIC
-                  </span>
-                </div>
+            {/* Right Storytelling Comparison (5 cols) */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-[#F8F8F5] p-6 sm:p-8 rounded-2xl border border-[#0A0A0D]/08">
+              <div className="space-y-4">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-[#848492] font-bold block">
+                  PRACTICAL IMPACT TRANSFORMATION:
+                </span>
 
-                <div className="p-4 rounded-2xl bg-rose-50/80 border border-rose-200/80 text-rose-950 space-y-1">
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-rose-700 block">
+                <div className="p-4 rounded-xl bg-rose-50 border border-rose-200/60 space-y-1">
+                  <span className="font-mono text-[10px] font-bold text-rose-700 uppercase">
                     BEFORE OPTQVO:
                   </span>
-                  <p className="text-xs sm:text-sm text-rose-900 leading-relaxed font-normal">
-                    {activeCategory.simpleExample.from}
+                  <p className="text-xs text-[#0A0A0D]/80 font-normal leading-relaxed">
+                    {currentSolution.simpleExample.from}
                   </p>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#CCFF00]/25 border border-[#0A0A0D]/15 text-[#0A0A0D] space-y-1">
-                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#28113B] block">
+                <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200/60 space-y-1">
+                  <span className="font-mono text-[10px] font-bold text-emerald-800 uppercase">
                     WITH OPTQVO SYSTEM:
                   </span>
-                  <p className="text-xs sm:text-sm text-[#0A0A0D] leading-relaxed font-semibold">
-                    {activeCategory.simpleExample.to}
+                  <p className="text-xs text-[#0A0A0D] font-semibold leading-relaxed">
+                    {currentSolution.simpleExample.to}
                   </p>
                 </div>
+              </div>
 
-                <p className="font-mono text-[11px] text-[#878794] text-center uppercase tracking-wider pt-1 font-semibold">
-                  Customized around your daily operational rules
-                </p>
+              <div className="pt-2">
+                <button
+                  onClick={() =>
+                    onOpenEnquiry
+                      ? onOpenEnquiry(currentSolution.name)
+                      : undefined
+                  }
+                  className="btn-zip-plum w-full py-4 rounded-full font-mono text-xs tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                >
+                  <MessageSquare className="w-4 h-4 text-[#CCFF00]" />
+                  <span>BUILD FOR {currentSolution.name.toUpperCase()}</span>
+                </button>
               </div>
             </div>
           </div>

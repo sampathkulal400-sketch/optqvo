@@ -54,27 +54,27 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
       ref={ref}
       className="relative py-20 lg:py-32 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
     >
-      <div className="section-wrap">
+      <div className="section-wrap relative z-10 space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
             <span>●</span> FREQUENTLY ASKED QUESTIONS
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0A0A0D] mb-4">
+          <h2 className="display-section-title text-[#0A0A0D] mb-4">
             Common <span className="highlight-lime">Questions.</span>
           </h2>
-          <p className="text-[#52525C] text-base sm:text-xl max-w-xl mx-auto font-normal">
+          <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-xl mx-auto">
             Everything you need to know about working with Optqvo — explained in simple terms.
           </p>
         </motion.div>
 
         {/* FAQ Accordion List */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3.5">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
@@ -91,25 +91,19 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer bg-transparent border-none"
+                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-7 text-left cursor-pointer bg-transparent border-none"
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <span className="font-mono text-xs font-bold text-[#878794]">
+                    <span className="font-mono text-xs font-bold text-[#848492]">
                       0{i + 1}
                     </span>
-                    <span className="text-base sm:text-lg font-bold text-[#0A0A0D] leading-snug">
+                    <span className="text-base sm:text-lg font-bold text-[#0A0A0D]">
                       {faq.q}
                     </span>
                   </div>
 
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
-                      isOpen
-                        ? "bg-[#28113B] text-[#CCFF00]"
-                        : "bg-[#0A0A0D]/06 text-[#0A0A0D]"
-                    }`}
-                  >
+                  <div className="w-8 h-8 rounded-full bg-[#0A0A0D]/05 flex items-center justify-center text-[#0A0A0D] flex-shrink-0">
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </button>
@@ -120,10 +114,9 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden"
+                      transition={{ duration: 0.25 }}
                     >
-                      <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-[#52525C] leading-relaxed border-t border-[#0A0A0D]/06 font-normal">
+                      <div className="px-5 sm:px-7 pb-6 pt-1 text-sm sm:text-base text-[#50505C] leading-relaxed font-normal border-t border-[#0A0A0D]/06">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -134,19 +127,24 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
           })}
         </div>
 
-        {/* Bottom Direct Question Callout */}
-        <div className="text-center mt-12">
-          <p className="text-sm text-[#52525C] font-normal">
-            Have a different question about your specific business?{" "}
-            <button
-              onClick={() => onOpenEnquiry ? onOpenEnquiry("FAQ Specific") : scrollTo("contact")}
-              className="font-mono text-xs text-[#28113B] font-bold hover:underline cursor-pointer bg-transparent border-none inline-flex items-center gap-1.5"
-            >
-              <MessageSquare className="w-3.5 h-3.5 text-[#28113B]" />
-              <span>Ask us directly on WhatsApp</span>
-            </button>
+        {/* FAQ Bottom Callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center pt-4"
+        >
+          <p className="text-xs sm:text-sm text-[#848492] font-mono mb-3">
+            Have a different question not listed above?
           </p>
-        </div>
+          <button
+            onClick={() => onOpenEnquiry ? onOpenEnquiry("FAQ Inquiry") : scrollTo("contact")}
+            className="btn-zip-plum px-7 py-3.5 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] inline-flex items-center gap-2 cursor-pointer shadow-md"
+          >
+            <MessageSquare className="w-4 h-4 text-[#CCFF00]" />
+            <span>ASK US DIRECTLY ON WHATSAPP</span>
+          </button>
+        </motion.div>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, MessageSquare, CheckCircle2 } from "lucide-react";
+import { X, Send, MessageSquare, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
 
 const WHATSAPP_NUMBER = "918217206292";
 
@@ -94,119 +94,125 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
               <h3 className="text-2xl sm:text-3xl font-black text-[#0A0A0D] tracking-tight leading-snug">
                 What problem are you trying to solve?
               </h3>
-              <p className="text-xs sm:text-sm text-[#52525C] mt-1 font-normal">
-                Tell us about your business requirement. We reply on WhatsApp the same day with practical options.
+              <p className="text-xs sm:text-sm text-[#50505C] mt-1 font-normal">
+                Tell us about your business requirement. We reply on WhatsApp the same day with practical options and a fixed quote.
               </p>
             </div>
 
-            {/* Quick Sector Selector Chips */}
-            <div className="mb-5 space-y-1.5">
-              <label className="block font-mono text-[11px] font-bold uppercase tracking-wider text-[#878794]">
-                SELECT BUSINESS CATEGORY:
-              </label>
-              <div className="flex flex-wrap gap-1.5">
-                {categoryPills.map((pill) => {
-                  const isSelected = businessType.toLowerCase().includes(pill.toLowerCase().slice(0, 5));
-                  return (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Category Pills */}
+              <div>
+                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-2">
+                  Select Business Type
+                </label>
+                <div className="flex flex-wrap gap-1.5">
+                  {categoryPills.map((cat) => (
                     <button
-                      key={pill}
                       type="button"
-                      onClick={() => setBusinessType(pill)}
-                      className={`px-3 py-1.5 rounded-full font-mono text-[10px] uppercase font-bold tracking-wider cursor-pointer border transition-all ${
-                        isSelected
-                          ? "bg-[#28113B] text-[#CCFF00] border-[#28113B]"
-                          : "bg-white text-[#52525C] border-[#0A0A0D]/10 hover:border-[#0A0A0D]/25"
+                      key={cat}
+                      onClick={() => setBusinessType(cat)}
+                      className={`px-3 py-1.5 rounded-full font-mono text-[11px] transition-all cursor-pointer border ${
+                        businessType === cat
+                          ? "bg-[#28113B] text-[#CCFF00] border-[#28113B] font-bold shadow-sm"
+                          : "bg-white text-[#50505C] border-[#0A0A0D]/10 hover:border-[#0A0A0D]/20"
                       }`}
                     >
-                      {pill}
+                      {cat}
                     </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block font-mono text-xs font-bold uppercase tracking-wider text-[#0A0A0D] mb-1">
-                  Your Name *
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. Rahul Sharma"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] placeholder-[#878794] focus:outline-none focus:border-[#28113B] transition-colors"
-                />
+                  ))}
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Name & Phone Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-[#0A0A0D] mb-1">
-                    Business Name
+                  <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                    Your Name *
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Royal Cafe"
-                    value={businessName}
-                    onChange={(e) => setBusinessName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] placeholder-[#878794] focus:outline-none focus:border-[#28113B] transition-colors"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="e.g. Ramesh Kumar"
+                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
                   />
                 </div>
+
                 <div>
-                  <label className="block font-mono text-xs font-bold uppercase tracking-wider text-[#0A0A0D] mb-1">
-                    WhatsApp Phone *
+                  <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                    WhatsApp Number *
                   </label>
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. 9876543210"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] placeholder-[#878794] focus:outline-none focus:border-[#28113B] transition-colors"
+                    placeholder="e.g. 9876543210"
+                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
                   />
                 </div>
               </div>
 
+              {/* Business Name */}
               <div>
-                <label className="block font-mono text-xs font-bold uppercase tracking-wider text-[#0A0A0D] mb-1">
-                  What problem are you trying to solve? *
+                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                  Business / Store Name (Optional)
+                </label>
+                <input
+                  type="text"
+                  value={businessName}
+                  onChange={(e) => setBusinessName(e.target.value)}
+                  placeholder="e.g. Sri Krishna Sweets, Puttur"
+                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
+                />
+              </div>
+
+              {/* Problem Statement */}
+              <div>
+                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                  Describe Your Problem / What You Need *
                 </label>
                 <textarea
                   required
                   rows={3}
-                  placeholder="e.g. We need a digital QR menu with instant WhatsApp ordering and table reservations for our cafe."
                   value={problemText}
                   onChange={(e) => setProblemText(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] placeholder-[#878794] focus:outline-none focus:border-[#28113B] transition-colors resize-none"
+                  placeholder="e.g. We need a digital menu with QR code for 15 tables so customers can order on WhatsApp directly..."
+                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors resize-none"
                 />
               </div>
 
+              {/* Target Budget */}
               <div>
-                <label className="block font-mono text-xs font-bold uppercase tracking-wider text-[#0A0A0D] mb-1">
-                  Target Budget (Optional)
+                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                  Estimated Budget (Optional)
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. ₹15,000 - ₹35,000 or Flexible"
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] placeholder-[#878794] focus:outline-none focus:border-[#28113B] transition-colors"
+                  placeholder="e.g. ₹10,000 – ₹25,000 or Flexible"
+                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
                 />
               </div>
 
-              <button
-                type="submit"
-                className="btn-zip-plum w-full py-4 px-6 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 shadow-lg cursor-pointer border-none mt-2"
-              >
-                <span>CONNECT ON WHATSAPP DIRECTLY</span>
-                <Send className="w-4 h-4 text-[#CCFF00]" />
-              </button>
+              {/* Submit Button */}
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="btn-zip-plum w-full py-4 rounded-full font-mono text-xs tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                >
+                  <Send className="w-4 h-4 text-[#CCFF00]" />
+                  <span>SUBMIT & CHAT ON WHATSAPP</span>
+                  <ArrowRight className="w-4 h-4 text-[#CCFF00]" />
+                </button>
+              </div>
 
-              <p className="font-mono text-[11px] text-[#878794] text-center uppercase tracking-wider font-semibold">
-                Free 30-min Consultation • Fixed Pricing • Direct WhatsApp
-              </p>
+              <div className="flex items-center justify-center gap-2 text-[11px] text-[#848492] font-mono pt-1">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <span>We never spam or share your contact details</span>
+              </div>
             </form>
           </motion.div>
         </div>
