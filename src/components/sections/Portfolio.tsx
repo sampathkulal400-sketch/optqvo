@@ -20,36 +20,6 @@ interface PortfolioProps {
 
 const projects = [
   {
-    id: "gokarna-purohita",
-    name: "Gokarna Purohita",
-    category: "Pooja Booking Platform & Devotee Portal",
-    url: "https://www.gokarnapurohita.com/",
-    domain: "gokarnapurohita.com",
-    tag: "LIVE PRODUCTION",
-    problem:
-      "Devotees across India struggled to find authentic ritual timings, transparent priest fees, and reliable pooja booking arrangements in Gokarna.",
-    approach:
-      "Engineered an ultra-fast, mobile-first devotional portal with direct WhatsApp inquiry routing, detailed ritual descriptions, and verified booking confirmations.",
-    whatWeBuilt: [
-      "Online Pooja & Ritual Booking Calendar",
-      "Detailed Ritual Guidelines & Information Pages",
-      "One-Tap Instant WhatsApp & Phone Inquiries",
-      "High-Speed Mobile-First Cloud Architecture",
-    ],
-    result:
-      "Transformed fragmented phone inquiries into a streamlined digital booking portal with automated WhatsApp confirmations.",
-    metrics: [
-      { label: "Mobile Rendering", value: "100% Fluid" },
-      { label: "Booking Channels", value: "Direct WhatsApp" },
-      { label: "Middleman Fees", value: "₹0 Commission" },
-    ],
-    fleetHighlights: [
-      "Online Pooja Booking Calendar",
-      "Transparent Ritual Breakdown & Timings",
-      "Direct Devotee WhatsApp Confirmations",
-    ],
-  },
-  {
     id: "sn-cranes-puttur",
     name: "SN Cranes Puttur",
     category: "Heavy Machinery Fleet & Rental Showcase",

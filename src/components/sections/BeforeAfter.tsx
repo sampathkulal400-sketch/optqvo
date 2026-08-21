@@ -14,7 +14,7 @@ const before = [
 
 const after = [
   "Full Automation",
-  "AI Assistance",
+  "Smart Workflows",
   "Centralized Dashboard",
   "Real-Time Analytics",
   "Higher Productivity",

@@ -22,24 +22,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://optqvo.com"),
   title: {
-    default: "Optqvo — Build. Automate. Grow. | AI-Powered Software Engineering & Digital Transformation",
+    default: "Optqvo — Build. Automate. Grow. | Practical Software Engineering & Business Automation",
     template: "%s | Optqvo",
   },
   description:
-    "Optqvo helps businesses build, automate, optimize and scale through modern software, AI solutions, business dashboards, mobile apps and intelligent automation systems.",
+    "Optqvo helps businesses build, automate, optimize and scale through custom web applications, WhatsApp automations, operational dashboards, mobile apps, and business software.",
   keywords: [
-    "AI software development",
-    "digital transformation",
+    "custom software development",
     "business automation",
-    "custom software",
-    "AI solutions",
+    "WhatsApp automation",
+    "web development",
     "mobile app development",
     "business dashboard",
-    "web development",
-    "n8n automation",
     "CRM development",
     "ERP systems",
-    "AI chatbot",
+    "QR menu ordering",
     "Optqvo",
   ],
   authors: [{ name: "Optqvo", url: "https://optqvo.com" }],
@@ -63,13 +60,13 @@ export const metadata: Metadata = {
     siteName: "Optqvo",
     title: "Optqvo — Build. Automate. Grow.",
     description:
-      "We design websites, mobile applications, AI solutions, custom business software, automation systems and intelligent dashboards that help businesses operate smarter.",
+      "We build custom business websites, mobile applications, WhatsApp automations, bespoke business tools, and operational dashboards that help businesses run smoother.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Optqvo — AI-Powered Software Engineering & Digital Transformation",
+        alt: "Optqvo — Software Engineering & Business Automation",
       },
     ],
   },
@@ -77,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Optqvo — Build. Automate. Grow.",
     description:
-      "AI-powered software engineering and digital transformation company. We build websites, mobile apps, AI solutions, automation systems and business dashboards.",
+      "Practical software engineering and business automation. We build custom web apps, mobile apps, WhatsApp automations, and operational dashboards.",
     images: ["/og-image.png"],
     creator: "@optqvo",
     site: "@optqvo",
@@ -114,7 +111,7 @@ export default function RootLayout({
               url: "https://optqvo.com",
               logo: "https://optqvo.com/logo.png",
               description:
-                "AI-powered software engineering and digital transformation company helping businesses build, automate, optimize and scale.",
+                "Practical software engineering and business automation company helping businesses build custom web applications, WhatsApp automations, and operational tools.",
               sameAs: [
                 "https://linkedin.com/company/optqvo",
                 "https://github.com/optqvo",
@@ -127,23 +124,23 @@ export default function RootLayout({
               },
               serviceArea: {
                 "@type": "Place",
-                name: "Global",
+                name: "India & Global",
               },
               offers: [
                 {
                   "@type": "Offer",
-                  name: "Website Development",
-                  description: "Custom websites, landing pages, web applications and e-commerce.",
+                  name: "Website & Web App Development",
+                  description: "Custom websites, business portals, web applications and quick commerce.",
                 },
                 {
                   "@type": "Offer",
-                  name: "AI Solutions",
-                  description: "AI chatbots, assistants, voice agents and workflow integration.",
+                  name: "Custom Business Portals & CRM",
+                  description: "Custom management systems, member portals, and business workflow software.",
                 },
                 {
                   "@type": "Offer",
-                  name: "Business Automation",
-                  description: "n8n automation, CRM automation, WhatsApp and email automation.",
+                  name: "Business & WhatsApp Automation",
+                  description: "WhatsApp notifications, CRM sync, invoice automation, and scheduled alerts.",
                 },
               ],
             }),

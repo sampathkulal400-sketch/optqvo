@@ -30,8 +30,8 @@ function DashboardPreview() {
         <div className="flex-1 mx-3 h-5 rounded-md bg-white/[0.04] flex items-center px-2">
           <span className="text-[10px] text-slate-600">Business Intelligence Dashboard</span>
         </div>
-        <div className="w-4 h-4 rounded bg-violet-500/20 flex items-center justify-center">
-          <span className="text-[8px] text-violet-400 font-bold">AI</span>
+        <div className="w-4 h-4 rounded bg-emerald-500/20 flex items-center justify-center">
+          <span className="text-[8px] text-emerald-400 font-bold">●</span>
         </div>
       </div>
 

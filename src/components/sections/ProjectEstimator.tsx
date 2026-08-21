@@ -37,7 +37,7 @@ const featureOptions: FeatureOption[] = [
   { id: "admin", label: "Admin Control Panel", extraDays: 5 },
   { id: "whatsapp", label: "Automated WhatsApp Alerts", extraDays: 3 },
   { id: "database", label: "Cloud Database & API", extraDays: 4 },
-  { id: "ai", label: "AI Customer Assistant", extraDays: 5 },
+  { id: "crm", label: "CRM & Customer Management", extraDays: 5 },
 ];
 
 export default function ProjectEstimator() {
