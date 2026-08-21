@@ -28,8 +28,8 @@
   max-width: 1340px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1.25rem, 5vw, 4rem);
-  padding-right: clamp(1.25rem, 5vw, 4rem);
+  padding-left: clamp(1rem, 4vw, 4rem);
+  padding-right: clamp(1rem, 4vw, 4rem);
 }
 
 /* ─── Base Styles ────────────────────────────────────────────────── */
@@ -44,6 +44,7 @@ html {
   text-rendering: optimizeLegibility;
   background-color: var(--bg-bone);
   color: var(--ink-primary);
+  touch-action: manipulation;
 }
 
 body {
@@ -53,6 +54,7 @@ body {
   line-height: 1.55;
   overflow-x: hidden;
   min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ─── Monospace Tag Utility ──────────────────────────────────────── */
@@ -97,6 +99,7 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
+  touch-action: manipulation;
 }
 .btn-zip-plum:hover {
   background-color: var(--brand-plum-hover);
@@ -118,6 +121,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  touch-action: manipulation;
 }
 .btn-zip-outline:hover {
   border-color: var(--ink-primary);
@@ -139,6 +143,7 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
+  touch-action: manipulation;
 }
 .btn-zip-lime:hover {
   background-color: var(--brand-lime-hover);
@@ -151,7 +156,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.38rem 0.9rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -167,7 +172,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.38rem 0.9rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -183,7 +188,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.32rem 0.8rem;
+  padding: 0.3rem 0.75rem;
   border-radius: 9999px;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -214,38 +219,33 @@ body {
   border-color: var(--border-hairline-strong);
 }
 
-/* ─── Tech Pulse & Signal Stream ─────────────────────────────────── */
-@keyframes pulseSignal {
-  0% { transform: translateY(0); opacity: 0; }
-  30% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { transform: translateY(100%); opacity: 0; }
+/* ─── Mobile Horizontal Scroll Helpers ───────────────────────────── */
+.horizontal-scroll-touch {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
-.signal-stream {
-  animation: pulseSignal 2.4s ease-in-out infinite;
-}
-
-@keyframes pingDot {
-  0% { transform: scale(1); opacity: 1; }
-  75%, 100% { transform: scale(2.4); opacity: 0; }
-}
-.dot-ping {
-  animation: pingDot 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+.horizontal-scroll-touch::-webkit-scrollbar {
+  display: none;
 }
 
-/* ─── Editorial Typography Scaling ───────────────────────────────── */
+/* ─── Editorial Fluid Typography Scaling ─────────────────────────── */
 .display-hero-title {
-  font-size: clamp(2.5rem, 6.5vw, 5.25rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.15rem, 7.5vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
   font-weight: 900;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .display-section-title {
-  font-size: clamp(2rem, 4.5vw, 3.75rem);
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.85rem, 5.5vw, 3.75rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
   font-weight: 900;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ─── Responsive & Smooth Scrolling ──────────────────────────────── */

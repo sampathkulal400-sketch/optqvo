@@ -74,7 +74,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 16 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="relative w-full max-w-xl bg-[#F8F8F5] text-[#0A0A0D] border border-[#0A0A0D]/15 rounded-3xl p-6 sm:p-9 shadow-2xl z-10 my-auto max-h-[92vh] overflow-y-auto"
+            className="relative w-full max-w-xl bg-[#F8F8F5] text-[#0A0A0D] border border-[#0A0A0D]/15 rounded-3xl p-5 sm:p-9 shadow-2xl z-10 my-auto max-h-[90vh] overflow-y-auto"
           >
             {/* Close Button */}
             <button
@@ -86,12 +86,12 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
             </button>
 
             {/* Header */}
-            <div className="mb-6 pr-8">
-              <span className="badge-plum mb-3">
+            <div className="mb-5 sm:mb-6 pr-8">
+              <span className="badge-plum mb-2.5 sm:mb-3">
                 <MessageSquare className="w-3.5 h-3.5" />
                 <span>TELL US YOUR PROBLEM</span>
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black text-[#0A0A0D] tracking-tight leading-snug">
+              <h3 className="text-xl sm:text-3xl font-black text-[#0A0A0D] tracking-tight leading-snug">
                 What problem are you trying to solve?
               </h3>
               <p className="text-xs sm:text-sm text-[#50505C] mt-1 font-normal">
@@ -99,10 +99,10 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
               {/* Category Pills */}
               <div>
-                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-2">
+                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5 sm:mb-2">
                   Select Business Type
                 </label>
                 <div className="flex flex-wrap gap-1.5">
@@ -126,7 +126,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
               {/* Name & Phone Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                  <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1">
                     Your Name *
                   </label>
                   <input
@@ -135,12 +135,12 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. Ramesh Kumar"
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
+                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                  <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1">
                     WhatsApp Number *
                   </label>
                   <input
@@ -149,14 +149,14 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="e.g. 9876543210"
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
+                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
                   />
                 </div>
               </div>
 
               {/* Business Name */}
               <div>
-                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1">
                   Business / Store Name (Optional)
                 </label>
                 <input
@@ -164,13 +164,13 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
                   placeholder="e.g. Sri Krishna Sweets, Puttur"
-                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
+                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
                 />
               </div>
 
               {/* Problem Statement */}
               <div>
-                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1">
                   Describe Your Problem / What You Need *
                 </label>
                 <textarea
@@ -179,13 +179,13 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                   value={problemText}
                   onChange={(e) => setProblemText(e.target.value)}
                   placeholder="e.g. We need a digital menu with QR code for 15 tables so customers can order on WhatsApp directly..."
-                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors resize-none"
                 />
               </div>
 
               {/* Target Budget */}
               <div>
-                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1.5">
+                <label className="block font-mono text-[11px] uppercase tracking-wider text-[#848492] font-bold mb-1">
                   Estimated Budget (Optional)
                 </label>
                 <input
@@ -193,7 +193,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
                   placeholder="e.g. ₹10,000 – ₹25,000 or Flexible"
-                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
+                  className="w-full px-4 py-3 rounded-2xl bg-white border border-[#0A0A0D]/15 text-base sm:text-sm text-[#0A0A0D] focus:outline-none focus:border-[#28113B] transition-colors"
                 />
               </div>
 

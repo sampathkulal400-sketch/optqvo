@@ -181,14 +181,22 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="fixed top-20 left-4 right-4 z-[99] bg-[#F8F8F5] border border-[#0A0A0D]/12 rounded-3xl p-6 lg:hidden max-h-[82vh] overflow-y-auto shadow-2xl space-y-4"
+              className="fixed top-20 left-4 right-4 z-[99] bg-[#F8F8F5] border border-[#0A0A0D]/12 rounded-3xl p-5 sm:p-6 lg:hidden max-h-[82vh] overflow-y-auto shadow-2xl space-y-4"
             >
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A0A0D]/04 border border-[#0A0A0D]/08 font-mono text-[10px] text-[#52525C] uppercase tracking-wider font-semibold w-fit">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CCFF00] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]"></span>
+                </span>
+                <span>Available for Q1 / Q2 Projects</span>
+              </div>
+
               <div className="space-y-1">
                 {navLinks.map((link) => (
                   <button
                     key={link.href}
                     onClick={() => scrollTo(link.href)}
-                    className="w-full text-left px-4 py-3.5 font-mono text-xs uppercase tracking-widest text-[#0A0A0D] font-bold hover:bg-[#0A0A0D]/06 rounded-xl transition-colors cursor-pointer bg-transparent border-none flex items-center justify-between"
+                    className="w-full text-left px-4 py-3 min-h-[44px] font-mono text-xs uppercase tracking-widest text-[#0A0A0D] font-bold hover:bg-[#0A0A0D]/06 rounded-xl transition-colors cursor-pointer bg-transparent border-none flex items-center justify-between"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-4 h-4 text-[#878794]" />
@@ -200,10 +208,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 <button
                   onClick={() => {
                     setMobileOpen(false);
-                    if (onOpenEnquiry) onOpenEnquiry();
+                    if (onOpenEnquiry) onOpenEnquiry("Mobile Menu CTA");
                     else scrollTo("contact");
                   }}
-                  className="btn-zip-plum w-full py-4 rounded-full font-mono text-xs tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                  className="btn-zip-plum w-full py-4 min-h-[48px] rounded-full font-mono text-xs tracking-widest text-[#FAFAF8] flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   <MessageSquare className="w-4 h-4 text-[#CCFF00]" />
                   <span>TELL US YOUR PROBLEM</span>

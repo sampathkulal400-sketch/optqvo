@@ -20,6 +20,36 @@ interface PortfolioProps {
 
 const projects = [
   {
+    id: "gokarna-purohita",
+    name: "Gokarna Purohita",
+    category: "Pooja Booking Platform & Devotee Portal",
+    url: "https://www.gokarnapurohita.com/",
+    domain: "gokarnapurohita.com",
+    tag: "LIVE PRODUCTION",
+    problem:
+      "Devotees across India struggled to find authentic ritual timings, transparent priest fees, and reliable pooja booking arrangements in Gokarna.",
+    approach:
+      "Engineered an ultra-fast, mobile-first devotional portal with direct WhatsApp inquiry routing, detailed ritual descriptions, and verified booking confirmations.",
+    whatWeBuilt: [
+      "Online Pooja & Ritual Booking Calendar",
+      "Detailed Ritual Guidelines & Information Pages",
+      "One-Tap Instant WhatsApp & Phone Inquiries",
+      "High-Speed Mobile-First Cloud Architecture",
+    ],
+    result:
+      "Transformed fragmented phone inquiries into a streamlined digital booking portal with automated WhatsApp confirmations.",
+    metrics: [
+      { label: "Mobile Rendering", value: "100% Fluid" },
+      { label: "Booking Channels", value: "Direct WhatsApp" },
+      { label: "Middleman Fees", value: "₹0 Commission" },
+    ],
+    fleetHighlights: [
+      "Online Pooja Booking Calendar",
+      "Transparent Ritual Breakdown & Timings",
+      "Direct Devotee WhatsApp Confirmations",
+    ],
+  },
+  {
     id: "sn-cranes-puttur",
     name: "SN Cranes Puttur",
     category: "Heavy Machinery Fleet & Rental Showcase",
@@ -96,8 +126,8 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                 {/* Left Visual / Browser Mockup Card (5 cols) */}
-                <div className="lg:col-span-5 bg-[#28113B] text-[#FAFAF8] p-7 sm:p-10 flex flex-col justify-between relative overflow-hidden">
-                  <div className="space-y-6 relative z-10">
+                <div className="lg:col-span-5 bg-[#28113B] text-[#FAFAF8] p-5 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+                  <div className="space-y-5 sm:space-y-6 relative z-10">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#CCFF00] text-[#0A0A0D] uppercase tracking-widest">
                         {proj.tag}
@@ -117,7 +147,7 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
                       <span className="font-mono text-xs text-[#CCFF00] uppercase font-bold tracking-wider">
                         {proj.category}
                       </span>
-                      <h3 className="text-3xl sm:text-4xl font-black text-[#FAFAF8] mt-1">
+                      <h3 className="text-2xl sm:text-4xl font-black text-[#FAFAF8] mt-1">
                         {proj.name}
                       </h3>
                     </div>
@@ -156,7 +186,7 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
                     </div>
                   </div>
 
-                  <div className="pt-8 border-t border-white/10 relative z-10 flex items-center justify-between text-xs font-mono text-[#FAFAF8]/60">
+                  <div className="pt-6 sm:pt-8 border-t border-white/10 relative z-10 flex items-center justify-between text-xs font-mono text-[#FAFAF8]/60">
                     <span>{proj.domain}</span>
                     <a
                       href={proj.url}
@@ -171,7 +201,7 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
                 </div>
 
                 {/* Right Storytelling Breakdown (7 cols) */}
-                <div className="lg:col-span-7 p-7 sm:p-10 space-y-6 flex flex-col justify-between">
+                <div className="lg:col-span-7 p-5 sm:p-10 space-y-6 flex flex-col justify-between">
                   <div className="space-y-6">
                     {/* The Problem */}
                     <div>

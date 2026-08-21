@@ -240,7 +240,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
         </motion.div>
 
         {/* Sector Tabs Navigation Matrix */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none max-w-5xl mx-auto justify-start lg:justify-center">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 -mx-4 px-4 sm:mx-auto sm:px-0 scrollbar-none max-w-5xl justify-start lg:justify-center">
           {solutionCategories.map((cat) => {
             const isActive = activeTab === cat.id;
             const TabIcon = cat.icon;
@@ -248,7 +248,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer whitespace-nowrap border ${
+                className={`flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer whitespace-nowrap border flex-shrink-0 ${
                   isActive
                     ? "bg-[#28113B] text-[#CCFF00] border-[#28113B] shadow-md scale-105"
                     : "bg-[#FFFFFF] text-[#50505C] border-[#0A0A0D]/10 hover:border-[#0A0A0D]/25 hover:text-[#0A0A0D]"
@@ -267,7 +267,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-8 sm:p-12 lg:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.06)]"
+          className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-5 sm:p-10 lg:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.06)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Breakdown (7 cols) */}
