@@ -2,44 +2,61 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, CheckCircle2, ArrowUpRight, MessageSquare } from "lucide-react";
+import {
+  ExternalLink,
+  CheckCircle2,
+  ArrowUpRight,
+  MessageSquare,
+  Globe,
+  Sparkles,
+  TrendingUp,
+  ShieldCheck,
+} from "lucide-react";
 
 interface PortfolioProps {
   onOpenEnquiry?: (category?: string) => void;
 }
 
-const realProjects = [
+const projects = [
   {
     id: "gokarna-purohita",
     name: "Gokarna Purohita",
-    category: "Pooja Booking & Online Services",
+    category: "Pooja Booking Platform & Devotee Portal",
     url: "https://www.gokarnapurohita.com/",
-    description: "A digital platform designed to make it easier for devotees to explore pooja services, check details, and make online bookings for Gokarna.",
-    whatWeBuilt: [
-      "Online Pooja Booking System",
-      "Service & Ritual Information Pages",
-      "Mobile-Friendly Website Layout",
-      "Direct WhatsApp & Contact Inquiries",
-    ],
-    tag: "Live Project",
+    domain: "gokarnapurohita.com",
+    tag: "LIVE PRODUCTION",
     badgeColor: "bg-amber-100 text-amber-900 border-amber-300",
-    gradient: "from-amber-50/80 via-white to-stone-50",
+    problem:
+      "Devotees across India struggled to find authentic ritual timings, transparent priest fees, and reliable pooja booking arrangements in Gokarna.",
+    whatWeBuilt: [
+      "Online Pooja & Ritual Booking Calendar",
+      "Detailed Ritual Guidelines & Information Pages",
+      "One-Tap WhatsApp & Phone Inquiries",
+      "Mobile-First Responsive Web Architecture",
+    ],
+    result:
+      "Transformed phone-based inquiries into a streamlined digital booking hub with direct WhatsApp confirmations.",
+    metrics: ["100% Mobile Responsive", "Direct WhatsApp Sync", "Zero Middleman Fees"],
   },
   {
     id: "sn-cranes-puttur",
     name: "SN Cranes Puttur",
-    category: "Business Website & Service Showcase",
+    category: "Heavy Machinery Fleet & Rental Showcase",
     url: "https://sn-cranes-puttur.vercel.app/",
-    description: "A professional online presence for a crane rental and heavy equipment business in Puttur, making it easier for clients to view services and get in touch.",
-    whatWeBuilt: [
-      "Professional Crane Rental Website",
-      "Heavy Machinery & Service Showcase",
-      "One-Tap Call & WhatsApp Contact Buttons",
-      "Location & Service Coverage Info",
-    ],
-    tag: "Live Project",
+    domain: "sn-cranes-puttur.vercel.app",
+    tag: "LIVE PRODUCTION",
     badgeColor: "bg-blue-100 text-blue-900 border-blue-300",
-    gradient: "from-blue-50/80 via-white to-stone-50",
+    problem:
+      "A prominent crane and heavy equipment rental service in Puttur lacked a professional online presence to showcase tonnage capacity and regional service coverage.",
+    whatWeBuilt: [
+      "Modern Crane & Fleet Specifications Showcase",
+      "Instant Emergency Rental Contact Buttons",
+      "Service Radius & Location Coverage Mapping",
+      "Fast-Loading Cloud Deployment with 99.9% Uptime",
+    ],
+    result:
+      "Established an authoritative digital catalog enabling site engineers and contractors to verify crane specs and book instantly.",
+    metrics: ["Fast Cloud Load (<0.5s)", "One-Tap Call Dialing", "Regional SEO Visibility"],
   },
 ];
 
@@ -52,111 +69,181 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
   };
 
   return (
-    <section id="work" ref={ref} className="relative py-16 lg:py-24 overflow-hidden bg-[#FAFAF8] text-[#0B0B0C]">
-      <div className="section-wrap">
+    <section
+      id="work"
+      ref={ref}
+      className="relative py-20 lg:py-32 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+    >
+      <div className="section-wrap space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 sm:mb-14"
+          className="text-center max-w-3xl mx-auto"
         >
-          <span className="font-mono text-xs uppercase tracking-widest text-[#FAFAF8] font-bold bg-[#3B1B4E] px-3.5 py-1 rounded-full inline-block mb-4">
-            REAL WORK SHIPPED
+          <span className="badge-plum mb-4">
+            <span>●</span> SHIPPED CLIENT WORK
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-[#0B0B0C] mb-4">
-            Real Projects <span className="highlight-lime">We Have Built</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0A0A0D] mb-4">
+            Real Projects. <span className="highlight-lime">Real Results.</span>
           </h2>
-          <p className="text-[#0B0B0C]/75 text-base sm:text-lg max-w-2xl mx-auto font-normal">
-            Take a look at actual digital solutions we have built for real businesses to solve their online presence and booking needs.
+          <p className="text-[#52525C] text-base sm:text-xl font-normal">
+            Take an in-depth look at actual digital systems we engineered for verified businesses.
           </p>
         </motion.div>
 
-        {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {realProjects.map((proj, i) => (
+        {/* Varied Editorial Case Study Layouts */}
+        <div className="space-y-12">
+          {projects.map((proj, i) => (
             <motion.div
               key={proj.id}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="rounded-3xl bg-white border border-[#0B0B0C]/15 overflow-hidden flex flex-col justify-between hover:border-[#3B1B4E] transition-all duration-300 shadow-xl group"
+              className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:border-[#28113B]/40 transition-all duration-300"
             >
-              {/* Top Banner / Header */}
-              <div className="p-6 sm:p-8 bg-gradient-to-br from-[#3B1B4E]/10 via-[#FAFAF8] to-white border-b border-[#0B0B0C]/10 relative">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-[#CCFF00] text-[#0B0B0C] border border-[#0B0B0C]/20 uppercase tracking-widest">
-                    {proj.tag}
-                  </span>
-                  <a
-                    href={proj.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full bg-[#3B1B4E] text-[#CCFF00] flex items-center justify-center hover:scale-105 transition-transform shadow-sm"
-                    aria-label={`Visit ${proj.name}`}
-                  >
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                </div>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                {/* Left Visual / Browser Mockup Card (5 cols) */}
+                <div className="lg:col-span-5 bg-[#28113B] text-[#FAFAF8] p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+                  <div className="space-y-4 relative z-10">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#CCFF00] text-[#0A0A0D] uppercase tracking-widest">
+                        {proj.tag}
+                      </span>
+                      <a
+                        href={proj.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-full bg-white/10 text-[#CCFF00] flex items-center justify-center hover:scale-110 hover:bg-[#CCFF00] hover:text-[#0A0A0D] transition-all shadow-md"
+                        aria-label={`Visit live site ${proj.name}`}
+                      >
+                        <ArrowUpRight className="w-5 h-5" />
+                      </a>
+                    </div>
 
-                <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#3B1B4E]">{proj.category}</span>
-                <h3 className="text-2xl sm:text-3xl font-black text-[#0B0B0C] mt-1 mb-2">{proj.name}</h3>
-                <p className="text-xs sm:text-sm text-[#0B0B0C]/75 leading-relaxed max-w-lg">
-                  {proj.description}
-                </p>
-              </div>
+                    <div>
+                      <span className="font-mono text-xs text-[#CCFF00] uppercase font-bold tracking-wider">
+                        {proj.category}
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-black text-[#FAFAF8] mt-1">
+                        {proj.name}
+                      </h3>
+                    </div>
 
-              {/* Bottom Body Details */}
-              <div className="p-6 sm:p-8 space-y-6">
-                <div>
-                  <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#0B0B0C]/50 mb-3">WHAT WE BUILT:</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-[#0B0B0C]">
-                    {proj.whatWeBuilt.map((item) => (
-                      <div key={item} className="flex items-center gap-2 font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-[#3B1B4E] flex-shrink-0" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
+                    {/* Metric Chips */}
+                    <div className="space-y-2 pt-2">
+                      {proj.metrics.map((m) => (
+                        <div
+                          key={m}
+                          className="flex items-center gap-2 font-mono text-xs text-[#FAFAF8]/90 bg-white/06 px-3 py-1.5 rounded-xl border border-white/10"
+                        >
+                          <TrendingUp className="w-3.5 h-3.5 text-[#CCFF00]" />
+                          <span>{m}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-8 border-t border-white/10 relative z-10 flex items-center justify-between text-xs font-mono text-[#FAFAF8]/60">
+                    <span>{proj.domain}</span>
+                    <a
+                      href={proj.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#CCFF00] hover:underline flex items-center gap-1 font-bold no-underline"
+                    >
+                      <span>VISIT SITE</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-[#0B0B0C]/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-                  <span className="font-mono text-xs text-[#0B0B0C]/60 truncate">{proj.url.replace("https://", "").replace("/", "")}</span>
-                  <a
-                    href={proj.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-zip-plum px-6 py-2.5 rounded-full font-mono text-xs uppercase tracking-widest text-[#FAFAF8] inline-flex items-center justify-center gap-2 no-underline"
-                  >
-                    <span>VIEW LIVE SITE</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-[#CCFF00] flex-shrink-0" />
-                  </a>
+                {/* Right Storytelling Breakdown (7 cols) */}
+                <div className="lg:col-span-7 p-6 sm:p-10 space-y-6 flex flex-col justify-between">
+                  <div className="space-y-6">
+                    {/* The Problem */}
+                    <div>
+                      <span className="font-mono text-xs font-bold uppercase tracking-widest text-rose-600 block mb-1">
+                        THE BUSINESS CHALLENGE:
+                      </span>
+                      <p className="text-sm sm:text-base text-[#52525C] leading-relaxed font-normal">
+                        {proj.problem}
+                      </p>
+                    </div>
+
+                    {/* What Was Built */}
+                    <div>
+                      <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#28113B] block mb-3">
+                        WHAT OPTQVO ENGINEERED:
+                      </span>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {proj.whatWeBuilt.map((item) => (
+                          <div
+                            key={item}
+                            className="flex items-start gap-2 text-xs sm:text-sm text-[#0A0A0D] font-medium"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* The Result */}
+                    <div className="p-4 rounded-2xl bg-[#CCFF00]/15 border border-[#0A0A0D]/10">
+                      <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#28113B] block mb-1">
+                        THE MEASURED OUTCOME:
+                      </span>
+                      <p className="text-xs sm:text-sm text-[#0A0A0D] font-semibold leading-relaxed">
+                        {proj.result}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="pt-4 border-t border-[#0A0A0D]/08 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <span className="text-xs text-[#878794] font-medium">
+                      Built with clean code & zero template dependencies
+                    </span>
+                    <a
+                      href={proj.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-zip-plum px-6 py-3 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] inline-flex items-center justify-center gap-2 no-underline w-full sm:w-auto"
+                    >
+                      <span>INSPECT LIVE PROJECT</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#CCFF00]" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Portfolio Callout Box */}
+        {/* Portfolio Bottom Callout Box */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-3xl bg-white border border-[#0B0B0C]/15 p-6 sm:p-10 text-center max-w-3xl mx-auto shadow-lg"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-8 sm:p-12 text-center max-w-3xl mx-auto shadow-sm space-y-4"
         >
-          <h3 className="text-xl sm:text-2xl font-black text-[#0B0B0C] mb-2 leading-snug">
-            Want something like this for your business?
+          <h3 className="text-2xl sm:text-3xl font-black text-[#0A0A0D]">
+            Need a high-performing digital asset for your business?
           </h3>
-          <p className="text-xs sm:text-sm text-[#0B0B0C]/75 mb-6 font-normal">
-            Tell us what you need and we will help you find and build the right digital solution.
+          <p className="text-sm sm:text-base text-[#52525C] max-w-xl mx-auto font-normal">
+            Tell us what your business does and we will design, build, and deploy the right digital tool for you.
           </p>
-          <button
-            onClick={() => onOpenEnquiry ? onOpenEnquiry("Portfolio Inquiry") : scrollTo("contact")}
-            className="btn-zip-plum px-8 py-3.5 rounded-full font-mono text-xs uppercase tracking-widest text-[#FAFAF8] inline-flex items-center justify-center gap-2 cursor-pointer border-none shadow-md"
-          >
-            <MessageSquare className="w-4 h-4 text-[#CCFF00] flex-shrink-0" />
-            <span>LET&apos;S TALK</span>
-          </button>
+          <div className="pt-2">
+            <button
+              onClick={() => onOpenEnquiry ? onOpenEnquiry("Work Portfolio") : scrollTo("contact")}
+              className="btn-zip-plum px-8 py-4 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] inline-flex items-center justify-center gap-2 cursor-pointer shadow-md"
+            >
+              <MessageSquare className="w-4 h-4 text-[#CCFF00] flex-shrink-0" />
+              <span>DISCUSS YOUR PROJECT SCOPE</span>
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>

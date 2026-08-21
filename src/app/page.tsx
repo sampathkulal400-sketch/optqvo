@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div style={{ backgroundColor: "#09090B", minHeight: "100vh" }}>
+    <div className="bg-[#F8F8F5] min-h-screen text-[#0A0A0D] selection:bg-[#CCFF00] selection:text-[#0A0A0D]">
       <Navbar onOpenEnquiry={handleOpenEnquiry} />
 
       <main>
