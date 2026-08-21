@@ -22,31 +22,31 @@ export default function About() {
 
   const engineeringPillars = [
     {
-      title: "Real Problems Over Buzzwords",
+      title: "We Solve Real Problems",
       description:
-        "We never push bloated software you don't need. If a simple digital menu, WhatsApp trigger, or booking portal solves your operational friction, that's exactly what we build.",
+        "We never push complicated software you don't need. If a simple QR menu, WhatsApp alert, or booking page fixes your headache, that's exactly what we build.",
       tag: "PRACTICAL FOCUS",
       icon: Cpu,
     },
     {
-      title: "Direct Developer Contact",
+      title: "Talk Directly to Us",
       description:
-        "Zero middleman account managers or ticketing delays. You collaborate directly with the engineers architecting, building, and maintaining your live system.",
-      tag: "ZERO BUREAUCRACY",
+        "No call centres, no ticket queues. You talk directly to the person building your product on WhatsApp — any question, any time.",
+      tag: "ALWAYS REACHABLE",
       icon: MessageSquare,
     },
     {
-      title: "Fast 1–3 Week Delivery",
+      title: "Ready in 1–3 Weeks",
       description:
-        "Growing businesses cannot wait 6 months for a website. We work in focused sprint cycles to get your digital tools live and generating revenue rapidly.",
-      tag: "SPEED TO MARKET",
+        "Your business can't wait 6 months. We work fast and deliver working results in 1 to 3 weeks, not months of meetings and wireframes.",
+      tag: "FAST DELIVERY",
       icon: Zap,
     },
     {
-      title: "Dedicated Cloud Care",
+      title: "We Keep It Running",
       description:
-        "Launch day is just step one. We monitor cloud hosting, SSL certificates, security backups, and handle ongoing technical updates so you remain stress-free.",
-      tag: "LONG-TERM CARE",
+        "After launch, we stay with you. If something goes wrong, we fix it. We keep your site live, secure, and up-to-date — so you never have to worry.",
+      tag: "ONGOING SUPPORT",
       icon: ShieldCheck,
     },
   ];
@@ -54,23 +54,23 @@ export default function About() {
   const executionSteps = [
     {
       step: "01",
-      name: "Listen & Diagnose",
-      detail: "We analyze your exact operational bottlenecks over a casual WhatsApp or phone conversation.",
+      name: "We Listen First",
+      detail: "Tell us what's frustrating you about your business. We ask simple questions over WhatsApp or a quick call — no tech knowledge needed from your side.",
     },
     {
       step: "02",
-      name: "Architecture Blueprint",
-      detail: "We outline the exact screen layouts, user journeys, and a fixed price quote for your review.",
+      name: "We Show You the Plan",
+      detail: "We sketch out what your website or tool will look like, explain it in plain terms, and give you a clear fixed price before we start anything.",
     },
     {
       step: "03",
-      name: "Precision Engineering",
-      detail: "We build with modern Next.js and clean APIs — tested thoroughly across all screen sizes.",
+      name: "We Build It Fast",
+      detail: "We get to work and build it properly — tested on all phones, looking sharp, and working exactly as described. Most projects done in 1–3 weeks.",
     },
     {
       step: "04",
-      name: "Launch & Support",
-      detail: "Your system goes live with automated backups, custom DNS setup, and ongoing developer care.",
+      name: "We Launch & Stay",
+      detail: "Your site or tool goes live. We handle everything — from making it appear on Google to keeping it running smoothly. We're available on WhatsApp anytime.",
     },
   ];
 
@@ -182,7 +182,7 @@ export default function About() {
               HOW WE WORK
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-[#FAFAF8]">
-              From Problem To Live System in 4 Steps
+              How We Work Together — In 4 Simple Steps
             </h3>
           </div>
 

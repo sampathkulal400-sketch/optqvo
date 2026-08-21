@@ -43,45 +43,45 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
     {
       id: 0,
       phase: "01",
-      badge: "INGESTION",
-      title: "Customer Touchpoint Layer",
-      tagline: "Frictionless intent capture across mobile & web",
-      metric: "< 350ms speed",
+      badge: "STEP ONE",
+      title: "Your Customers Find You Online",
+      tagline: "A website, app, or QR menu that works on any phone",
+      metric: "Opens in 1 second",
       icon: Smartphone,
-      description: "Digital QR menus, instant booking forms, web applications, and customer portals capturing orders with zero app downloads.",
-      status: "LIVE STREAM",
-      activeTelemetry: "24/7 Multi-channel Traffic Ingestion",
-      events: ["Table Scan Verified", "Booking Slot Selected", "Customer Inquiry Logged"],
+      description: "We build your digital shop front — a website, QR menu, or booking page your customers can open on any phone in seconds, without downloading anything.",
+      status: "ALWAYS ON",
+      activeTelemetry: "Works 24 hours, 7 days a week",
+      events: ["Customer scans your QR code", "Booking form submitted", "Enquiry sent to your WhatsApp"],
       color: "#28113B",
       accent: "#CCFF00",
     },
     {
       id: 1,
       phase: "02",
-      badge: "LOGIC",
-      title: "Intelligent Event Pipeline",
-      tagline: "Zero manual data-entry or copy-paste friction",
-      metric: "100% Automated",
+      badge: "STEP TWO",
+      title: "You Get Notified Instantly",
+      tagline: "No more missed calls, lost papers, or manual follow-ups",
+      metric: "100% Automatic",
       icon: Cpu,
-      description: "Automated webhook routers dispatching instant WhatsApp order alerts, auto-generating PDF invoices, and synchronizing customer CRM entries.",
-      status: "ROUTING REALTIME",
-      activeTelemetry: "Zero Manual Intervention Required",
-      events: ["Instant WhatsApp Alert Sent", "PDF Invoice Generated", "Inventory Synced"],
+      description: "When a customer enquires, orders, or books — you get an instant WhatsApp alert. Invoices generate themselves. No copy-pasting, no chasing.",
+      status: "ALWAYS RUNNING",
+      activeTelemetry: "Nothing slips through the cracks",
+      events: ["WhatsApp alert sent to your phone", "PDF invoice sent to customer", "Order recorded automatically"],
       color: "#181824",
       accent: "#38BDF8",
     },
     {
       id: 2,
       phase: "03",
-      badge: "CONTROL",
-      title: "Unified Operational Hub",
-      tagline: "Complete visibility for business owners & managers",
-      metric: "99.9% Uptime",
+      badge: "STEP THREE",
+      title: "See Your Business Clearly",
+      tagline: "Know your sales, orders & customers — all in one place",
+      metric: "Always Up-to-Date",
       icon: Database,
-      description: "Clean, responsive business dashboards replacing messy spreadsheets — tracking daily revenue, active orders, customer history, and team tasks.",
-      status: "SECURE CLOUD",
-      activeTelemetry: "Live Sync with Google Sheets / DB",
-      events: ["Revenue Analytics Live", "Team Dispatch Updated", "Encrypted Cloud Backup"],
+      description: "A simple, clean dashboard showing your daily sales, pending orders, and customer history — like a WhatsApp for your business data, but cleaner.",
+      status: "LIVE DASHBOARD",
+      activeTelemetry: "Your business numbers, always current",
+      events: ["Today's revenue updated", "Pending orders visible", "Customer history saved"],
       color: "#112217",
       accent: "#4ADE80",
     },
@@ -142,7 +142,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   transition={{ duration: 0.55, delay: 0.16 }}
                   className="text-base sm:text-xl lg:text-2xl text-[#50505C] font-normal leading-relaxed max-w-2xl"
                 >
-                  We engineer tailor-made digital systems, WhatsApp automations, fast web applications, and operational dashboards for businesses that want to operate smarter and scale faster.
+                  We build websites, apps, WhatsApp automations, and simple business tools that help local businesses look professional, save time, and get more customers — without any tech headache.
                 </motion.p>
               </div>
 
@@ -208,7 +208,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                       <span className="w-2 h-2 rounded-full bg-amber-500/80" />
                       <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
                       <span className="font-mono text-[9px] sm:text-[10px] text-white/50 uppercase tracking-widest ml-1 sm:ml-2 truncate">
-                        ARCHITECTURE ENGINE
+                        HOW IT WORKS FOR YOUR BUSINESS
                       </span>
                     </div>
 
@@ -271,7 +271,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   {/* Live Simulated Event Dispatch Stream */}
                   <div className="space-y-1.5 pt-2 border-t border-white/08">
                     <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-widest text-white/40 block">
-                      EXECUTED AUTOMATION EVENTS:
+                       WHAT HAPPENS AUTOMATICALLY:
                     </span>
                     <div className="space-y-1">
                       {activeData.events.map((evt) => (
@@ -283,7 +283,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                             <span className="w-1.5 h-1.5 rounded-full bg-[#CCFF00] flex-shrink-0" />
                             <span className="truncate">{evt}</span>
                           </div>
-                          <span className="text-emerald-400 font-bold flex-shrink-0 text-[9px] sm:text-[10px]">200 OK</span>
+                          <span className="text-emerald-400 font-bold flex-shrink-0 text-[9px] sm:text-[10px]">✓ Done</span>
                         </div>
                       ))}
                     </div>
@@ -292,7 +292,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
 
                 {/* Visualizer Footer Bar */}
                 <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 font-mono text-[10px] text-white/60">
-                  <span className="text-[9px] sm:text-[10px]">TAP TABS TO INSPECT PIPELINE</span>
+                  <span className="text-[9px] sm:text-[10px]">TAP EACH STEP TO SEE HOW IT WORKS</span>
                   <button
                     onClick={() =>
                       onOpenEnquiry
