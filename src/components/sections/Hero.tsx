@@ -112,7 +112,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
             className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5 sm:mb-6"
           >
             <span className="badge-plum">
-              <span>●</span> PRACTICAL DIGITAL SYSTEMS
+              PRACTICAL DIGITAL SYSTEMS
             </span>
             <span className="hidden sm:inline-block font-mono text-[11px] text-[#50505C] uppercase tracking-widest font-semibold">
               Software • Automations • Web • Mobile
@@ -237,7 +237,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                             <span className="font-mono text-[8px] sm:text-[9px] font-bold text-[#CCFF00] uppercase">
                               {node.phase}
                             </span>
-                            <IconComponent className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                            
                           </div>
                           <span className="font-mono text-[9px] sm:text-[10px] font-bold truncate">
                             {node.badge}
@@ -259,9 +259,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                         {activeData.title}
                       </h4>
                     </div>
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#CCFF00] flex-shrink-0">
-                      <activeData.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
+                    
                   </div>
 
                   <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-normal">

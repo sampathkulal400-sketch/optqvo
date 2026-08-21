@@ -78,7 +78,7 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="relative py-20 lg:py-32 overflow-hidden bg-[#09090C] text-[#FAFAF8]"
+      className="relative py-16 lg:py-24 overflow-hidden bg-[#09090C] text-[#FAFAF8]"
     >
       {/* Ambient Dark Pattern */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -86,7 +86,7 @@ export default function About() {
         <div className="absolute top-1/3 -right-20 w-[600px] h-[600px] bg-[#28113B]/30 rounded-full filter blur-[120px]" />
       </div>
 
-      <div className="section-wrap relative z-10 space-y-16">
+      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
         {/* Editorial Top Headline */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <motion.div
@@ -96,7 +96,7 @@ export default function About() {
             className="lg:col-span-7 space-y-6"
           >
             <span className="badge-lime">
-              <span>●</span> WHY OPTQVO
+              WHY OPTQVO
             </span>
 
             <h2 className="display-section-title text-[#FAFAF8]">

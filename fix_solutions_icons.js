@@ -1,0 +1,11 @@
+﻿const fs = require('fs');
+const file = 'src/components/sections/Solutions.tsx';
+let content = fs.readFileSync(file, 'utf8');
+content = content.replace(/<Icon className="w-4 h-4 sm:w-5 sm:h-5" \/>/g, '');
+content = content.replace(/<Icon className="w-5 h-5 sm:w-6 sm:h-6" \/>/g, '');
+content = content.replace(/<currentSolution.icon className="w-5 h-5 sm:w-6 sm:h-6" \/>/g, '');
+content = content.replace(/<category\.icon className="w-3\.5 h-3\.5" \/>/g, '');
+content = content.replace(/<category\.icon className="w-4 h-4" \/>/g, '');
+content = content.replace(/<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white\/10 flex items-center justify-center text-\[#CCFF00\] flex-shrink-0">[\s\S]*?<\/div>/g, '');
+content = content.replace(/<div className="w-10 h-10 rounded-xl bg-white\/10 flex items-center justify-center text-\[#CCFF00\] flex-shrink-0">[\s\S]*?<\/div>/g, '');
+fs.writeFileSync(file, content, 'utf8');

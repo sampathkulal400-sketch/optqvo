@@ -63,9 +63,9 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
     <section
       id="work"
       ref={ref}
-      className="relative py-20 lg:py-32 overflow-hidden bg-[#F2F2ED] text-[#0A0A0D]"
+      className="relative py-16 lg:py-24 overflow-hidden bg-[#F2F2ED] text-[#0A0A0D]"
     >
-      <div className="section-wrap relative z-10 space-y-16">
+      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
           className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
-            <span>●</span> VERIFIED CLIENT CASE STUDY
+            VERIFIED CLIENT CASE STUDY
           </span>
           <h2 className="display-section-title text-[#0A0A0D] mb-4">
             Real Projects. <span className="highlight-lime">Measured Impact.</span>

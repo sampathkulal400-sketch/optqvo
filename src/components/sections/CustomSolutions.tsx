@@ -93,9 +93,9 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
     <section
       id="custom-solutions"
       ref={ref}
-      className="relative py-20 lg:py-32 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+      className="relative py-16 lg:py-24 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
     >
-      <div className="section-wrap relative z-10 space-y-16">
+      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -104,7 +104,7 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
           className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
-            <span>●</span> TRANSFORMATION ENGINE
+            TRANSFORMATION ENGINE
           </span>
           <h2 className="display-section-title text-[#0A0A0D] mb-4">
             Turning Daily Friction Into <span className="highlight-lime">Automated Systems.</span>
@@ -133,15 +133,7 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div
-                      className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                        isSelected
-                          ? "bg-white/15 text-[#CCFF00]"
-                          : "bg-[#0A0A0D]/05 text-[#28113B]"
-                      }`}
-                    >
-                      <ItemIcon className="w-4 h-4" />
-                    </div>
+
                     <div>
                       <span
                         className={`font-mono text-[9px] font-bold uppercase tracking-wider block ${

@@ -36,7 +36,6 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
             </p>
 
             <div className="flex items-center gap-2 font-mono text-xs text-[#CCFF00] uppercase tracking-wider font-bold">
-              <span>●</span>
               <span>Made in India • Built for Growing Businesses</span>
             </div>
 
@@ -130,7 +129,6 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
           </div>
           <div className="flex items-center gap-4">
             <span>Clean Code & Practical Systems</span>
-            <span>•</span>
             <span>Uptime: 99.9%</span>
           </div>
         </div>

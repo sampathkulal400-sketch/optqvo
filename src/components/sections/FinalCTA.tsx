@@ -20,7 +20,7 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
     <section
       id="contact"
       ref={ref}
-      className="relative py-20 lg:py-32 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+      className="relative py-16 lg:py-24 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
     >
       <div className="section-wrap relative z-10">
         <motion.div
@@ -37,7 +37,7 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
 
           <div className="relative z-10 space-y-8 max-w-3xl mx-auto">
             <span className="badge-lime">
-              <span>●</span> READY TO BUILD
+              READY TO BUILD
             </span>
 
             <h2 className="display-hero-title text-[#FAFAF8]">

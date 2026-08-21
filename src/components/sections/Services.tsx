@@ -117,9 +117,9 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
     <section
       id="services"
       ref={ref}
-      className="relative py-20 lg:py-32 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+      className="relative py-16 lg:py-24 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
     >
-      <div className="section-wrap relative z-10 space-y-16">
+      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -128,7 +128,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
           className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
-            <span>●</span> ENGINEERING CAPABILITIES
+            ENGINEERING CAPABILITIES
           </span>
           <h2 className="display-section-title text-[#0A0A0D] mb-4">
             What Optqvo <span className="highlight-lime">Can Build For You.</span>
@@ -158,9 +158,6 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
               </div>
 
               <div className="space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#CCFF00]">
-                  <activeService.icon className="w-6 h-6" />
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-black text-[#FAFAF8] tracking-tight">
                   {activeService.title}
                 </h3>
