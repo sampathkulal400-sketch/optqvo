@@ -7,7 +7,6 @@ import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Solutions from "@/components/sections/Solutions";
 import CustomSolutions from "@/components/sections/CustomSolutions";
-import Portfolio from "@/components/sections/Portfolio";
 import About from "@/components/sections/About";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -35,7 +34,7 @@ export default function Home() {
         {/* 1. Hero: 5-Second Test Clarity */}
         <Hero onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 2. Services: What Optqvo Can Build */}
+        {/* 2. Services: What Optqvo Solutions Can Build */}
         <Services onOpenEnquiry={handleOpenEnquiry} />
 
         {/* 3. Solutions: Solutions Organized by Business Types */}
@@ -44,10 +43,7 @@ export default function Home() {
         {/* 4. Custom Solutions: Dedicated Problem Solver Section */}
         <CustomSolutions onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 5. Our Work: Real Verified Projects (SN Cranes Puttur) */}
-        <Portfolio onOpenEnquiry={handleOpenEnquiry} />
-
-        {/* 6. About: Simple, Trustworthy Story */}
+        {/* 5. About: Simple, Trustworthy Story */}
         <About />
 
         {/* 7. FAQ: Plain English Answers */}

@@ -22,11 +22,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://optqvo.com"),
   title: {
-    default: "Optqvo — Build. Automate. Grow. | Practical Software Engineering & Business Automation",
-    template: "%s | Optqvo",
+    default: "Optqvo Solutions — Build. Automate. Grow. | Practical Software Engineering & Business Automation",
+    template: "%s | Optqvo Solutions",
   },
   description:
-    "Optqvo helps businesses build, automate, optimize and scale through custom web applications, WhatsApp automations, operational dashboards, mobile apps, and business software.",
+    "Optqvo Solutions helps businesses build, automate, optimize and scale through custom web applications, WhatsApp automations, operational dashboards, mobile apps, and business software.",
   keywords: [
     "custom software development",
     "business automation",
@@ -37,11 +37,12 @@ export const metadata: Metadata = {
     "CRM development",
     "ERP systems",
     "QR menu ordering",
+    "Optqvo Solutions",
     "Optqvo",
   ],
-  authors: [{ name: "Optqvo", url: "https://optqvo.com" }],
-  creator: "Optqvo",
-  publisher: "Optqvo",
+  authors: [{ name: "Optqvo Solutions", url: "https://optqvo.com" }],
+  creator: "Optqvo Solutions",
+  publisher: "Optqvo Solutions",
   robots: {
     index: true,
     follow: true,
@@ -57,8 +58,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://optqvo.com",
-    siteName: "Optqvo",
-    title: "Optqvo — Build. Automate. Grow.",
+    siteName: "Optqvo Solutions",
+    title: "Optqvo Solutions — Build. Automate. Grow.",
     description:
       "We build custom business websites, mobile applications, WhatsApp automations, bespoke business tools, and operational dashboards that help businesses run smoother.",
     images: [
@@ -66,13 +67,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Optqvo — Software Engineering & Business Automation",
+        alt: "Optqvo Solutions — Software Engineering & Business Automation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Optqvo — Build. Automate. Grow.",
+    title: "Optqvo Solutions — Build. Automate. Grow.",
     description:
       "Practical software engineering and business automation. We build custom web apps, mobile apps, WhatsApp automations, and operational dashboards.",
     images: ["/og-image.png"],
@@ -107,7 +108,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Optqvo",
+              name: "Optqvo Solutions",
               url: "https://optqvo.com",
               logo: "https://optqvo.com/logo.png",
               description:

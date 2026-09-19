@@ -63,9 +63,9 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
     <section
       id="work"
       ref={ref}
-      className="relative py-16 lg:py-24 overflow-hidden bg-[#F2F2ED] text-[#0A0A0D]"
+      className="relative py-10 lg:py-16 overflow-hidden bg-[#F2F2ED] text-[#0A0A0D]"
     >
-      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
+      <div className="section-wrap relative z-10 space-y-6 sm:space-y-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,13 +74,13 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
           className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
-            VERIFIED CLIENT CASE STUDY
+            OUR RECENT WORK
           </span>
           <h2 className="display-section-title text-[#0A0A0D] mb-4">
-            Real Projects. <span className="highlight-lime">Measured Impact.</span>
+            Real Projects. <span className="highlight-lime">Real Results.</span>
           </h2>
           <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-2xl mx-auto">
-            Inspect real digital assets and production systems engineered by Optqvo for active commercial operations.
+            Take a look at actual websites, apps, and systems we have designed and built for our clients.
           </p>
         </motion.div>
 
@@ -186,7 +186,7 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
                     {/* What Was Built */}
                     <div>
                       <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#28113B] block mb-3">
-                        WHAT OPTQVO ENGINEERED:
+                        WHAT WE BUILT:
                       </span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {proj.whatWeBuilt.map((item) => (
@@ -201,14 +201,17 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
                       </div>
                     </div>
 
-                    {/* The Result */}
-                    <div className="p-4 rounded-2xl bg-[#CCFF00]/15 border border-[#0A0A0D]/10">
-                      <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#28113B] block mb-1">
-                        THE MEASURED OUTCOME:
-                      </span>
-                      <p className="text-xs sm:text-sm text-[#0A0A0D] font-semibold leading-relaxed">
-                        {proj.result}
-                      </p>
+                    {/* Impact / Results */}
+                    <div className="p-4 sm:p-5 rounded-2xl bg-[#CCFF00]/20 border border-[#28113B]/15 flex items-start gap-3">
+                      <Zap className="w-5 h-5 text-[#28113B] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#28113B] block mb-1">
+                          THE RESULT:
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold text-[#0A0A0D]">
+                          {proj.result}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
@@ -233,25 +236,27 @@ export default function Portfolio({ onOpenEnquiry }: PortfolioProps) {
           ))}
         </div>
 
-        {/* Portfolio Bottom Callout Box */}
+        {/* Global Case Study Footnote Callout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-8 sm:p-12 text-center max-w-3xl mx-auto shadow-sm space-y-4"
         >
-          <h3 className="text-2xl sm:text-3xl font-black text-[#0A0A0D]">
-            Need a high-performing digital asset for your business?
+          <h3 className="text-xl sm:text-2xl font-black text-[#0A0A0D]">
+            Need a similar system for your business?
           </h3>
           <p className="text-sm sm:text-base text-[#50505C] max-w-xl mx-auto font-normal">
-            Tell us what your business does and we will design, build, and deploy the right digital system for you.
+            Every business has its own unique workflow. Tell us what you need, and we will build a tool that fits your exact requirements.
           </p>
           <div className="pt-2">
             <button
               onClick={() =>
-                onOpenEnquiry ? onOpenEnquiry("Work Portfolio") : scrollTo("contact")
+                onOpenEnquiry
+                  ? onOpenEnquiry("Custom Project Consultation")
+                  : scrollTo("contact")
               }
-              className="btn-zip-plum px-8 py-4 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] inline-flex items-center justify-center gap-2 cursor-pointer shadow-md"
+              className="btn-zip-plum px-8 py-4 rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] inline-flex items-center gap-2 cursor-pointer shadow-md"
             >
               <MessageSquare className="w-4 h-4 text-[#CCFF00] flex-shrink-0" />
               <span>DISCUSS YOUR PROJECT SCOPE</span>

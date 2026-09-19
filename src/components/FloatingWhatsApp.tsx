@@ -6,7 +6,7 @@ import { MessageCircle } from "lucide-react";
 const WHATSAPP_NUMBER = "918217206292";
 
 export default function FloatingWhatsApp() {
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Optqvo%2C%20I%27d%20like%20to%20discuss%20a%20project.`;
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Optqvo%20Solutions%2C%20I%27d%20like%20to%20discuss%20a%20project.`;
 
   return (
     <motion.div

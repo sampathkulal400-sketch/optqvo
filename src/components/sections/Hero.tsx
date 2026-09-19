@@ -93,7 +93,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
     <section
       id="home"
       ref={ref}
-      className="relative pt-24 pb-14 sm:pt-36 sm:pb-28 overflow-hidden bg-[#F8F8F5]"
+      className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 lg:pt-20 lg:pb-14 overflow-hidden bg-[#F8F8F5]"
     >
       {/* Background Subtle Tech Matrix & Ambient Blur */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -109,20 +109,20 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5 sm:mb-6"
+            className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4"
           >
             <span className="badge-plum">
-              PRACTICAL DIGITAL SYSTEMS
+              SOFTWARE & WEB DEVELOPMENT
             </span>
             <span className="hidden sm:inline-block font-mono text-[11px] text-[#50505C] uppercase tracking-widest font-semibold">
-              Software • Automations • Web • Mobile
+              Websites • Web Apps • Automations • Mobile
             </span>
           </motion.div>
 
           {/* Main Hero Asymmetric Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch">
             {/* Left Column: Bold Typography & Action Triggers (7 cols) */}
-            <div className="lg:col-span-7 flex flex-col justify-between space-y-6 sm:space-y-8">
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-4 sm:space-y-6">
               <div className="space-y-4 sm:space-y-6">
                 <motion.h1
                   initial={{ opacity: 0, y: 22 }}
@@ -130,9 +130,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   transition={{ duration: 0.55, delay: 0.08 }}
                   className="display-hero-title text-[#0A0A0D]"
                 >
-                  EVERY DAY YOU WAIT,{" "}
+                  WE BUILD PRACTICAL SOFTWARE{" "}
                   <span className="block mt-1 sm:mt-2">
-                    <span className="highlight-lime">A COMPETITOR WINS.</span>
+                    <span className="highlight-lime">THAT GROWS YOUR BUSINESS.</span>
                   </span>
                 </motion.h1>
 
@@ -142,7 +142,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   transition={{ duration: 0.55, delay: 0.16 }}
                   className="text-base sm:text-xl lg:text-2xl text-[#50505C] font-normal leading-relaxed max-w-2xl"
                 >
-                  We build websites, apps, WhatsApp automations, and simple business tools that help local businesses look professional, save time, and get more customers — without any tech headache.
+                  Custom websites, mobile apps, WhatsApp automations, and management dashboards built specifically for your day-to-day operations. Clean work, fair pricing, and zero tech jargon.
                 </motion.p>
               </div>
 
@@ -161,15 +161,15 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                     className="btn-zip-plum w-full sm:w-auto px-7 sm:px-8 py-4 min-h-[50px] sm:min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#FAFAF8] flex items-center justify-center gap-3 shadow-lg cursor-pointer group"
                   >
                     <MessageSquare className="w-4 h-4 text-[#CCFF00] group-hover:scale-110 transition-transform" />
-                    <span>JUST TELL US WHAT YOU SELL</span>
+                    <span>DISCUSS YOUR PROJECT</span>
                     <ArrowRight className="w-4 h-4 text-[#CCFF00] group-hover:translate-x-0.5 transition-transform" />
                   </button>
 
                   <button
-                    onClick={() => scrollTo("work")}
+                    onClick={() => scrollTo("solutions")}
                     className="btn-zip-outline w-full sm:w-auto px-7 sm:px-8 py-4 min-h-[50px] sm:min-h-[52px] rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <span>INSPECT SHIPPED WORK</span>
+                    <span>EXPLORE SOLUTIONS</span>
                     <ArrowUpRight className="w-4 h-4 text-[#50505C]" />
                   </button>
                 </div>
@@ -178,15 +178,15 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                 <div className="pt-5 sm:pt-6 border-t border-[#0A0A0D]/08 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 font-mono text-[11px] text-[#50505C]">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
-                    <span className="font-medium">₹0 Surprise Fees</span>
+                    <span className="font-medium">Clear, Fixed Pricing</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
-                    <span className="font-medium">Direct Developer Access</span>
+                    <span className="font-medium">Direct Developer Contact</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#28113B] flex-shrink-0" />
-                    <span className="font-medium">Rapid 1–3 Week Delivery</span>
+                    <span className="font-medium">Fast 1–3 Week Delivery</span>
                   </div>
                 </div>
               </motion.div>
@@ -299,7 +299,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                     }
                     className="text-[#CCFF00] hover:underline cursor-pointer bg-transparent border-none p-0 flex items-center gap-1 font-bold text-[10px]"
                   >
-                    <span>BUILD THIS FOR YOUR BUSINESS</span>
+                    <span>GET THIS SETUP FOR YOUR BUSINESS</span>
                     <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>

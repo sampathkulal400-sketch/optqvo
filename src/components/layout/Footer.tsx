@@ -1,6 +1,7 @@
 "use client";
 
 import { MessageSquare, ArrowUpRight } from "lucide-react";
+import OptqvoLogo from "@/components/OptqvoLogo";
 
 const WHATSAPP_NUMBER = "918217206292";
 
@@ -13,22 +14,20 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Optqvo%2C%20I%27d%20like%20to%20discuss%20a%20digital%20solution%20for%20my%20business.`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Optqvo%20Solutions%2C%20I%27d%20like%20to%20discuss%20a%20digital%20solution%20for%20my%20business.`;
 
   return (
     <footer className="relative bg-[#070709] border-t border-white/10 overflow-hidden text-[#FAFAF8] text-xs">
-      <div className="section-wrap py-16 lg:py-20">
+      <div className="section-wrap py-10 lg:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           {/* Column 1: Brand Manifesto & WhatsApp Direct (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
             <button
               onClick={() => scrollTo("home")}
               className="flex items-center gap-1 bg-transparent border-none cursor-pointer p-0 text-left"
-              aria-label="Optqvo Home"
+              aria-label="Optqvo Solutions Home"
             >
-              <span className="font-mono text-2xl font-black tracking-tighter text-[#FAFAF8]">
-                OPTQVO<span className="text-[#CCFF00]">.</span>
-              </span>
+              <OptqvoLogo variant="light" className="h-9 sm:h-10 md:h-11 w-auto hover:opacity-85 transition-opacity" />
             </button>
 
             <p className="text-[#FAFAF8]/70 text-sm leading-relaxed max-w-sm font-normal">
@@ -63,8 +62,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
                 { label: "Capabilities", id: "services" },
                 { label: "Industry Blueprints", id: "solutions" },
                 { label: "Transformation Engine", id: "custom-solutions" },
-                { label: "Case Study", id: "work" },
-                { label: "Why Optqvo", id: "about" },
+                { label: "Why Optqvo Solutions", id: "about" },
                 { label: "FAQ", id: "faq" },
                 { label: "Contact Us", id: "contact" },
               ].map((item) => (
@@ -125,7 +123,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
         {/* Bottom Bar: Copyright & Location */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#FAFAF8]/50">
           <div>
-            © {new Date().getFullYear()} Optqvo Technologies. All rights reserved.
+            © {new Date().getFullYear()} Optqvo Solutions. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span>Clean Code & Practical Systems</span>

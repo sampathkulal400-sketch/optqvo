@@ -93,9 +93,9 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
     <section
       id="custom-solutions"
       ref={ref}
-      className="relative py-16 lg:py-24 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+      className="relative py-10 lg:py-16 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
     >
-      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
+      <div className="section-wrap relative z-10 space-y-6 sm:space-y-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -104,13 +104,13 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
           className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
-            TRANSFORMATION ENGINE
+            EVERYDAY PROBLEMS WE SOLVE
           </span>
           <h2 className="display-section-title text-[#0A0A0D] mb-4">
-            Turning Daily Friction Into <span className="highlight-lime">Automated Systems.</span>
+            Replacing Manual Work With <span className="highlight-lime">Clean Software.</span>
           </h2>
           <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-2xl mx-auto">
-            Explore how modern software engineering turns manual bottlenecks into smooth, automated business workflows.
+            Here is how we replace manual paperwork, missed messages, and messy spreadsheets with simple tools that run smoothly.
           </p>
         </motion.div>
 
@@ -184,10 +184,10 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
 
             {/* The 4-Stage Architectural Progression */}
             <div className="space-y-4">
-              {/* Problem */}
+              {/* Friction */}
               <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200/60">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-rose-700 block mb-1">
-                  1. THE OPERATIONAL FRICTION:
+                  1. THE COMMON ISSUE:
                 </span>
                 <p className="text-xs sm:text-sm text-[#0A0A0D]/85 font-normal leading-relaxed">
                   {current.problem}
@@ -197,7 +197,7 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
               {/* Approach */}
               <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/60">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-blue-700 block mb-1">
-                  2. OPTQVO ENGINEERING APPROACH:
+                  2. HOW WE SOLVE IT:
                 </span>
                 <p className="text-xs sm:text-sm text-[#0A0A0D]/85 font-normal leading-relaxed">
                   {current.approach}
@@ -207,7 +207,7 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
               {/* Solution */}
               <div className="p-4 rounded-2xl bg-[#F8F8F5] border border-[#0A0A0D]/10">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#28113B] block mb-1">
-                  3. DELIVERED DIGITAL SYSTEM:
+                  3. WHAT YOU GET:
                 </span>
                 <p className="text-xs sm:text-sm text-[#0A0A0D] font-medium leading-relaxed">
                   {current.solution}

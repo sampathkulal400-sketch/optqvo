@@ -42,7 +42,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
     if (!name || !phone || !problemText) return;
 
     const message =
-      `*New Problem Inquiry - Optqvo*\n\n` +
+      `*New Problem Inquiry - Optqvo Solutions*\n\n` +
       `👤 *Name:* ${name}\n` +
       `🏢 *Business:* ${businessName || "Not specified"}\n` +
       `📞 *Phone/WhatsApp:* ${phone}\n` +
@@ -89,13 +89,13 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
             <div className="mb-5 sm:mb-6 pr-8">
               <span className="badge-plum mb-2.5 sm:mb-3">
                 <MessageSquare className="w-3.5 h-3.5" />
-                <span>TELL US YOUR PROBLEM</span>
+                <span>START A PROJECT</span>
               </span>
               <h3 className="text-xl sm:text-3xl font-black text-[#0A0A0D] tracking-tight leading-snug">
-                What problem are you trying to solve?
+                Tell us about your project
               </h3>
               <p className="text-xs sm:text-sm text-[#50505C] mt-1 font-normal">
-                Tell us about your business requirement. We reply on WhatsApp the same day with practical options and a fixed quote.
+                Share a few details about what you need. We will get back to you with ideas, timelines, and a clear quote.
               </p>
             </div>
 

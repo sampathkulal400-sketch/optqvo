@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="badge mb-4">Why Optqvo</span>
+          <span className="badge mb-4">Why Optqvo Solutions</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
             For Business Owners Who Are <span className="gradient-text">Done Wasting Time</span>
           </h2>

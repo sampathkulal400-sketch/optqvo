@@ -218,9 +218,9 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
     <section
       id="solutions"
       ref={ref}
-      className="relative py-16 lg:py-24 overflow-hidden bg-[#F2F2ED] text-[#0A0A0D]"
+      className="relative py-10 lg:py-16 overflow-hidden bg-[#F2F2ED] text-[#0A0A0D]"
     >
-      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
+      <div className="section-wrap relative z-10 space-y-6 sm:space-y-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -319,7 +319,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
 
                 <div className="p-4 rounded-xl bg-rose-50 border border-rose-200/60 space-y-1">
                   <span className="font-mono text-[10px] font-bold text-rose-700 uppercase">
-                    BEFORE OPTQVO:
+                    BEFORE OPTQVO SOLUTIONS:
                   </span>
                   <p className="text-xs text-[#0A0A0D]/80 font-normal leading-relaxed">
                     {currentSolution.simpleExample.from}
@@ -328,7 +328,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
 
                 <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200/60 space-y-1">
                   <span className="font-mono text-[10px] font-bold text-emerald-800 uppercase">
-                    WITH OPTQVO SYSTEM:
+                    WITH OPTQVO SOLUTIONS SYSTEM:
                   </span>
                   <p className="text-xs text-[#0A0A0D] font-semibold leading-relaxed">
                     {currentSolution.simpleExample.to}

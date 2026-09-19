@@ -57,7 +57,7 @@ export default function Testimonials() {
               <span className="text-white font-bold text-sm">O</span>
             </div>
             <div className="text-left">
-              <p className="text-sm font-semibold text-white">Optqvo Team</p>
+              <p className="text-sm font-semibold text-white">Optqvo Solutions Team</p>
               <p className="text-xs text-slate-500">Practical Software Engineering</p>
             </div>
           </div>

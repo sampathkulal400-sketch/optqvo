@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowUpRight, MessageSquare } from "lucide-react";
+import OptqvoLogo from "@/components/OptqvoLogo";
 
 interface NavbarProps {
   onOpenEnquiry?: (category?: string) => void;
@@ -12,7 +13,6 @@ const navLinks = [
   { label: "Overview", href: "home" },
   { label: "Services", href: "services" },
   { label: "Solutions", href: "solutions", hasDropdown: true },
-  { label: "Work", href: "work" },
   { label: "About", href: "about" },
   { label: "FAQ", href: "faq" },
 ];
@@ -60,11 +60,9 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             <button
               onClick={() => scrollTo("home")}
               className="flex items-center gap-1.5 bg-transparent border-none cursor-pointer p-0 group"
-              aria-label="Optqvo Home"
+              aria-label="Optqvo Solutions Home"
             >
-              <span className="font-mono text-xl sm:text-2xl font-black tracking-tighter text-[#0A0A0D]">
-                OPTQVO<span className="text-[#28113B]">.</span>
-              </span>
+              <OptqvoLogo variant="dark" className="h-8 sm:h-9 md:h-10 w-auto hover:opacity-85 transition-opacity" />
             </button>
 
             <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A0A0D]/04 border border-[#0A0A0D]/08 font-mono text-[10px] text-[#52525C] uppercase tracking-wider font-semibold">
@@ -72,7 +70,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CCFF00] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]"></span>
               </span>
-              <span>3 Project Slots Open — Fills Fast</span>
+              <span>Available for New Projects</span>
             </div>
           </div>
 
@@ -148,7 +146,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               className="btn-zip-plum px-6 py-3 rounded-full text-xs font-mono tracking-widest flex items-center gap-2 cursor-pointer shadow-sm"
             >
               <MessageSquare className="w-3.5 h-3.5 text-[#CCFF00]" />
-              <span>Tell Us Your Problem</span>
+              <span>Start a Project</span>
             </button>
           </div>
 

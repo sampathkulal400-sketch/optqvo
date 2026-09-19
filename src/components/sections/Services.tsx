@@ -117,9 +117,9 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
     <section
       id="services"
       ref={ref}
-      className="relative py-16 lg:py-24 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+      className="relative py-10 lg:py-16 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
     >
-      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
+      <div className="section-wrap relative z-10 space-y-6 sm:space-y-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -128,13 +128,13 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
           className="text-center max-w-3xl mx-auto"
         >
           <span className="badge-plum mb-4">
-            ENGINEERING CAPABILITIES
+            OUR SERVICES
           </span>
           <h2 className="display-section-title text-[#0A0A0D] mb-4">
-            What Optqvo <span className="highlight-lime">Can Build For You.</span>
+            What We <span className="highlight-lime">Build For You.</span>
           </h2>
           <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-2xl mx-auto">
-            Practical digital software, modern web platforms, and automated workflows engineered to eliminate friction and grow your revenue.
+            Custom websites, mobile apps, WhatsApp automations, and management systems built for everyday business needs.
           </p>
         </motion.div>
 

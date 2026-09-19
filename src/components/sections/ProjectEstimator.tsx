@@ -71,7 +71,7 @@ export default function ProjectEstimator() {
     .filter(Boolean)
     .join(", ");
 
-  const messageText = `Hi Optqvo team! I used your Project Estimator:\n\n` +
+  const messageText = `Hi Optqvo Solutions team! I used your Project Estimator:\n\n` +
     `• Project Type: ${currentProjectType.name}\n` +
     `• Features: ${activeFeatureLabels || "Standard Package"}\n` +
     `• Speed: ${isFastTrack ? "Fast Track (Expedited)" : "Standard Timeline"}\n` +

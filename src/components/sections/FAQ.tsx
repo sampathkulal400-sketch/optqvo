@@ -14,7 +14,7 @@ const faqs = [
     a: "Absolutely. We don't build massive enterprise software. We build clean, simple tools specifically for small and medium businesses—like a digital menu for a cafe, or an automatic booking page for a clinic. If you want to save time and look professional, this is for you.",
   },
   {
-    q: "How is Optqvo different from a freelancer?",
+    q: "How is Optqvo Solutions different from a freelancer?",
     a: "Freelancers often juggle too many projects and disappear when things break. We are a dedicated engineering team. You get a fixed quote, a clear timeline, and a team that actually stays around to maintain and update your system after it goes live.",
   },
   {
@@ -52,9 +52,9 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
     <section
       id="faq"
       ref={ref}
-      className="relative py-16 lg:py-24 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
+      className="relative py-10 lg:py-16 overflow-hidden bg-[#F8F8F5] text-[#0A0A0D]"
     >
-      <div className="section-wrap relative z-10 space-y-10 sm:space-y-12">
+      <div className="section-wrap relative z-10 space-y-6 sm:space-y-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
             Common <span className="highlight-lime">Questions.</span>
           </h2>
           <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-xl mx-auto">
-            Everything you need to know about working with Optqvo — explained in simple terms.
+            Everything you need to know about working with Optqvo Solutions — explained in simple terms.
           </p>
         </motion.div>
 
