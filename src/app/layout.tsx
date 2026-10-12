@@ -125,7 +125,7 @@ export default function RootLayout({
               },
               serviceArea: {
                 "@type": "Place",
-                name: "India & Global",
+                name: "Global",
               },
               offers: [
                 {

@@ -35,7 +35,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
             </p>
 
             <div className="flex items-center gap-2 font-mono text-xs text-[#CCFF00] uppercase tracking-wider font-bold">
-              <span>Made in India • Built for Growing Businesses</span>
+              <span>Built for Growing Businesses</span>
             </div>
 
             <div className="pt-2">

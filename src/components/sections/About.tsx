@@ -104,7 +104,7 @@ export default function About() {
             </h2>
 
             <p className="text-base sm:text-xl text-[#FAFAF8]/85 leading-relaxed font-normal">
-              Optqvo Solutions is an engineering team dedicated to building practical, reliable digital tools for Indian restaurants, retail shops, clinics, hotels, and growing SMEs.
+              Optqvo Solutions is an engineering team dedicated to building practical, reliable digital tools for restaurants, retail shops, clinics, hotels, and growing SMEs.
             </p>
 
             <p className="text-sm sm:text-base text-[#FAFAF8]/65 leading-relaxed font-normal">
