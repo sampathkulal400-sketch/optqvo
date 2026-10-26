@@ -93,7 +93,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
     <section
       id="home"
       ref={ref}
-      className="relative pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-24 lg:pb-14 overflow-hidden bg-[#F8F8F5]"
+      className="relative pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16 overflow-hidden bg-[#F8F8F5]"
     >
       {/* Background Subtle Tech Matrix & Ambient Blur */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

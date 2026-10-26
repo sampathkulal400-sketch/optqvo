@@ -34,7 +34,7 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -48,10 +48,10 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-[100] bg-[#F8F8F5] transition-all duration-200 ${
           scrolled
-            ? "py-2.5 sm:py-3 bg-[#F8F8F5]/90 backdrop-blur-xl border-b border-[#0A0A0D]/08 shadow-[0_4px_24px_rgba(0,0,0,0.03)]"
-            : "py-3.5 sm:py-5 bg-transparent border-b border-transparent"
+            ? "py-2.5 sm:py-3 border-b border-[#0A0A0D]/08 shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
+            : "py-3.5 sm:py-4 border-b border-transparent"
         }`}
       >
         <div className="section-wrap flex items-center justify-between">
