@@ -1,0 +1,16 @@
+{
+  "name": "Elostara Solutions",
+  "short_name": "Elostara",
+  "description": "Practical software engineering and business automation for growing businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F8F5",
+  "theme_color": "#F8F8F5",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}

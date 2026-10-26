@@ -14,7 +14,7 @@ const faqs = [
     a: "Absolutely. We don't build massive enterprise software. We build clean, simple tools specifically for small and medium businesses—like a digital menu for a cafe, or an automatic booking page for a clinic. If you want to save time and look professional, this is for you.",
   },
   {
-    q: "How is Optqvo Solutions different from a freelancer?",
+    q: "How is Elostara Solutions different from a freelancer?",
     a: "Freelancers often juggle too many projects and disappear when things break. We are a dedicated engineering team. You get a fixed quote, a clear timeline, and a team that actually stays around to maintain and update your system after it goes live.",
   },
   {
@@ -69,7 +69,7 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
             Common <span className="highlight-lime">Questions.</span>
           </h2>
           <p className="text-[#50505C] text-base sm:text-xl font-normal max-w-xl mx-auto">
-            Everything you need to know about working with Optqvo Solutions — explained in simple terms.
+            Everything you need to know about working with Elostara Solutions — explained in simple terms.
           </p>
         </motion.div>
 
@@ -91,14 +91,14 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between gap-4 p-5 sm:p-7 text-left cursor-pointer bg-transparent border-none"
+                  className="w-full flex items-center justify-between gap-3 sm:gap-4 p-4 sm:p-7 text-left cursor-pointer bg-transparent border-none"
                   aria-expanded={isOpen}
                 >
-                  <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="flex items-center gap-2.5 sm:gap-4">
                     <span className="font-mono text-xs font-bold text-[#848492]">
                       0{i + 1}
                     </span>
-                    <span className="text-base sm:text-lg font-bold text-[#0A0A0D]">
+                    <span className="text-sm sm:text-lg font-bold text-[#0A0A0D]">
                       {faq.q}
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export default function FAQ({ onOpenEnquiry }: FAQProps) {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25 }}
                     >
-                      <div className="px-5 sm:px-7 pb-6 pt-1 text-sm sm:text-base text-[#50505C] leading-relaxed font-normal border-t border-[#0A0A0D]/06">
+                      <div className="px-4 sm:px-7 pb-5 sm:pb-6 pt-1 text-xs sm:text-base text-[#50505C] leading-relaxed font-normal border-t border-[#0A0A0D]/06">
                         {faq.a}
                       </div>
                     </motion.div>

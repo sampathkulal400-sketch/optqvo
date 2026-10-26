@@ -27,7 +27,7 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl bg-[#09090C] text-[#FAFAF8] p-6 sm:p-10 lg:p-14 text-center shadow-[0_30px_70px_rgba(0,0,0,0.25)] max-w-5xl mx-auto relative overflow-hidden border border-white/10"
+          className="rounded-3xl bg-[#09090C] text-[#FAFAF8] p-5 sm:p-10 lg:p-14 text-center shadow-[0_30px_70px_rgba(0,0,0,0.25)] max-w-5xl mx-auto relative overflow-hidden border border-white/10"
         >
           {/* Subtle Ambient Glow */}
           <div className="absolute inset-0 pointer-events-none">
@@ -35,7 +35,7 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#28113B]/40 rounded-full filter blur-[120px]" />
           </div>
 
-          <div className="relative z-10 space-y-8 max-w-3xl mx-auto">
+          <div className="relative z-10 space-y-6 sm:space-y-8 max-w-3xl mx-auto">
             <span className="badge-lime">
               GET IN TOUCH
             </span>
@@ -64,7 +64,7 @@ export default function FinalCTA({ onOpenEnquiry }: FinalCTAProps) {
             </div>
 
             {/* Trust Guarantees Bar */}
-            <div className="pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs text-[#FAFAF8]/80">
+            <div className="pt-6 sm:pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 font-mono text-xs text-[#FAFAF8]/80">
               <div className="flex items-center justify-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#CCFF00] flex-shrink-0" />
                 <span>FREE INITIAL CONSULTATION</span>

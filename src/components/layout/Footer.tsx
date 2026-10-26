@@ -1,7 +1,7 @@
 "use client";
 
 import { MessageSquare, ArrowUpRight } from "lucide-react";
-import OptqvoLogo from "@/components/OptqvoLogo";
+import ElostaraLogo from "@/components/ElostaraLogo";
 
 const WHATSAPP_NUMBER = "918217206292";
 
@@ -14,7 +14,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Optqvo%20Solutions%2C%20I%27d%20like%20to%20discuss%20a%20digital%20solution%20for%20my%20business.`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Elostara%20Solutions%2C%20I%27d%20like%20to%20discuss%20a%20digital%20solution%20for%20my%20business.`;
 
   return (
     <footer className="relative bg-[#070709] border-t border-white/10 overflow-hidden text-[#FAFAF8] text-xs">
@@ -25,9 +25,9 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
             <button
               onClick={() => scrollTo("home")}
               className="flex items-center gap-1 bg-transparent border-none cursor-pointer p-0 text-left"
-              aria-label="Optqvo Solutions Home"
+              aria-label="Elostara Solutions Home"
             >
-              <OptqvoLogo variant="light" className="h-9 sm:h-10 md:h-11 w-auto hover:opacity-85 transition-opacity" />
+              <ElostaraLogo variant="light" className="h-8 sm:h-10 md:h-11 max-w-[170px] sm:max-w-none w-auto hover:opacity-85 transition-opacity" />
             </button>
 
             <p className="text-[#FAFAF8]/70 text-sm leading-relaxed max-w-sm font-normal">
@@ -43,7 +43,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-zip-lime inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] no-underline shadow-lg"
+                className="btn-zip-lime w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-mono tracking-widest text-[#0A0A0D] no-underline shadow-lg"
               >
                 <MessageSquare className="w-4 h-4 text-[#0A0A0D]" />
                 <span>CHAT DIRECTLY ON WHATSAPP</span>
@@ -62,7 +62,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
                 { label: "Capabilities", id: "services" },
                 { label: "Industry Blueprints", id: "solutions" },
                 { label: "Transformation Engine", id: "custom-solutions" },
-                { label: "Why Optqvo Solutions", id: "about" },
+                { label: "Why Elostara Solutions", id: "about" },
                 { label: "FAQ", id: "faq" },
                 { label: "Contact Us", id: "contact" },
               ].map((item) => (
@@ -123,7 +123,7 @@ export default function Footer({ onOpenEnquiry }: FooterProps) {
         {/* Bottom Bar: Copyright & Location */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#FAFAF8]/50">
           <div>
-            © {new Date().getFullYear()} Optqvo Solutions. All rights reserved.
+            © {new Date().getFullYear()} Elostara Solutions. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span>Clean Code & Practical Systems</span>

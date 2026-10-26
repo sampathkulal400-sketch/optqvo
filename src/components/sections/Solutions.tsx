@@ -240,21 +240,19 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
         </motion.div>
 
         {/* Sector Tabs Navigation Matrix */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-3 -mx-4 px-4 sm:mx-auto sm:px-0 scrollbar-none max-w-5xl justify-start lg:justify-center">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none max-w-5xl justify-start lg:justify-center touch-pan-x">
           {solutionCategories.map((cat) => {
             const isActive = activeTab === cat.id;
-            const TabIcon = cat.icon;
             return (
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
                 className={`flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer whitespace-nowrap border flex-shrink-0 ${
                   isActive
-                    ? "bg-[#28113B] text-[#CCFF00] border-[#28113B] shadow-md scale-105"
+                    ? "bg-[#28113B] text-[#CCFF00] border-[#28113B] shadow-sm font-extrabold"
                     : "bg-[#FFFFFF] text-[#50505C] border-[#0A0A0D]/10 hover:border-[#0A0A0D]/25 hover:text-[#0A0A0D]"
                 }`}
               >
-                
                 <span>{cat.name}</span>
               </button>
             );
@@ -267,7 +265,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-5 sm:p-10 lg:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.06)]"
+          className="rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-4 sm:p-8 lg:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.06)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Breakdown (7 cols) */}
@@ -311,7 +309,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
             </div>
 
             {/* Right Storytelling Comparison (5 cols) */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-[#F8F8F5] p-6 sm:p-8 rounded-2xl border border-[#0A0A0D]/08">
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-5 sm:space-y-6 bg-[#F8F8F5] p-4 sm:p-8 rounded-2xl border border-[#0A0A0D]/08">
               <div className="space-y-4">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-[#848492] font-bold block">
                   HOW IT HELPS YOUR BUSINESS:
@@ -319,7 +317,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
 
                 <div className="p-4 rounded-xl bg-rose-50 border border-rose-200/60 space-y-1">
                   <span className="font-mono text-[10px] font-bold text-rose-700 uppercase">
-                    BEFORE OPTQVO SOLUTIONS:
+                    BEFORE ELOSTARA SOLUTIONS:
                   </span>
                   <p className="text-xs text-[#0A0A0D]/80 font-normal leading-relaxed">
                     {currentSolution.simpleExample.from}
@@ -328,7 +326,7 @@ export default function Solutions({ onOpenEnquiry }: SolutionsProps) {
 
                 <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200/60 space-y-1">
                   <span className="font-mono text-[10px] font-bold text-emerald-800 uppercase">
-                    WITH OPTQVO SOLUTIONS SYSTEM:
+                    WITH ELOSTARA SOLUTIONS SYSTEM:
                   </span>
                   <p className="text-xs text-[#0A0A0D] font-semibold leading-relaxed">
                     {currentSolution.simpleExample.to}

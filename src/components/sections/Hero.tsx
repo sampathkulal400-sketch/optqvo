@@ -93,7 +93,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
     <section
       id="home"
       ref={ref}
-      className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 lg:pt-20 lg:pb-14 overflow-hidden bg-[#F8F8F5]"
+      className="relative pt-24 pb-8 sm:pt-28 sm:pb-12 lg:pt-24 lg:pb-14 overflow-hidden bg-[#F8F8F5]"
     >
       {/* Background Subtle Tech Matrix & Ambient Blur */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -199,9 +199,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-5 flex flex-col"
             >
-              <div className="rounded-3xl bg-[#09090C] text-[#FAFAF8] p-5 sm:p-7 border border-white/10 shadow-[0_24px_50px_rgba(0,0,0,0.14)] flex flex-col justify-between h-full relative overflow-hidden">
+              <div className="rounded-3xl bg-[#09090C] text-[#FAFAF8] p-4 sm:p-7 border border-white/10 shadow-[0_24px_50px_rgba(0,0,0,0.14)] flex flex-col justify-between h-full relative overflow-hidden">
                 {/* Visualizer Header Bar */}
-                <div className="space-y-3.5 sm:space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-white/10">
                     <div className="flex items-center gap-1.5 sm:gap-2">
                       <span className="w-2 h-2 rounded-full bg-rose-500/80" />
@@ -222,12 +222,11 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                   <div className="grid grid-cols-3 gap-1 p-1 bg-white/05 rounded-2xl border border-white/08">
                     {workflowNodes.map((node, idx) => {
                       const isSelected = activeNode === idx;
-                      const IconComponent = node.icon;
                       return (
                         <button
                           key={node.id}
                           onClick={() => setActiveNode(idx)}
-                          className={`p-2 sm:p-2.5 rounded-xl text-left transition-all duration-200 cursor-pointer border-none flex flex-col gap-0.5 sm:gap-1 ${
+                          className={`p-1.5 sm:p-2.5 rounded-xl text-left transition-all duration-200 cursor-pointer border-none flex flex-col gap-0.5 sm:gap-1 ${
                             isSelected
                               ? "bg-white/15 text-[#FAFAF8] shadow-sm"
                               : "bg-transparent text-white/50 hover:text-white/80 hover:bg-white/05"
@@ -237,9 +236,8 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
                             <span className="font-mono text-[8px] sm:text-[9px] font-bold text-[#CCFF00] uppercase">
                               {node.phase}
                             </span>
-                            
                           </div>
-                          <span className="font-mono text-[9px] sm:text-[10px] font-bold truncate">
+                          <span className="font-mono text-[8.5px] sm:text-[10px] font-bold truncate">
                             {node.badge}
                           </span>
                         </button>

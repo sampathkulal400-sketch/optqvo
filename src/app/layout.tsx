@@ -4,10 +4,9 @@ import { Inter } from "next/font/google";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  themeColor: "#09090B",
-  colorScheme: "dark",
+  maximumScale: 5,
+  themeColor: "#F8F8F5",
+  viewportFit: "cover",
 };
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -20,13 +19,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://optqvo.com"),
+  metadataBase: new URL("https://elostara.com"),
   title: {
-    default: "Optqvo Solutions — Build. Automate. Grow. | Practical Software Engineering & Business Automation",
-    template: "%s | Optqvo Solutions",
+    default: "Elostara Solutions — Build. Automate. Grow. | Practical Software Engineering & Business Automation",
+    template: "%s | Elostara Solutions",
   },
   description:
-    "Optqvo Solutions helps businesses build, automate, optimize and scale through custom web applications, WhatsApp automations, operational dashboards, mobile apps, and business software.",
+    "Elostara Solutions helps businesses build, automate, optimize and scale through custom web applications, WhatsApp automations, operational dashboards, mobile apps, and business software.",
   keywords: [
     "custom software development",
     "business automation",
@@ -37,12 +36,13 @@ export const metadata: Metadata = {
     "CRM development",
     "ERP systems",
     "QR menu ordering",
-    "Optqvo Solutions",
-    "Optqvo",
+    "Elostara Solutions",
+    "Elostara",
+    "ELOSTARA.",
   ],
-  authors: [{ name: "Optqvo Solutions", url: "https://optqvo.com" }],
-  creator: "Optqvo Solutions",
-  publisher: "Optqvo Solutions",
+  authors: [{ name: "Elostara Solutions", url: "https://elostara.com" }],
+  creator: "Elostara Solutions",
+  publisher: "Elostara Solutions",
   robots: {
     index: true,
     follow: true,
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://optqvo.com",
-    siteName: "Optqvo Solutions",
-    title: "Optqvo Solutions — Build. Automate. Grow.",
+    url: "https://elostara.com",
+    siteName: "Elostara Solutions",
+    title: "Elostara Solutions — Build. Automate. Grow.",
     description:
       "We build custom business websites, mobile applications, WhatsApp automations, bespoke business tools, and operational dashboards that help businesses run smoother.",
     images: [
@@ -67,21 +67,21 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Optqvo Solutions — Software Engineering & Business Automation",
+        alt: "Elostara Solutions — Software Engineering & Business Automation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Optqvo Solutions — Build. Automate. Grow.",
+    title: "Elostara Solutions — Build. Automate. Grow.",
     description:
       "Practical software engineering and business automation. We build custom web apps, mobile apps, WhatsApp automations, and operational dashboards.",
     images: ["/og-image.png"],
-    creator: "@optqvo",
-    site: "@optqvo",
+    creator: "@elostara",
+    site: "@elostara",
   },
   alternates: {
-    canonical: "https://optqvo.com",
+    canonical: "https://elostara.com",
   },
   icons: {
     icon: "/icon.png",
@@ -108,20 +108,20 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Optqvo Solutions",
-              url: "https://optqvo.com",
-              logo: "https://optqvo.com/logo.png",
+              name: "Elostara Solutions",
+              url: "https://elostara.com",
+              logo: "https://elostara.com/logo.png",
               description:
                 "Practical software engineering and business automation company helping businesses build custom web applications, WhatsApp automations, and operational tools.",
               sameAs: [
-                "https://linkedin.com/company/optqvo",
-                "https://github.com/optqvo",
-                "https://instagram.com/optqvo",
+                "https://linkedin.com/company/elostara",
+                "https://github.com/elostara",
+                "https://instagram.com/elostara",
               ],
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer service",
-                email: "hello@optqvo.com",
+                email: "hello@elostara.com",
               },
               serviceArea: {
                 "@type": "Place",

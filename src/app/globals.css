@@ -26,8 +26,8 @@
 .section-wrap {
   width: 100%;
   max-width: 100%;
-  padding-left: clamp(1.5rem, 8vw, 10rem);
-  padding-right: clamp(1.5rem, 8vw, 10rem);
+  padding-left: clamp(1rem, 4.5vw, 8rem);
+  padding-right: clamp(1rem, 4.5vw, 8rem);
 }
 
 /* ─── Base Styles ────────────────────────────────────────────────── */
@@ -222,25 +222,34 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .horizontal-scroll-touch::-webkit-scrollbar {
   display: none;
 }
 
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 /* ─── Editorial Fluid Typography Scaling ─────────────────────────── */
 .display-hero-title {
-  font-size: clamp(2.15rem, 7.5vw, 5.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.85rem, 6.5vw, 5.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   font-weight: 900;
   word-break: break-word;
   overflow-wrap: break-word;
 }
 
 .display-section-title {
-  font-size: clamp(1.85rem, 5.5vw, 3.75rem);
-  line-height: 1.06;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.6rem, 5vw, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   font-weight: 900;
   word-break: break-word;
   overflow-wrap: break-word;

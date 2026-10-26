@@ -147,7 +147,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 lg:sticky lg:top-28"
           >
-            <div className="rounded-3xl bg-[#28113B] text-[#FAFAF8] p-7 sm:p-9 border border-white/10 shadow-[0_20px_45px_rgba(40,17,59,0.18)] space-y-6 relative overflow-hidden">
+            <div className="rounded-3xl bg-[#28113B] text-[#FAFAF8] p-5 sm:p-7 lg:p-9 border border-white/10 shadow-[0_20px_45px_rgba(40,17,59,0.18)] space-y-5 sm:space-y-6 relative overflow-hidden">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#CCFF00] text-[#0A0A0D] uppercase tracking-widest">
                   {activeService.badge}
@@ -229,15 +229,15 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
                       setSelectedService(idx);
                       toggleExpand(idx);
                     }}
-                    className="p-6 sm:p-7 cursor-pointer flex items-start justify-between gap-4 select-none"
+                    className="p-4 sm:p-6 lg:p-7 cursor-pointer flex items-start justify-between gap-3 sm:gap-4 select-none"
                   >
-                    <div className="flex items-start gap-4 sm:gap-5">
+                    <div className="flex items-start gap-3 sm:gap-5">
                       <span className="font-mono text-xs sm:text-sm font-bold text-[#848492] mt-1">
                         {service.num}
                       </span>
                       <div className="space-y-1">
                         <div className="flex items-center gap-2.5">
-                          <h4 className="text-lg sm:text-xl font-bold text-[#0A0A0D]">
+                          <h4 className="text-base sm:text-xl font-bold text-[#0A0A0D]">
                             {service.title}
                           </h4>
                         </div>
@@ -247,8 +247,8 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
                       </div>
                     </div>
 
-                    <div className="w-9 h-9 rounded-full bg-[#0A0A0D]/05 flex items-center justify-center text-[#0A0A0D] flex-shrink-0 mt-1">
-                      {isExpanded ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0A0A0D]/05 flex items-center justify-center text-[#0A0A0D] flex-shrink-0 mt-0.5">
+                      {isExpanded ? <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
                     </div>
                   </div>
 
@@ -259,7 +259,7 @@ export default function Services({ onOpenEnquiry }: ServicesProps) {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="px-6 sm:px-7 pb-6 pt-2 border-t border-[#0A0A0D]/06 space-y-4"
+                        className="px-4 sm:px-6 lg:px-7 pb-5 sm:pb-6 pt-2 border-t border-[#0A0A0D]/06 space-y-4"
                       >
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
                           {service.whatWeProvide.map((item) => (

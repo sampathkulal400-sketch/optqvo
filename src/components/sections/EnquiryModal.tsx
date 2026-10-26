@@ -42,7 +42,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
     if (!name || !phone || !problemText) return;
 
     const message =
-      `*New Problem Inquiry - Optqvo Solutions*\n\n` +
+      `*New Problem Inquiry - Elostara Solutions*\n\n` +
       `👤 *Name:* ${name}\n` +
       `🏢 *Business:* ${businessName || "Not specified"}\n` +
       `📞 *Phone/WhatsApp:* ${phone}\n` +
@@ -58,7 +58,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-6 overflow-y-auto overscroll-contain">
           {/* Dark Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -74,7 +74,7 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 16 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="relative w-full max-w-xl bg-[#F8F8F5] text-[#0A0A0D] border border-[#0A0A0D]/15 rounded-3xl p-5 sm:p-9 shadow-2xl z-10 my-auto max-h-[90vh] overflow-y-auto"
+            className="relative w-full max-w-xl bg-[#F8F8F5] text-[#0A0A0D] border border-[#0A0A0D]/15 rounded-3xl p-4 sm:p-8 lg:p-9 shadow-2xl z-10 my-auto max-h-[88dvh] overflow-y-auto overscroll-contain"
           >
             {/* Close Button */}
             <button

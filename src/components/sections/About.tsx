@@ -96,7 +96,7 @@ export default function About() {
             className="lg:col-span-7 space-y-6"
           >
             <span className="badge-lime">
-              WHY OPTQVO SOLUTIONS
+              WHY ELOSTARA SOLUTIONS
             </span>
 
             <h2 className="display-section-title text-[#FAFAF8]">
@@ -104,7 +104,7 @@ export default function About() {
             </h2>
 
             <p className="text-base sm:text-xl text-[#FAFAF8]/85 leading-relaxed font-normal">
-              Optqvo Solutions is an engineering team dedicated to building practical, reliable digital tools for restaurants, retail shops, clinics, hotels, and growing SMEs.
+              Elostara Solutions is an engineering team dedicated to building practical, reliable digital tools for restaurants, retail shops, clinics, hotels, and growing SMEs.
             </p>
 
             <p className="text-sm sm:text-base text-[#FAFAF8]/65 leading-relaxed font-normal">
@@ -117,7 +117,7 @@ export default function About() {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="lg:col-span-5 p-7 sm:p-9 rounded-3xl bg-white/04 border border-white/10 space-y-6"
+            className="lg:col-span-5 p-5 sm:p-7 lg:p-9 rounded-3xl bg-white/04 border border-white/10 space-y-5 sm:space-y-6"
           >
             <span className="font-mono text-[10px] uppercase tracking-widest text-[#CCFF00] font-bold block">
               OUR CORE PROMISES:
@@ -154,7 +154,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="p-6 sm:p-7 rounded-3xl bg-white/04 border border-white/08 hover:border-white/20 transition-all duration-300 space-y-4"
+                className="p-5 sm:p-7 rounded-3xl bg-white/04 border border-white/08 hover:border-white/20 transition-all duration-300 space-y-4"
               >
                 <div className="w-10 h-10 rounded-2xl bg-white/08 flex items-center justify-center text-[#CCFF00]">
                   <PillarIcon className="w-5 h-5" />
@@ -186,11 +186,11 @@ export default function About() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {executionSteps.map((step) => (
               <div
                 key={step.step}
-                className="p-6 rounded-2xl bg-white/03 border border-white/06 space-y-2 relative"
+                className="p-4 sm:p-6 rounded-2xl bg-white/03 border border-white/06 space-y-2 relative"
               >
                 <span className="font-mono text-2xl font-black text-[#CCFF00]/40">
                   {step.step}

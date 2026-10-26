@@ -86,6 +86,13 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
 
+  const handleSelect = (idx: number) => {
+    setSelectedIdx(idx);
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      document.getElementById("custom-solution-detail")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  };
+
   const current = transformations[selectedIdx];
   const IconComp = current.icon;
 
@@ -125,8 +132,8 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
               return (
                 <button
                   key={item.id}
-                  onClick={() => setSelectedIdx(idx)}
-                  className={`w-full text-left p-4 sm:p-5 rounded-2xl transition-all duration-200 cursor-pointer border flex items-center justify-between gap-3 ${
+                  onClick={() => handleSelect(idx)}
+                  className={`w-full text-left p-3.5 sm:p-5 rounded-2xl transition-all duration-200 cursor-pointer border flex items-center justify-between gap-3 ${
                     isSelected
                       ? "bg-[#28113B] text-[#FAFAF8] border-[#28113B] shadow-md translate-x-1"
                       : "bg-[#FFFFFF] text-[#0A0A0D] border-[#0A0A0D]/10 hover:border-[#0A0A0D]/25"
@@ -164,11 +171,12 @@ export default function CustomSolutions({ onOpenEnquiry }: CustomSolutionsProps)
 
           {/* Right Detailed Problem → Approach → Solution → Result Matrix (7 cols) */}
           <motion.div
+            id="custom-solution-detail"
             key={current.id}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
-            className="lg:col-span-7 rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-5 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.06)] space-y-5 sm:space-y-6"
+            className="lg:col-span-7 rounded-3xl bg-[#FFFFFF] border border-[#0A0A0D]/12 p-4 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.06)] space-y-4 sm:space-y-6 scroll-mt-20"
           >
             <div className="flex items-center justify-between pb-4 border-b border-[#0A0A0D]/08">
               <div className="flex items-center gap-2">
