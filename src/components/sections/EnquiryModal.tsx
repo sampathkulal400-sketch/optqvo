@@ -42,18 +42,15 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
     if (!name || !phone || !problemText) return;
 
     const lines = [
-      `*🚀 New Project Enquiry — Elostara Solutions*`,
-      ``,
-      `👤 *Name:* ${name}`,
-      `🏢 *Business:* ${businessName || "Not specified"}`,
-      `📱 *Phone / WhatsApp:* ${phone}`,
-      `🏷️ *Business Category:* ${businessType}`,
-      ``,
-      `💡 *Problem / Requirement:*`,
+      "New enquiry from " + name,
+      "",
+      "Business: " + (businessName || "Not specified"),
+      "Phone: " + phone,
+      "Category: " + businessType,
+      "",
+      "Requirement:",
       problemText,
-      ...(budget ? [``, `💰 *Target Budget:* ${budget}`] : []),
-      ``,
-      `_Sent via elostara.com_`,
+      ...(budget ? ["", "Budget: " + budget] : []),
     ];
     const message = lines.join("\n");
 
