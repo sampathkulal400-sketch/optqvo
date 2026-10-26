@@ -41,14 +41,21 @@ export default function EnquiryModal({ isOpen, onClose, initialCategory = "" }: 
     e.preventDefault();
     if (!name || !phone || !problemText) return;
 
-    const message =
-      `*New Problem Inquiry - Elostara Solutions*\n\n` +
-      `👤 *Name:* ${name}\n` +
-      `🏢 *Business:* ${businessName || "Not specified"}\n` +
-      `📞 *Phone/WhatsApp:* ${phone}\n` +
-      `🏷️ *Business Category:* ${businessType}\n` +
-      `💡 *Problem / Requirement:*\n${problemText}\n` +
-      (budget ? `💰 *Target Budget:* ${budget}\n` : "");
+    const lines = [
+      `*🚀 New Project Enquiry — Elostara Solutions*`,
+      ``,
+      `👤 *Name:* ${name}`,
+      `🏢 *Business:* ${businessName || "Not specified"}`,
+      `📱 *Phone / WhatsApp:* ${phone}`,
+      `🏷️ *Business Category:* ${businessType}`,
+      ``,
+      `💡 *Problem / Requirement:*`,
+      problemText,
+      ...(budget ? [``, `💰 *Target Budget:* ${budget}`] : []),
+      ``,
+      `_Sent via elostara.com_`,
+    ];
+    const message = lines.join("\n");
 
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
